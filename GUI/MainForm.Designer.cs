@@ -28,12 +28,130 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.PanelButtons = new System.Windows.Forms.Panel();
+            this.PanelUserAccount = new System.Windows.Forms.Panel();
+            this.slideBar = new System.Windows.Forms.Panel();
+            this.BtnDichVuSuaChua = new System.Windows.Forms.Button();
+            this.BtnQuanLiKhachHang = new System.Windows.Forms.Button();
+            this.BtnVatTu = new System.Windows.Forms.Button();
+            this.BtnBaoCao = new System.Windows.Forms.Button();
+            this.PanelContent = new System.Windows.Forms.Panel();
+            this.PanelSubButtons = new System.Windows.Forms.Panel();
+            this.PanelDecoration = new System.Windows.Forms.Panel();
+            this.PanelButtons.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // PanelButtons
+            // 
+            this.PanelButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.PanelButtons.Controls.Add(this.PanelUserAccount);
+            this.PanelButtons.Controls.Add(this.slideBar);
+            this.PanelButtons.Controls.Add(this.BtnDichVuSuaChua);
+            this.PanelButtons.Controls.Add(this.BtnQuanLiKhachHang);
+            this.PanelButtons.Controls.Add(this.BtnVatTu);
+            this.PanelButtons.Controls.Add(this.BtnBaoCao);
+            resources.ApplyResources(this.PanelButtons, "PanelButtons");
+            this.PanelButtons.Name = "PanelButtons";
+            // 
+            // PanelUserAccount
+            // 
+            resources.ApplyResources(this.PanelUserAccount, "PanelUserAccount");
+            this.PanelUserAccount.Name = "PanelUserAccount";
+            // 
+            // slideBar
+            // 
+            this.slideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            resources.ApplyResources(this.slideBar, "slideBar");
+            this.slideBar.Name = "slideBar";
+            // 
+            // BtnDichVuSuaChua
+            // 
+            this.BtnDichVuSuaChua.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.BtnDichVuSuaChua.FlatAppearance.BorderSize = 0;
+            this.BtnDichVuSuaChua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            resources.ApplyResources(this.BtnDichVuSuaChua, "BtnDichVuSuaChua");
+            this.BtnDichVuSuaChua.ForeColor = System.Drawing.Color.White;
+            this.BtnDichVuSuaChua.Name = "BtnDichVuSuaChua";
+            this.BtnDichVuSuaChua.UseVisualStyleBackColor = true;
+            this.BtnDichVuSuaChua.Click += new System.EventHandler(this.BtnDichVuSuaChua_Click);
+            // 
+            // BtnQuanLiKhachHang
+            // 
+            this.BtnQuanLiKhachHang.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.BtnQuanLiKhachHang.FlatAppearance.BorderSize = 0;
+            this.BtnQuanLiKhachHang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            resources.ApplyResources(this.BtnQuanLiKhachHang, "BtnQuanLiKhachHang");
+            this.BtnQuanLiKhachHang.ForeColor = System.Drawing.Color.White;
+            this.BtnQuanLiKhachHang.Name = "BtnQuanLiKhachHang";
+            this.BtnQuanLiKhachHang.UseVisualStyleBackColor = true;
+            this.BtnQuanLiKhachHang.Click += new System.EventHandler(this.BtnQuanLiKhachHang_Click);
+            // 
+            // BtnVatTu
+            // 
+            this.BtnVatTu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.BtnVatTu.FlatAppearance.BorderSize = 0;
+            this.BtnVatTu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            resources.ApplyResources(this.BtnVatTu, "BtnVatTu");
+            this.BtnVatTu.ForeColor = System.Drawing.Color.White;
+            this.BtnVatTu.Name = "BtnVatTu";
+            this.BtnVatTu.UseVisualStyleBackColor = true;
+            this.BtnVatTu.Click += new System.EventHandler(this.BtnVatTu_Click);
+            // 
+            // BtnBaoCao
+            // 
+            this.BtnBaoCao.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.BtnBaoCao.FlatAppearance.BorderSize = 0;
+            this.BtnBaoCao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            resources.ApplyResources(this.BtnBaoCao, "BtnBaoCao");
+            this.BtnBaoCao.ForeColor = System.Drawing.Color.White;
+            this.BtnBaoCao.Name = "BtnBaoCao";
+            this.BtnBaoCao.UseVisualStyleBackColor = true;
+            this.BtnBaoCao.Click += new System.EventHandler(this.BtnBaoCao_Click);
+            // 
+            // PanelContent
+            // 
+            this.PanelContent.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            resources.ApplyResources(this.PanelContent, "PanelContent");
+            this.PanelContent.Name = "PanelContent";
+            // 
+            // PanelSubButtons
+            // 
+            this.PanelSubButtons.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.PanelSubButtons, "PanelSubButtons");
+            this.PanelSubButtons.Name = "PanelSubButtons";
+            // 
+            // PanelDecoration
+            // 
+            this.PanelDecoration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            resources.ApplyResources(this.PanelDecoration, "PanelDecoration");
+            this.PanelDecoration.Name = "PanelDecoration";
+            // 
+            // MainForm
+            // 
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "MainForm";
+            this.Controls.Add(this.PanelContent);
+            this.Controls.Add(this.PanelSubButtons);
+            this.Controls.Add(this.PanelDecoration);
+            this.Controls.Add(this.PanelButtons);
+            this.Name = "MainForm";
+            this.PanelButtons.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel PanelButtons;
+        private System.Windows.Forms.Panel PanelUserAccount;
+        private System.Windows.Forms.Panel slideBar;
+        private System.Windows.Forms.Button BtnDichVuSuaChua;
+        public System.Windows.Forms.Button BtnQuanLiKhachHang;
+        private System.Windows.Forms.Button BtnVatTu;
+        private System.Windows.Forms.Button BtnBaoCao;
+        private System.Windows.Forms.Panel PanelContent;
+        private System.Windows.Forms.Panel PanelSubButtons;
+        private System.Windows.Forms.Panel PanelDecoration;
     }
 }
