@@ -46,6 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DichVuSuaChua\UC_LapPhieuSuaChua.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DichVuSuaChua\UC_LapPhieuSuaChua.Designer.cs">
+      <DependentUpon>UC_LapPhieuSuaChua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DichVuSuaChua\UC_LichSuSuaChua.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DichVuSuaChua\UC_LichSuSuaChua.Designer.cs">
+      <DependentUpon>UC_LichSuSuaChua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DichVuSuaChua\UC_PanelButtons_DichVuSuaChua.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DichVuSuaChua\UC_PanelButtons_DichVuSuaChua.Designer.cs">
+      <DependentUpon>UC_PanelButtons_DichVuSuaChua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DichVuSuaChua\UC_QuanLiXe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DichVuSuaChua\UC_QuanLiXe.Designer.cs">
+      <DependentUpon>UC_QuanLiXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DichVuSuaChua\UC_TiepNhanXe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DichVuSuaChua\UC_TiepNhanXe.Designer.cs">
+      <DependentUpon>UC_TiepNhanXe.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +84,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DichVuSuaChua\UC_LapPhieuSuaChua.resx">
+      <DependentUpon>UC_LapPhieuSuaChua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DichVuSuaChua\UC_LichSuSuaChua.resx">
+      <DependentUpon>UC_LichSuSuaChua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DichVuSuaChua\UC_PanelButtons_DichVuSuaChua.resx">
+      <DependentUpon>UC_PanelButtons_DichVuSuaChua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DichVuSuaChua\UC_QuanLiXe.resx">
+      <DependentUpon>UC_QuanLiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DichVuSuaChua\UC_TiepNhanXe.resx">
+      <DependentUpon>UC_TiepNhanXe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

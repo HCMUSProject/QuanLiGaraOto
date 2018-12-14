@@ -126,7 +126,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelUserAccount.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;PanelUserAccount.Name" xml:space="preserve">
     <value>PanelUserAccount</value>
@@ -147,7 +147,7 @@
     <value>10, 75</value>
   </data>
   <data name="slideBar.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;slideBar.Name" xml:space="preserve">
     <value>slideBar</value>
@@ -187,7 +187,7 @@
     <value>360, 75</value>
   </data>
   <data name="BtnDichVuSuaChua.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>0</value>
   </data>
   <data name="BtnDichVuSuaChua.Text" xml:space="preserve">
     <value>  Dịch vụ sửa chữa</value>
@@ -235,7 +235,7 @@
     <value>360, 75</value>
   </data>
   <data name="BtnQuanLiKhachHang.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>3</value>
   </data>
   <data name="BtnQuanLiKhachHang.Text" xml:space="preserve">
     <value>  Quản lí khách hàng</value>
@@ -283,7 +283,7 @@
     <value>360, 75</value>
   </data>
   <data name="BtnVatTu.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>1</value>
   </data>
   <data name="BtnVatTu.Text" xml:space="preserve">
     <value>  Vật tư / Phụ tùng</value>
@@ -331,7 +331,7 @@
     <value>360, 75</value>
   </data>
   <data name="BtnBaoCao.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>2</value>
   </data>
   <data name="BtnBaoCao.Text" xml:space="preserve">
     <value>  Báo cáo</value>
@@ -388,7 +388,7 @@
     <value>1000, 640</value>
   </data>
   <data name="PanelContent.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;PanelContent.Name" xml:space="preserve">
     <value>PanelContent</value>
@@ -415,7 +415,7 @@
     <value>1000, 70</value>
   </data>
   <data name="PanelSubButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;PanelSubButtons.Name" xml:space="preserve">
     <value>PanelSubButtons</value>
@@ -442,7 +442,7 @@
     <value>1000, 10</value>
   </data>
   <data name="PanelDecoration.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;PanelDecoration.Name" xml:space="preserve">
     <value>PanelDecoration</value>

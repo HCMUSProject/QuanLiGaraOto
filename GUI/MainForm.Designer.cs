@@ -111,13 +111,13 @@
             // 
             // PanelContent
             // 
-            this.PanelContent.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.PanelContent.BackColor = System.Drawing.SystemColors.ControlLightLight;
             resources.ApplyResources(this.PanelContent, "PanelContent");
             this.PanelContent.Name = "PanelContent";
             // 
             // PanelSubButtons
             // 
-            this.PanelSubButtons.BackColor = System.Drawing.SystemColors.Control;
+            this.PanelSubButtons.BackColor = System.Drawing.SystemColors.MenuBar;
             resources.ApplyResources(this.PanelSubButtons, "PanelSubButtons");
             this.PanelSubButtons.Name = "PanelSubButtons";
             // 
