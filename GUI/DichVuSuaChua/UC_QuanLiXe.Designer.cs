@@ -54,9 +54,11 @@
             this.GroupBoxBasicInfo.Controls.Add(this.label2);
             this.GroupBoxBasicInfo.Controls.Add(this.label1);
             this.GroupBoxBasicInfo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxBasicInfo.Location = new System.Drawing.Point(213, 33);
+            this.GroupBoxBasicInfo.Location = new System.Drawing.Point(285, 27);
+            this.GroupBoxBasicInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GroupBoxBasicInfo.Name = "GroupBoxBasicInfo";
-            this.GroupBoxBasicInfo.Size = new System.Drawing.Size(587, 138);
+            this.GroupBoxBasicInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GroupBoxBasicInfo.Size = new System.Drawing.Size(440, 112);
             this.GroupBoxBasicInfo.TabIndex = 1;
             this.GroupBoxBasicInfo.TabStop = false;
             this.GroupBoxBasicInfo.Text = "Thông tin cơ bản";
@@ -64,36 +66,40 @@
             // NumOfCarsToday
             // 
             this.NumOfCarsToday.AutoSize = true;
-            this.NumOfCarsToday.Location = new System.Drawing.Point(404, 92);
+            this.NumOfCarsToday.Location = new System.Drawing.Point(303, 75);
+            this.NumOfCarsToday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NumOfCarsToday.Name = "NumOfCarsToday";
-            this.NumOfCarsToday.Size = new System.Drawing.Size(76, 23);
+            this.NumOfCarsToday.Size = new System.Drawing.Size(63, 19);
             this.NumOfCarsToday.TabIndex = 1;
             this.NumOfCarsToday.Text = "label4";
             // 
             // TotalCars
             // 
             this.TotalCars.AutoSize = true;
-            this.TotalCars.Location = new System.Drawing.Point(404, 53);
+            this.TotalCars.Location = new System.Drawing.Point(303, 43);
+            this.TotalCars.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TotalCars.Name = "TotalCars";
-            this.TotalCars.Size = new System.Drawing.Size(76, 23);
+            this.TotalCars.Size = new System.Drawing.Size(63, 19);
             this.TotalCars.TabIndex = 0;
             this.TotalCars.Text = "label3";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(118, 92);
+            this.label2.Location = new System.Drawing.Point(88, 75);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(263, 23);
+            this.label2.Size = new System.Drawing.Size(216, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "Số xe nhập vào hôm nay:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(118, 53);
+            this.label1.Location = new System.Drawing.Point(88, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 23);
+            this.label1.Size = new System.Drawing.Size(162, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Số xe trong gara:";
             // 
@@ -126,12 +132,13 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvQuanLiXe.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgvQuanLiXe.Location = new System.Drawing.Point(18, 189);
+            this.dtgvQuanLiXe.Location = new System.Drawing.Point(14, 154);
+            this.dtgvQuanLiXe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgvQuanLiXe.Name = "dtgvQuanLiXe";
             this.dtgvQuanLiXe.ReadOnly = true;
             this.dtgvQuanLiXe.RowHeadersVisible = false;
             this.dtgvQuanLiXe.RowTemplate.Height = 24;
-            this.dtgvQuanLiXe.Size = new System.Drawing.Size(966, 420);
+            this.dtgvQuanLiXe.Size = new System.Drawing.Size(974, 421);
             this.dtgvQuanLiXe.TabIndex = 0;
             // 
             // KhachHang
@@ -178,13 +185,14 @@
             // 
             // UC_QuanLiXe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.dtgvQuanLiXe);
             this.Controls.Add(this.GroupBoxBasicInfo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UC_QuanLiXe";
-            this.Size = new System.Drawing.Size(1000, 640);
+            this.Size = new System.Drawing.Size(1000, 600);
             this.GroupBoxBasicInfo.ResumeLayout(false);
             this.GroupBoxBasicInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvQuanLiXe)).EndInit();

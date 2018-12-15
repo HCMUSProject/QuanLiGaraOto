@@ -121,8 +121,12 @@
   <data name="PanelUserAccount.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelUserAccount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
   <data name="PanelUserAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 150</value>
+    <value>354, 122</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelUserAccount.TabIndex" type="System.Int32, mscorlib">
@@ -141,10 +145,13 @@
     <value>0</value>
   </data>
   <data name="slideBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 200</value>
+    <value>0, 162</value>
+  </data>
+  <data name="slideBar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="slideBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 75</value>
+    <value>8, 61</value>
   </data>
   <data name="slideBar.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -161,7 +168,6 @@
   <data name="&gt;&gt;slideBar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="BtnDichVuSuaChua.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -175,16 +181,19 @@
     <value>NoControl</value>
   </data>
   <data name="BtnDichVuSuaChua.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 200</value>
+    <value>8, 162</value>
+  </data>
+  <data name="BtnDichVuSuaChua.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="BtnDichVuSuaChua.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 0, 0, 0</value>
+    <value>8, 0, 0, 0</value>
   </data>
   <data name="BtnDichVuSuaChua.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="BtnDichVuSuaChua.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 75</value>
+    <value>344, 61</value>
   </data>
   <data name="BtnDichVuSuaChua.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -223,16 +232,19 @@
     <value>NoControl</value>
   </data>
   <data name="BtnQuanLiKhachHang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 425</value>
+    <value>8, 345</value>
+  </data>
+  <data name="BtnQuanLiKhachHang.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="BtnQuanLiKhachHang.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 0, 0, 0</value>
+    <value>8, 0, 0, 0</value>
   </data>
   <data name="BtnQuanLiKhachHang.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="BtnQuanLiKhachHang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 75</value>
+    <value>344, 61</value>
   </data>
   <data name="BtnQuanLiKhachHang.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -271,16 +283,19 @@
     <value>NoControl</value>
   </data>
   <data name="BtnVatTu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 275</value>
+    <value>8, 223</value>
+  </data>
+  <data name="BtnVatTu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="BtnVatTu.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 0, 0, 0</value>
+    <value>8, 0, 0, 0</value>
   </data>
   <data name="BtnVatTu.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="BtnVatTu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 75</value>
+    <value>344, 61</value>
   </data>
   <data name="BtnVatTu.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -319,16 +334,19 @@
     <value>NoControl</value>
   </data>
   <data name="BtnBaoCao.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 350</value>
+    <value>8, 284</value>
+  </data>
+  <data name="BtnBaoCao.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="BtnBaoCao.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 0, 0, 0</value>
+    <value>8, 0, 0, 0</value>
   </data>
   <data name="BtnBaoCao.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="BtnBaoCao.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 75</value>
+    <value>344, 61</value>
   </data>
   <data name="BtnBaoCao.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -360,8 +378,11 @@
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="PanelButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 720</value>
+    <value>354, 681</value>
   </data>
   <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -382,10 +403,13 @@
     <value>Fill</value>
   </data>
   <data name="PanelContent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>370, 80</value>
+    <value>354, 80</value>
+  </data>
+  <data name="PanelContent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="PanelContent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 640</value>
+    <value>1000, 601</value>
   </data>
   <data name="PanelContent.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -406,7 +430,7 @@
     <value>Top</value>
   </data>
   <data name="PanelSubButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>370, 10</value>
+    <value>354, 10</value>
   </data>
   <data name="PanelSubButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -433,7 +457,7 @@
     <value>Top</value>
   </data>
   <data name="PanelDecoration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>370, 0</value>
+    <value>354, 0</value>
   </data>
   <data name="PanelDecoration.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -460,13 +484,16 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1370, 720</value>
+    <value>1354, 681</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1370, 720</value>
+    <value>1032, 592</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
