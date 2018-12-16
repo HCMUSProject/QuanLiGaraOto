@@ -99,7 +99,7 @@
             this.dtgvLichSu.RowHeadersVisible = false;
             this.dtgvLichSu.RowTemplate.Height = 24;
             this.dtgvLichSu.Size = new System.Drawing.Size(532, 494);
-            this.dtgvLichSu.TabIndex = 1;
+            this.dtgvLichSu.TabIndex = 2;
             // 
             // KhachHang
             // 
@@ -168,7 +168,7 @@
             this.dtgvChiTietSuaChua.ReadOnly = true;
             this.dtgvChiTietSuaChua.RowHeadersVisible = false;
             this.dtgvChiTietSuaChua.Size = new System.Drawing.Size(437, 306);
-            this.dtgvChiTietSuaChua.TabIndex = 2;
+            this.dtgvChiTietSuaChua.TabIndex = 3;
             // 
             // LoaiDichVu
             // 
@@ -207,7 +207,7 @@
             this.GrBoxChiTiet.Location = new System.Drawing.Point(551, 409);
             this.GrBoxChiTiet.Name = "GrBoxChiTiet";
             this.GrBoxChiTiet.Size = new System.Drawing.Size(436, 171);
-            this.GrBoxChiTiet.TabIndex = 3;
+            this.GrBoxChiTiet.TabIndex = 4;
             this.GrBoxChiTiet.TabStop = false;
             this.GrBoxChiTiet.Text = "Thông tin chi tiết";
             // 
@@ -289,7 +289,7 @@
             this.dtFrom.Location = new System.Drawing.Point(79, 23);
             this.dtFrom.Name = "dtFrom";
             this.dtFrom.Size = new System.Drawing.Size(105, 26);
-            this.dtFrom.TabIndex = 6;
+            this.dtFrom.TabIndex = 0;
             // 
             // dtTo
             // 
@@ -298,7 +298,7 @@
             this.dtTo.Location = new System.Drawing.Point(244, 23);
             this.dtTo.Name = "dtTo";
             this.dtTo.Size = new System.Drawing.Size(105, 26);
-            this.dtTo.TabIndex = 7;
+            this.dtTo.TabIndex = 1;
             // 
             // UC_LichSuSuaChua
             // 

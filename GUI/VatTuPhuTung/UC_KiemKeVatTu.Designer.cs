@@ -31,14 +31,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvKiemKeVatTu = new System.Windows.Forms.DataGridView();
-            this.DanhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HangXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VatTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtTo = new System.Windows.Forms.DateTimePicker();
             this.dtFrom = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.DanhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HangSanXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VatTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvKiemKeVatTu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             this.dtgvKiemKeVatTu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvKiemKeVatTu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DanhMuc,
-            this.HangXe,
+            this.HangSanXuat,
             this.VatTu,
             this.SoLuong});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -81,30 +81,6 @@
             this.dtgvKiemKeVatTu.RowHeadersVisible = false;
             this.dtgvKiemKeVatTu.Size = new System.Drawing.Size(969, 517);
             this.dtgvKiemKeVatTu.TabIndex = 0;
-            // 
-            // DanhMuc
-            // 
-            this.DanhMuc.HeaderText = "Danh mục";
-            this.DanhMuc.Name = "DanhMuc";
-            this.DanhMuc.ReadOnly = true;
-            // 
-            // HangXe
-            // 
-            this.HangXe.HeaderText = "Hãng xe";
-            this.HangXe.Name = "HangXe";
-            this.HangXe.ReadOnly = true;
-            // 
-            // VatTu
-            // 
-            this.VatTu.HeaderText = "Vật tư";
-            this.VatTu.Name = "VatTu";
-            this.VatTu.ReadOnly = true;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
             // 
             // dtTo
             // 
@@ -144,6 +120,30 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Từ";
             // 
+            // DanhMuc
+            // 
+            this.DanhMuc.HeaderText = "Danh mục";
+            this.DanhMuc.Name = "DanhMuc";
+            this.DanhMuc.ReadOnly = true;
+            // 
+            // HangSanXuat
+            // 
+            this.HangSanXuat.HeaderText = "Hãng sản xuất";
+            this.HangSanXuat.Name = "HangSanXuat";
+            this.HangSanXuat.ReadOnly = true;
+            // 
+            // VatTu
+            // 
+            this.VatTu.HeaderText = "Vật tư";
+            this.VatTu.Name = "VatTu";
+            this.VatTu.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            // 
             // UC_KiemKeVatTu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,7 +170,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn DanhMuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HangXe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HangSanXuat;
         private System.Windows.Forms.DataGridViewTextBoxColumn VatTu;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
     }

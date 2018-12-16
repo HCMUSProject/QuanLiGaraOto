@@ -38,8 +38,8 @@
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtTo = new System.Windows.Forms.DateTimePicker();
-            this.dtFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtpkTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpkFrom = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -135,25 +135,25 @@
             this.NhanVien.Name = "NhanVien";
             this.NhanVien.ReadOnly = true;
             // 
-            // dtTo
+            // dtpkTo
             // 
-            this.dtTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtTo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtTo.Location = new System.Drawing.Point(887, 106);
-            this.dtTo.Name = "dtTo";
-            this.dtTo.Size = new System.Drawing.Size(101, 26);
-            this.dtTo.TabIndex = 11;
+            this.dtpkTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpkTo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkTo.Location = new System.Drawing.Point(887, 106);
+            this.dtpkTo.Name = "dtpkTo";
+            this.dtpkTo.Size = new System.Drawing.Size(101, 26);
+            this.dtpkTo.TabIndex = 1;
             // 
-            // dtFrom
+            // dtpkFrom
             // 
-            this.dtFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtFrom.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFrom.Location = new System.Drawing.Point(733, 106);
-            this.dtFrom.Name = "dtFrom";
-            this.dtFrom.Size = new System.Drawing.Size(101, 26);
-            this.dtFrom.TabIndex = 10;
+            this.dtpkFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpkFrom.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkFrom.Location = new System.Drawing.Point(733, 106);
+            this.dtpkFrom.Name = "dtpkFrom";
+            this.dtpkFrom.Size = new System.Drawing.Size(101, 26);
+            this.dtpkFrom.TabIndex = 0;
             // 
             // label5
             // 
@@ -232,8 +232,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dtTo);
-            this.Controls.Add(this.dtFrom);
+            this.Controls.Add(this.dtpkTo);
+            this.Controls.Add(this.dtpkFrom);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgvQuanLiNhapKho);
@@ -250,8 +250,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgvQuanLiNhapKho;
-        private System.Windows.Forms.DateTimePicker dtTo;
-        private System.Windows.Forms.DateTimePicker dtFrom;
+        private System.Windows.Forms.DateTimePicker dtpkTo;
+        private System.Windows.Forms.DateTimePicker dtpkFrom;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;

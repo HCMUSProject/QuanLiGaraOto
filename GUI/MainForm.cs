@@ -67,6 +67,20 @@ namespace GUI
         private void BtnQuanLiKhachHang_Click(object sender, EventArgs e)
         {
             AutoSlideBar(BtnQuanLiKhachHang);
+            PanelContent.Controls.Clear();
+
+            // mở submenu
+            if (!PanelSubButtons.Controls.Contains(QuanLiKhachHang.UC_PanelButtons_QuanLiKhachHang.Instance))
+            {
+                PanelSubButtons.Controls.Add(QuanLiKhachHang.UC_PanelButtons_QuanLiKhachHang.Instance);
+                QuanLiKhachHang.UC_PanelButtons_QuanLiKhachHang.Instance.Dock = DockStyle.Fill;
+                QuanLiKhachHang.UC_PanelButtons_QuanLiKhachHang.Instance.BringToFront();
+                QuanLiKhachHang.UC_PanelButtons_QuanLiKhachHang.Instance.OnButtonClick += OnSubButtons_QuanLyKhachHang_Click;
+            }
+            else
+            {
+                QuanLiKhachHang.UC_PanelButtons_QuanLiKhachHang.Instance.BringToFront();
+            }
         }
 
         //========================= handle sự kiện trong button Dịch vụ sửa chữa ====================
@@ -200,6 +214,42 @@ namespace GUI
                 }
 
                 //MessageBox.Show("BtnLichSuSuaChua");
+            }
+        }
+
+        private void OnSubButtons_QuanLyKhachHang_Click(object sender, EventArgs e)
+        {
+            // eps kiểu sender về button
+            Button btnClicked = sender as Button;
+
+            if (btnClicked.Name == "BtnQuanLiKhachHang")
+            {
+                if (!PanelContent.Controls.Contains(QuanLiKhachHang.UC_QuanLiKhachHang.Instance))
+                {
+                    PanelContent.Controls.Add(QuanLiKhachHang.UC_QuanLiKhachHang.Instance);
+                    QuanLiKhachHang.UC_QuanLiKhachHang.Instance.Dock = DockStyle.Fill;
+                    QuanLiKhachHang.UC_QuanLiKhachHang.Instance.BringToFront();
+                }
+                else
+                {
+                    QuanLiKhachHang.UC_QuanLiKhachHang.Instance.BringToFront();
+                }
+                //MessageBox.Show("BtnTiepNhanXe");
+            }
+            if (btnClicked.Name == "BtnXemThongTin")
+            {
+                if (!PanelContent.Controls.Contains(QuanLiKhachHang.UC_XemThongTinKhachHang.Instance))
+                {
+                    PanelContent.Controls.Add(QuanLiKhachHang.UC_XemThongTinKhachHang.Instance);
+                    QuanLiKhachHang.UC_XemThongTinKhachHang.Instance.Dock = DockStyle.Fill;
+                    QuanLiKhachHang.UC_XemThongTinKhachHang.Instance.BringToFront();
+                }
+                else
+                {
+                    QuanLiKhachHang.UC_XemThongTinKhachHang.Instance.BringToFront();
+                }
+
+                //MessageBox.Show("BtnQuanLiXe");
             }
         }
     }
