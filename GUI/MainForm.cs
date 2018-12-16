@@ -62,6 +62,20 @@ namespace GUI
         private void BtnBaoCao_Click(object sender, EventArgs e)
         {
             AutoSlideBar(BtnBaoCao);
+            PanelContent.Controls.Clear();
+
+            // mở submenu
+            if (!PanelSubButtons.Controls.Contains(BaoCao.UC_PanelButtons_BaoCao.Instance))
+            {
+                PanelSubButtons.Controls.Add(BaoCao.UC_PanelButtons_BaoCao.Instance);
+                BaoCao.UC_PanelButtons_BaoCao.Instance.Dock = DockStyle.Fill;
+                BaoCao.UC_PanelButtons_BaoCao.Instance.BringToFront();
+                BaoCao.UC_PanelButtons_BaoCao.Instance.OnButtonClick += OnSubButtons_BaoCao_Click;
+            }
+            else
+            {
+                BaoCao.UC_PanelButtons_BaoCao.Instance.BringToFront();
+            }
         }
 
         private void BtnQuanLiKhachHang_Click(object sender, EventArgs e)
@@ -247,6 +261,42 @@ namespace GUI
                 else
                 {
                     QuanLiKhachHang.UC_XemThongTinKhachHang.Instance.BringToFront();
+                }
+
+                //MessageBox.Show("BtnQuanLiXe");
+            }
+        }
+
+        private void OnSubButtons_BaoCao_Click(object sender, EventArgs e)
+        {
+            // eps kiểu sender về button
+            Button btnClicked = sender as Button;
+
+            if (btnClicked.Name == "BtnBaoCaoDoanhThu")
+            {
+                if (!PanelContent.Controls.Contains(BaoCao.UC_BaoCaoDoanhThu.Instance))
+                {
+                    PanelContent.Controls.Add(BaoCao.UC_BaoCaoDoanhThu.Instance);
+                    BaoCao.UC_BaoCaoDoanhThu.Instance.Dock = DockStyle.Fill;
+                    BaoCao.UC_BaoCaoDoanhThu.Instance.BringToFront();
+                }
+                else
+                {
+                    BaoCao.UC_BaoCaoDoanhThu.Instance.BringToFront();
+                }
+                //MessageBox.Show("BtnTiepNhanXe");
+            }
+            if (btnClicked.Name == "BtnBaoCaoTonKho")
+            {
+                if (!PanelContent.Controls.Contains(BaoCao.UC_BaoCaoTonKho.Instance))
+                {
+                    PanelContent.Controls.Add(BaoCao.UC_BaoCaoTonKho.Instance);
+                    BaoCao.UC_BaoCaoTonKho.Instance.Dock = DockStyle.Fill;
+                    BaoCao.UC_BaoCaoTonKho.Instance.BringToFront();
+                }
+                else
+                {
+                    BaoCao.UC_BaoCaoTonKho.Instance.BringToFront();
                 }
 
                 //MessageBox.Show("BtnQuanLiXe");

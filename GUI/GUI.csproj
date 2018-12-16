@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCao\UC_BaoCaoDoanhThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaoCao\UC_BaoCaoDoanhThu.Designer.cs">
+      <DependentUpon>UC_BaoCaoDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\UC_BaoCaoTonKho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaoCao\UC_BaoCaoTonKho.Designer.cs">
+      <DependentUpon>UC_BaoCaoTonKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\UC_PanelButtons_BaoCao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaoCao\UC_PanelButtons_BaoCao.Designer.cs">
+      <DependentUpon>UC_PanelButtons_BaoCao.cs</DependentUpon>
+    </Compile>
     <Compile Include="DichVuSuaChua\UC_LapPhieuSuaChua.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,6 +150,15 @@
     <Compile Include="VatTuPhuTung\UC_QuanLiNhapKho.Designer.cs">
       <DependentUpon>UC_QuanLiNhapKho.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaoCao\UC_BaoCaoDoanhThu.resx">
+      <DependentUpon>UC_BaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\UC_BaoCaoTonKho.resx">
+      <DependentUpon>UC_BaoCaoTonKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\UC_PanelButtons_BaoCao.resx">
+      <DependentUpon>UC_PanelButtons_BaoCao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DichVuSuaChua\UC_LapPhieuSuaChua.resx">
       <DependentUpon>UC_LapPhieuSuaChua.cs</DependentUpon>
     </EmbeddedResource>

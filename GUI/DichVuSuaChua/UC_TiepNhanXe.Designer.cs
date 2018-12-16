@@ -117,7 +117,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(261, 174);
+            this.label5.Location = new System.Drawing.Point(234, 174);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 19);
@@ -153,7 +153,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(261, 236);
+            this.label2.Location = new System.Drawing.Point(234, 236);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 19);
@@ -164,7 +164,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(261, 295);
+            this.label6.Location = new System.Drawing.Point(234, 295);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 19);
@@ -175,7 +175,7 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(261, 350);
+            this.label7.Location = new System.Drawing.Point(234, 350);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 19);
@@ -184,6 +184,7 @@
             // 
             // txbTenXe
             // 
+            this.txbTenXe.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbTenXe.Location = new System.Drawing.Point(362, 294);
             this.txbTenXe.Name = "txbTenXe";
             this.txbTenXe.Size = new System.Drawing.Size(338, 20);
@@ -191,6 +192,7 @@
             // 
             // txbBienSo
             // 
+            this.txbBienSo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbBienSo.Location = new System.Drawing.Point(362, 349);
             this.txbBienSo.Name = "txbBienSo";
             this.txbBienSo.Size = new System.Drawing.Size(338, 20);

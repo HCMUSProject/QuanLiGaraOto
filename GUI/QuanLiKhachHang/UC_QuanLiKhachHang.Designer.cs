@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvKhachHang = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txbTen = new System.Windows.Forms.TextBox();
-            this.txbCMND = new System.Windows.Forms.TextBox();
-            this.txbSDT = new System.Windows.Forms.TextBox();
-            this.txbDiaChi = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnTimKiem = new System.Windows.Forms.Button();
             this.txbTimKiemSDT = new System.Windows.Forms.TextBox();
             this.txbTimKiemCMND = new System.Windows.Forms.TextBox();
             this.txbTimKiemTen = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnXoa = new System.Windows.Forms.Button();
             this.BtnSua = new System.Windows.Forms.Button();
             this.BtnThem = new System.Windows.Forms.Button();
-            this.BtnTimKiem = new System.Windows.Forms.Button();
+            this.txbDiaChi = new System.Windows.Forms.TextBox();
+            this.txbSDT = new System.Windows.Forms.TextBox();
+            this.txbCMND = new System.Windows.Forms.TextBox();
+            this.txbTen = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,28 +70,28 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvKhachHang.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TenKH,
             this.CMND,
             this.SDT,
             this.DiaChi});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvKhachHang.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvKhachHang.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvKhachHang.Location = new System.Drawing.Point(16, 31);
             this.dtgvKhachHang.MultiSelect = false;
             this.dtgvKhachHang.Name = "dtgvKhachHang";
@@ -99,6 +99,30 @@
             this.dtgvKhachHang.RowHeadersVisible = false;
             this.dtgvKhachHang.Size = new System.Drawing.Size(583, 552);
             this.dtgvKhachHang.TabIndex = 0;
+            // 
+            // TenKH
+            // 
+            this.TenKH.HeaderText = "Tên khách hàng";
+            this.TenKH.Name = "TenKH";
+            this.TenKH.ReadOnly = true;
+            // 
+            // CMND
+            // 
+            this.CMND.HeaderText = "CMND";
+            this.CMND.Name = "CMND";
+            this.CMND.ReadOnly = true;
+            // 
+            // SDT
+            // 
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -117,6 +141,67 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm khách hàng";
+            // 
+            // BtnTimKiem
+            // 
+            this.BtnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnTimKiem.AutoSize = true;
+            this.BtnTimKiem.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTimKiem.Location = new System.Drawing.Point(127, 149);
+            this.BtnTimKiem.Name = "BtnTimKiem";
+            this.BtnTimKiem.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.BtnTimKiem.Size = new System.Drawing.Size(101, 33);
+            this.BtnTimKiem.TabIndex = 3;
+            this.BtnTimKiem.Text = "Tìm kiếm";
+            this.BtnTimKiem.UseVisualStyleBackColor = true;
+            // 
+            // txbTimKiemSDT
+            // 
+            this.txbTimKiemSDT.Location = new System.Drawing.Point(133, 102);
+            this.txbTimKiemSDT.Name = "txbTimKiemSDT";
+            this.txbTimKiemSDT.Size = new System.Drawing.Size(209, 23);
+            this.txbTimKiemSDT.TabIndex = 2;
+            // 
+            // txbTimKiemCMND
+            // 
+            this.txbTimKiemCMND.Location = new System.Drawing.Point(133, 65);
+            this.txbTimKiemCMND.Name = "txbTimKiemCMND";
+            this.txbTimKiemCMND.Size = new System.Drawing.Size(209, 23);
+            this.txbTimKiemCMND.TabIndex = 1;
+            // 
+            // txbTimKiemTen
+            // 
+            this.txbTimKiemTen.Location = new System.Drawing.Point(133, 28);
+            this.txbTimKiemTen.Name = "txbTimKiemTen";
+            this.txbTimKiemTen.Size = new System.Drawing.Size(209, 23);
+            this.txbTimKiemTen.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(18, 101);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 24);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "SĐT";
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(18, 64);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 24);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "CMND";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(18, 27);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 24);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Tên";
             // 
             // label1
             // 
@@ -176,106 +261,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quản lí thông tin";
             // 
-            // TenKH
-            // 
-            this.TenKH.HeaderText = "Tên khách hàng";
-            this.TenKH.Name = "TenKH";
-            this.TenKH.ReadOnly = true;
-            // 
-            // CMND
-            // 
-            this.CMND.HeaderText = "CMND";
-            this.CMND.Name = "CMND";
-            this.CMND.ReadOnly = true;
-            // 
-            // SDT
-            // 
-            this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.ReadOnly = true;
-            // 
-            // txbTen
-            // 
-            this.txbTen.Location = new System.Drawing.Point(133, 50);
-            this.txbTen.Name = "txbTen";
-            this.txbTen.Size = new System.Drawing.Size(209, 23);
-            this.txbTen.TabIndex = 0;
-            // 
-            // txbCMND
-            // 
-            this.txbCMND.Location = new System.Drawing.Point(133, 103);
-            this.txbCMND.Name = "txbCMND";
-            this.txbCMND.Size = new System.Drawing.Size(209, 23);
-            this.txbCMND.TabIndex = 1;
-            // 
-            // txbSDT
-            // 
-            this.txbSDT.Location = new System.Drawing.Point(133, 155);
-            this.txbSDT.Name = "txbSDT";
-            this.txbSDT.Size = new System.Drawing.Size(209, 23);
-            this.txbSDT.TabIndex = 2;
-            // 
-            // txbDiaChi
-            // 
-            this.txbDiaChi.Location = new System.Drawing.Point(133, 208);
-            this.txbDiaChi.Name = "txbDiaChi";
-            this.txbDiaChi.Size = new System.Drawing.Size(209, 23);
-            this.txbDiaChi.TabIndex = 3;
-            // 
-            // txbTimKiemSDT
-            // 
-            this.txbTimKiemSDT.Location = new System.Drawing.Point(133, 102);
-            this.txbTimKiemSDT.Name = "txbTimKiemSDT";
-            this.txbTimKiemSDT.Size = new System.Drawing.Size(209, 23);
-            this.txbTimKiemSDT.TabIndex = 2;
-            // 
-            // txbTimKiemCMND
-            // 
-            this.txbTimKiemCMND.Location = new System.Drawing.Point(133, 65);
-            this.txbTimKiemCMND.Name = "txbTimKiemCMND";
-            this.txbTimKiemCMND.Size = new System.Drawing.Size(209, 23);
-            this.txbTimKiemCMND.TabIndex = 1;
-            // 
-            // txbTimKiemTen
-            // 
-            this.txbTimKiemTen.Location = new System.Drawing.Point(133, 28);
-            this.txbTimKiemTen.Name = "txbTimKiemTen";
-            this.txbTimKiemTen.Size = new System.Drawing.Size(209, 23);
-            this.txbTimKiemTen.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 101);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 24);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "SĐT";
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 64);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 24);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "CMND";
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(18, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 24);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Tên";
-            // 
             // BtnXoa
             // 
             this.BtnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -315,20 +300,35 @@
             this.BtnThem.Text = "Thêm";
             this.BtnThem.UseVisualStyleBackColor = true;
             // 
-            // BtnTimKiem
+            // txbDiaChi
             // 
-            this.BtnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnTimKiem.AutoSize = true;
-            this.BtnTimKiem.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnTimKiem.Location = new System.Drawing.Point(127, 149);
-            this.BtnTimKiem.Name = "BtnTimKiem";
-            this.BtnTimKiem.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.BtnTimKiem.Size = new System.Drawing.Size(101, 33);
-            this.BtnTimKiem.TabIndex = 3;
-            this.BtnTimKiem.Text = "Tìm kiếm";
-            this.BtnTimKiem.UseVisualStyleBackColor = true;
+            this.txbDiaChi.Location = new System.Drawing.Point(133, 208);
+            this.txbDiaChi.Name = "txbDiaChi";
+            this.txbDiaChi.Size = new System.Drawing.Size(209, 23);
+            this.txbDiaChi.TabIndex = 3;
             // 
-            // UC_QuanLiKhachHnag
+            // txbSDT
+            // 
+            this.txbSDT.Location = new System.Drawing.Point(133, 155);
+            this.txbSDT.Name = "txbSDT";
+            this.txbSDT.Size = new System.Drawing.Size(209, 23);
+            this.txbSDT.TabIndex = 2;
+            // 
+            // txbCMND
+            // 
+            this.txbCMND.Location = new System.Drawing.Point(133, 103);
+            this.txbCMND.Name = "txbCMND";
+            this.txbCMND.Size = new System.Drawing.Size(209, 23);
+            this.txbCMND.TabIndex = 1;
+            // 
+            // txbTen
+            // 
+            this.txbTen.Location = new System.Drawing.Point(133, 50);
+            this.txbTen.Name = "txbTen";
+            this.txbTen.Size = new System.Drawing.Size(209, 23);
+            this.txbTen.TabIndex = 0;
+            // 
+            // UC_QuanLiKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -336,7 +336,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtgvKhachHang);
-            this.Name = "UC_QuanLiKhachHnag";
+            this.Name = "UC_QuanLiKhachHang";
             this.Size = new System.Drawing.Size(1000, 600);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).EndInit();
             this.groupBox1.ResumeLayout(false);

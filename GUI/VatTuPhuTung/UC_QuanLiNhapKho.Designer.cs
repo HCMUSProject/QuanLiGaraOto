@@ -32,12 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvQuanLiNhapKho = new System.Windows.Forms.DataGridView();
             this.DanhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HangXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HangSanXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VatTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NhanVienNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpkTo = new System.Windows.Forms.DateTimePicker();
             this.dtpkFrom = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             this.dtgvQuanLiNhapKho.BackgroundColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -71,12 +71,12 @@
             this.dtgvQuanLiNhapKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvQuanLiNhapKho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DanhMuc,
-            this.HangXe,
+            this.HangSanXuat,
             this.VatTu,
             this.SoLuong,
             this.DonGia,
             this.NgayNhap,
-            this.NhanVien});
+            this.NhanVienNhap});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -99,11 +99,11 @@
             this.DanhMuc.Name = "DanhMuc";
             this.DanhMuc.ReadOnly = true;
             // 
-            // HangXe
+            // HangSanXuat
             // 
-            this.HangXe.HeaderText = "Hãng xe";
-            this.HangXe.Name = "HangXe";
-            this.HangXe.ReadOnly = true;
+            this.HangSanXuat.HeaderText = "Hãng sản xuất";
+            this.HangSanXuat.Name = "HangSanXuat";
+            this.HangSanXuat.ReadOnly = true;
             // 
             // VatTu
             // 
@@ -129,11 +129,11 @@
             this.NgayNhap.Name = "NgayNhap";
             this.NgayNhap.ReadOnly = true;
             // 
-            // NhanVien
+            // NhanVienNhap
             // 
-            this.NhanVien.HeaderText = "Nhân viên";
-            this.NhanVien.Name = "NhanVien";
-            this.NhanVien.ReadOnly = true;
+            this.NhanVienNhap.HeaderText = "Nhân viên nhập";
+            this.NhanVienNhap.Name = "NhanVienNhap";
+            this.NhanVienNhap.ReadOnly = true;
             // 
             // dtpkTo
             // 
@@ -260,11 +260,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn DanhMuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HangXe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HangSanXuat;
         private System.Windows.Forms.DataGridViewTextBoxColumn VatTu;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NhanVienNhap;
     }
 }
