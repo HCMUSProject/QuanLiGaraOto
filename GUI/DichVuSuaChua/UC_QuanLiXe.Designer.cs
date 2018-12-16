@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GroupBoxBasicInfo = new System.Windows.Forms.GroupBox();
             this.NumOfCarsToday = new System.Windows.Forms.Label();
             this.TotalCars = new System.Windows.Forms.Label();
@@ -55,9 +56,9 @@
             this.GroupBoxBasicInfo.Controls.Add(this.label1);
             this.GroupBoxBasicInfo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBoxBasicInfo.Location = new System.Drawing.Point(285, 27);
-            this.GroupBoxBasicInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GroupBoxBasicInfo.Margin = new System.Windows.Forms.Padding(2);
             this.GroupBoxBasicInfo.Name = "GroupBoxBasicInfo";
-            this.GroupBoxBasicInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GroupBoxBasicInfo.Padding = new System.Windows.Forms.Padding(2);
             this.GroupBoxBasicInfo.Size = new System.Drawing.Size(440, 112);
             this.GroupBoxBasicInfo.TabIndex = 1;
             this.GroupBoxBasicInfo.TabStop = false;
@@ -115,6 +116,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvQuanLiXe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvQuanLiXe.BackgroundColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvQuanLiXe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvQuanLiXe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvQuanLiXe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.KhachHang,
@@ -124,16 +133,16 @@
             this.HieuXe,
             this.BienSo,
             this.DichVu});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvQuanLiXe.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvQuanLiXe.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvQuanLiXe.Location = new System.Drawing.Point(14, 154);
-            this.dtgvQuanLiXe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvQuanLiXe.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvQuanLiXe.Name = "dtgvQuanLiXe";
             this.dtgvQuanLiXe.ReadOnly = true;
             this.dtgvQuanLiXe.RowHeadersVisible = false;
@@ -190,7 +199,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.dtgvQuanLiXe);
             this.Controls.Add(this.GroupBoxBasicInfo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_QuanLiXe";
             this.Size = new System.Drawing.Size(1000, 600);
             this.GroupBoxBasicInfo.ResumeLayout(false);

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvChiTietSuaChua = new System.Windows.Forms.DataGridView();
             this.LoaiDichVu = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.PhuTung = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -59,14 +61,31 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvChiTietSuaChua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvChiTietSuaChua.BackgroundColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvChiTietSuaChua.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvChiTietSuaChua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvChiTietSuaChua.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LoaiDichVu,
             this.PhuTung,
             this.SoLuong,
             this.GiaTien});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvChiTietSuaChua.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvChiTietSuaChua.Location = new System.Drawing.Point(361, 100);
-            this.dtgvChiTietSuaChua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvChiTietSuaChua.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgvChiTietSuaChua.MultiSelect = false;
             this.dtgvChiTietSuaChua.Name = "dtgvChiTietSuaChua";
             this.dtgvChiTietSuaChua.RowHeadersVisible = false;
             this.dtgvChiTietSuaChua.RowTemplate.Height = 24;
@@ -102,7 +121,7 @@
             this.cmbBienSoXe.Font = new System.Drawing.Font("Consolas", 12F);
             this.cmbBienSoXe.FormattingEnabled = true;
             this.cmbBienSoXe.Location = new System.Drawing.Point(126, 300);
-            this.cmbBienSoXe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbBienSoXe.Margin = new System.Windows.Forms.Padding(2);
             this.cmbBienSoXe.Name = "cmbBienSoXe";
             this.cmbBienSoXe.Size = new System.Drawing.Size(222, 27);
             this.cmbBienSoXe.TabIndex = 3;
@@ -112,7 +131,7 @@
             this.cmbLoaiXe.Font = new System.Drawing.Font("Consolas", 12F);
             this.cmbLoaiXe.FormattingEnabled = true;
             this.cmbLoaiXe.Location = new System.Drawing.Point(126, 245);
-            this.cmbLoaiXe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbLoaiXe.Margin = new System.Windows.Forms.Padding(2);
             this.cmbLoaiXe.Name = "cmbLoaiXe";
             this.cmbLoaiXe.Size = new System.Drawing.Size(222, 27);
             this.cmbLoaiXe.TabIndex = 2;
@@ -122,7 +141,7 @@
             this.cmbKhachHang.Font = new System.Drawing.Font("Consolas", 12F);
             this.cmbKhachHang.FormattingEnabled = true;
             this.cmbKhachHang.Location = new System.Drawing.Point(126, 127);
-            this.cmbKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.cmbKhachHang.Name = "cmbKhachHang";
             this.cmbKhachHang.Size = new System.Drawing.Size(222, 27);
             this.cmbKhachHang.TabIndex = 0;
@@ -131,7 +150,7 @@
             // 
             this.txbNhanVienSuaChua.Font = new System.Drawing.Font("Consolas", 12F);
             this.txbNhanVienSuaChua.Location = new System.Drawing.Point(126, 361);
-            this.txbNhanVienSuaChua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbNhanVienSuaChua.Margin = new System.Windows.Forms.Padding(2);
             this.txbNhanVienSuaChua.Name = "txbNhanVienSuaChua";
             this.txbNhanVienSuaChua.Size = new System.Drawing.Size(222, 26);
             this.txbNhanVienSuaChua.TabIndex = 4;
@@ -140,7 +159,7 @@
             // 
             this.txbDienThoai.Font = new System.Drawing.Font("Consolas", 12F);
             this.txbDienThoai.Location = new System.Drawing.Point(126, 190);
-            this.txbDienThoai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbDienThoai.Margin = new System.Windows.Forms.Padding(2);
             this.txbDienThoai.Name = "txbDienThoai";
             this.txbDienThoai.Size = new System.Drawing.Size(222, 26);
             this.txbDienThoai.TabIndex = 1;
@@ -150,7 +169,7 @@
             this.txbMaPhieu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbMaPhieu.Font = new System.Drawing.Font("Consolas", 12F);
             this.txbMaPhieu.Location = new System.Drawing.Point(409, 47);
-            this.txbMaPhieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMaPhieu.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaPhieu.Name = "txbMaPhieu";
             this.txbMaPhieu.ReadOnly = true;
             this.txbMaPhieu.Size = new System.Drawing.Size(288, 26);
@@ -229,7 +248,7 @@
             this.BtnLapPhieu.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnLapPhieu.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLapPhieu.Location = new System.Drawing.Point(409, 543);
-            this.BtnLapPhieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnLapPhieu.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLapPhieu.Name = "BtnLapPhieu";
             this.BtnLapPhieu.Size = new System.Drawing.Size(150, 32);
             this.BtnLapPhieu.TabIndex = 6;
@@ -246,14 +265,14 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 19);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Tổng tiển";
+            this.label2.Text = "Tổng tiền";
             // 
             // txbTongTien
             // 
             this.txbTongTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txbTongTien.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTongTien.Location = new System.Drawing.Point(819, 492);
-            this.txbTongTien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbTongTien.Margin = new System.Windows.Forms.Padding(2);
             this.txbTongTien.Name = "txbTongTien";
             this.txbTongTien.ReadOnly = true;
             this.txbTongTien.Size = new System.Drawing.Size(169, 26);
@@ -280,7 +299,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_LapPhieuSuaChua";
             this.Size = new System.Drawing.Size(1000, 600);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvChiTietSuaChua)).EndInit();

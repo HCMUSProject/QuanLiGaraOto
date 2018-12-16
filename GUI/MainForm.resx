@@ -172,7 +172,7 @@
     <value>Flat</value>
   </data>
   <data name="BtnDichVuSuaChua.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Consolas, 13.8pt</value>
+    <value>Consolas, 15.75pt</value>
   </data>
   <data name="BtnDichVuSuaChua.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -223,7 +223,7 @@
     <value>Flat</value>
   </data>
   <data name="BtnQuanLiKhachHang.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Consolas, 13.8pt</value>
+    <value>Consolas, 15.75pt</value>
   </data>
   <data name="BtnQuanLiKhachHang.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -274,7 +274,7 @@
     <value>Flat</value>
   </data>
   <data name="BtnVatTu.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Consolas, 13.8pt</value>
+    <value>Consolas, 15.75pt</value>
   </data>
   <data name="BtnVatTu.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -325,7 +325,7 @@
     <value>Flat</value>
   </data>
   <data name="BtnBaoCao.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Consolas, 13.8pt</value>
+    <value>Consolas, 15.75pt</value>
   </data>
   <data name="BtnBaoCao.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>

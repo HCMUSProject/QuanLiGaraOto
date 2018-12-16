@@ -92,7 +92,7 @@
             // 
             // UC_PanelButtons_DichVuSuaChua
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.BtnLichSuSuaChua);
             this.Controls.Add(this.BtnQuanLiXe);
@@ -101,7 +101,7 @@
             this.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UC_PanelButtons_DichVuSuaChua";
-            this.Size = new System.Drawing.Size(875, 70);
+            this.Size = new System.Drawing.Size(1000, 70);
             this.ResumeLayout(false);
 
         }

@@ -84,6 +84,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VatTuPhuTung\UC_CapNhatVatTu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VatTuPhuTung\UC_CapNhatVatTu.Designer.cs">
+      <DependentUpon>UC_CapNhatVatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VatTuPhuTung\UC_DanhMucVatTu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VatTuPhuTung\UC_DanhMucVatTu.Designer.cs">
+      <DependentUpon>UC_DanhMucVatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VatTuPhuTung\UC_KiemKeVatTu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VatTuPhuTung\UC_KiemKeVatTu.Designer.cs">
+      <DependentUpon>UC_KiemKeVatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VatTuPhuTung\UC_PanelButtons_VatTuPhuTung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VatTuPhuTung\UC_PanelButtons_VatTuPhuTung.Designer.cs">
+      <DependentUpon>UC_PanelButtons_VatTuPhuTung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VatTuPhuTung\UC_QuanLiNhapKho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VatTuPhuTung\UC_QuanLiNhapKho.Designer.cs">
+      <DependentUpon>UC_QuanLiNhapKho.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DichVuSuaChua\UC_LapPhieuSuaChua.resx">
       <DependentUpon>UC_LapPhieuSuaChua.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +141,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VatTuPhuTung\UC_CapNhatVatTu.resx">
+      <DependentUpon>UC_CapNhatVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VatTuPhuTung\UC_DanhMucVatTu.resx">
+      <DependentUpon>UC_DanhMucVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VatTuPhuTung\UC_KiemKeVatTu.resx">
+      <DependentUpon>UC_KiemKeVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VatTuPhuTung\UC_PanelButtons_VatTuPhuTung.resx">
+      <DependentUpon>UC_PanelButtons_VatTuPhuTung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VatTuPhuTung\UC_QuanLiNhapKho.resx">
+      <DependentUpon>UC_QuanLiNhapKho.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
