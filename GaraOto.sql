@@ -480,8 +480,6 @@ insert into VATTU values(10,N'Đèn pha Audi TT Coupe',200)
 
 
 
---Bảng lịch sử nhập kho
-insert into LICHSUNHAPKHO values(
 
 
 
