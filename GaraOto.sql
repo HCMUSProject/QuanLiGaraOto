@@ -151,6 +151,14 @@ constraint PK_ACC primary key (IDAccount)
 GO
 alter table ACCOUNT add constraint ACC_LOAINV check(Loainhanvien = 0 OR Loainhanvien = 1 )
 GO
+--13.Tao bang thanh toan
+CREATE TABLE THANHTOAN
+(
+	IDThanhToan int identity(0,1) not null,
+	Madonhang int not null,
+	Ngayxuat datetime not null
+)
+GO
 --THÊM KHÓA NGOẠI
 alter table DONHANGSUACHUA add 
 	Constraint FK_DHSC_NVN foreign key (Manhanvienlaphoadon) references NHANVIEN(Manhanvien),
@@ -184,6 +192,9 @@ alter table LICHSUNHAPKHO add
 
 alter table ACCOUNT add 
 	Constraint FK_ACC_NV foreign key (Manhanvien) references NHANVIEN(Manhanvien)
+
+alter table THANHTOAN add
+	Constraint FK_TT_DH foreign key(Madonhang) references DONHANGSUACHUA(Madonhang)
 
 --Thêm dữ liệu
 --Bảng Nhan vien
