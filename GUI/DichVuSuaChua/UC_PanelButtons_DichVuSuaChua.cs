@@ -55,5 +55,10 @@ namespace GUI.DichVuSuaChua
             OnButtonClick?.Invoke(sender, e);
 
         }
+
+        private void BtnThanhToan_Click(object sender, EventArgs e)
+        {
+            OnButtonClick?.Invoke(sender, e);
+        }
     }
 }

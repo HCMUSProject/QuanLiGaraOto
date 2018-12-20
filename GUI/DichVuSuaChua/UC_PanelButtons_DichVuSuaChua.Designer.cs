@@ -32,6 +32,7 @@
             this.BtnQuanLiXe = new System.Windows.Forms.Button();
             this.BtnLapPhieu = new System.Windows.Forms.Button();
             this.BtnTiepNhanXe = new System.Windows.Forms.Button();
+            this.BtnThanhToan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnLichSuSuaChua
@@ -39,7 +40,7 @@
             this.BtnLichSuSuaChua.FlatAppearance.BorderSize = 0;
             this.BtnLichSuSuaChua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLichSuSuaChua.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLichSuSuaChua.Location = new System.Drawing.Point(435, 0);
+            this.BtnLichSuSuaChua.Location = new System.Drawing.Point(570, 0);
             this.BtnLichSuSuaChua.Margin = new System.Windows.Forms.Padding(0);
             this.BtnLichSuSuaChua.Name = "BtnLichSuSuaChua";
             this.BtnLichSuSuaChua.Size = new System.Drawing.Size(140, 70);
@@ -90,10 +91,25 @@
             this.BtnTiepNhanXe.UseVisualStyleBackColor = true;
             this.BtnTiepNhanXe.Click += new System.EventHandler(this.BtnTiepNhanXe_Click);
             // 
+            // BtnThanhToan
+            // 
+            this.BtnThanhToan.FlatAppearance.BorderSize = 0;
+            this.BtnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnThanhToan.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnThanhToan.Location = new System.Drawing.Point(430, 0);
+            this.BtnThanhToan.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnThanhToan.Name = "BtnThanhToan";
+            this.BtnThanhToan.Size = new System.Drawing.Size(140, 70);
+            this.BtnThanhToan.TabIndex = 4;
+            this.BtnThanhToan.Text = "Thanh toán";
+            this.BtnThanhToan.UseVisualStyleBackColor = true;
+            this.BtnThanhToan.Click += new System.EventHandler(this.BtnThanhToan_Click);
+            // 
             // UC_PanelButtons_DichVuSuaChua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BtnThanhToan);
             this.Controls.Add(this.BtnLichSuSuaChua);
             this.Controls.Add(this.BtnQuanLiXe);
             this.Controls.Add(this.BtnLapPhieu);
@@ -112,5 +128,6 @@
         private System.Windows.Forms.Button BtnQuanLiXe;
         private System.Windows.Forms.Button BtnLapPhieu;
         private System.Windows.Forms.Button BtnTiepNhanXe;
+        private System.Windows.Forms.Button BtnThanhToan;
     }
 }

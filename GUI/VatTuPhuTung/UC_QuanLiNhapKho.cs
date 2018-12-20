@@ -29,5 +29,14 @@ namespace GUI.VatTuPhuTung
         {
             InitializeComponent();
         }
+
+        public void XoaDuLieu()
+        {
+            dtgvQuanLiNhapKho.Rows.Clear();
+            dtgvQuanLiNhapKho.Refresh();
+
+            lbSoLuongVatTu.Text = "";
+            lbTongTien.Text = "";
+        }
     }
 }

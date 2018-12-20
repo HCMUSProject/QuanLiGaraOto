@@ -29,5 +29,11 @@ namespace GUI.VatTuPhuTung
         {
             InitializeComponent();
         }
+
+        public void XoaDuLieu()
+        {
+            dtgvKiemKeVatTu.Rows.Clear();
+            dtgvKiemKeVatTu.Refresh();
+        }
     }
 }

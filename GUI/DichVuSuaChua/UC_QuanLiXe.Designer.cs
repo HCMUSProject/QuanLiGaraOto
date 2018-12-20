@@ -42,7 +42,7 @@
             this.HangXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HieuXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BienSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBoxBasicInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvQuanLiXe)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +132,7 @@
             this.HangXe,
             this.HieuXe,
             this.BienSo,
-            this.DichVu});
+            this.NgayNhap});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,10 +143,12 @@
             this.dtgvQuanLiXe.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvQuanLiXe.Location = new System.Drawing.Point(14, 154);
             this.dtgvQuanLiXe.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgvQuanLiXe.MultiSelect = false;
             this.dtgvQuanLiXe.Name = "dtgvQuanLiXe";
             this.dtgvQuanLiXe.ReadOnly = true;
             this.dtgvQuanLiXe.RowHeadersVisible = false;
             this.dtgvQuanLiXe.RowTemplate.Height = 24;
+            this.dtgvQuanLiXe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvQuanLiXe.Size = new System.Drawing.Size(974, 421);
             this.dtgvQuanLiXe.TabIndex = 0;
             // 
@@ -186,11 +188,11 @@
             this.BienSo.Name = "BienSo";
             this.BienSo.ReadOnly = true;
             // 
-            // DichVu
+            // NgayNhap
             // 
-            this.DichVu.HeaderText = "Dịch vụ";
-            this.DichVu.Name = "DichVu";
-            this.DichVu.ReadOnly = true;
+            this.NgayNhap.HeaderText = "Ngày nhập";
+            this.NgayNhap.Name = "NgayNhap";
+            this.NgayNhap.ReadOnly = true;
             // 
             // UC_QuanLiXe
             // 
@@ -223,6 +225,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HangXe;
         private System.Windows.Forms.DataGridViewTextBoxColumn HieuXe;
         private System.Windows.Forms.DataGridViewTextBoxColumn BienSo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhap;
     }
 }

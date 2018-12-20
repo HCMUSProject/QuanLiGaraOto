@@ -25,6 +25,15 @@ namespace GUI.QuanLiKhachHang
             }
         }
 
+        public void XoaDuLieu()
+        {
+            dtgvKhachHang.Rows.Clear();
+            dtgvKhachHang.Refresh();
+
+            dtgvXe.Rows.Clear();
+            dtgvXe.Refresh();
+        }
+
         public UC_XemThongTinKhachHang()
         {
             InitializeComponent();

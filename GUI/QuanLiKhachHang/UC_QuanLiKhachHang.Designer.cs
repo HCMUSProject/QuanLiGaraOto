@@ -97,6 +97,7 @@
             this.dtgvKhachHang.Name = "dtgvKhachHang";
             this.dtgvKhachHang.ReadOnly = true;
             this.dtgvKhachHang.RowHeadersVisible = false;
+            this.dtgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvKhachHang.Size = new System.Drawing.Size(583, 552);
             this.dtgvKhachHang.TabIndex = 0;
             // 

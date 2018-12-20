@@ -29,5 +29,16 @@ namespace GUI.DichVuSuaChua
         {
             InitializeComponent();
         }
+
+        public void XoaDuLieu()
+        {
+            dtgvChiTietSuaChua.Rows.Clear();
+            dtgvChiTietSuaChua.Refresh();
+
+            dtgvLichSu.Rows.Clear();
+            dtgvLichSu.Refresh();
+
+            txbTongTien.Text = "";
+        }
     }
 }

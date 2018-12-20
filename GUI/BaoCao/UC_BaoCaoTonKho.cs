@@ -29,5 +29,11 @@ namespace GUI.BaoCao
         {
             InitializeComponent();
         }
+        public void XoaDuLieu()
+        {
+            dtgvTonKho.Rows.Clear();
+            dtgvTonKho.Refresh();
+        }
+
     }
 }

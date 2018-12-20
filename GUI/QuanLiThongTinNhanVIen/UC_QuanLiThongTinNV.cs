@@ -8,40 +8,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.QuanLiKhachHang
+namespace GUI.QuanLiThongTinNhanVIen
 {
-    public partial class UC_QuanLiKhachHang : UserControl
+    public partial class UC_QuanLiThongTinNV : UserControl
     {
-        private static UC_QuanLiKhachHang _instance;
-        public static UC_QuanLiKhachHang Instance
+        private static UC_QuanLiThongTinNV _instance;
+        public static UC_QuanLiThongTinNV Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new UC_QuanLiKhachHang();
+                    _instance = new UC_QuanLiThongTinNV();
                 }
                 return _instance;
             }
         }
 
-        public UC_QuanLiKhachHang()
+        public UC_QuanLiThongTinNV()
         {
             InitializeComponent();
         }
 
         public void XoaDuLieu()
         {
-            dtgvKhachHang.Rows.Clear();
-            dtgvKhachHang.Refresh();
+            dtgvXemNhanVIen.Rows.Clear();
+            dtgvXemNhanVIen.Refresh();
 
+            txbHoTen.Text = "";
+            txbTaiKhoan.Text = "";
             txbCMND.Text = "";
             txbDiaChi.Text = "";
             txbSDT.Text = "";
-            txbTen.Text = "";
-            txbTimKiemCMND.Text = "";
-            txbTimKiemSDT.Text = "";
-            txbTimKiemTen.Text = "";
         }
     }
 }

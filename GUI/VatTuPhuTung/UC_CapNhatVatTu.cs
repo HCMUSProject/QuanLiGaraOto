@@ -29,5 +29,20 @@ namespace GUI.VatTuPhuTung
         {
             InitializeComponent();
         }
+
+        public void XoaDuLieu()
+        {
+            dtgvVatTu.Rows.Clear();
+
+            cmbDanhMuc.Text = "";
+            cmbDanhMuc.DataSource = null;
+
+            cmbHangSanXuat.Text = "";
+            cmbHangSanXuat.DataSource = null;
+
+            txbDonGia.Text = "";
+            txbSoLuong.Text = "";
+            txbVatTu.Text = "";
+        }
     }
 }

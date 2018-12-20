@@ -10,45 +10,45 @@ using System.Windows.Forms;
 
 namespace GUI.DichVuSuaChua
 {
-    public partial class UC_LapPhieuSuaChua : UserControl
+    public partial class UC_ThanhToan : UserControl
     {
-        private static UC_LapPhieuSuaChua _instance;
-        public static UC_LapPhieuSuaChua Instance
+        private static UC_ThanhToan _instance;
+        public static UC_ThanhToan Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new UC_LapPhieuSuaChua();
+                    _instance = new UC_ThanhToan();
                 }
                 return _instance;
             }
         }
 
-        public UC_LapPhieuSuaChua()
+        public UC_ThanhToan()
         {
             InitializeComponent();
         }
 
         public void XoaDuLieu()
         {
-            txbMaPhieu.Text = "";
-            txbDienThoai.Text = "";
-            txbTongTien.Text = "";
-
-            cmbBienSoXe.Text = "";
-            cmbBienSoXe.DataSource = null;
             cmbKhachHang.Text = "";
             cmbKhachHang.DataSource = null;
-            cmbLoaiXe.Text = "";
-            cmbLoaiXe.DataSource = null;
-            cmbNhanVienSuaChua.Text = "";
-            cmbNhanVienSuaChua.DataSource = null;
+
+            txbBienSo.Text = "";
+            txbDienThoai.Text = "";
+            txbHieuXe.Text = "";
+            txbMaPhieu.Text = "";
+            txbNhanVien.Text = "";
+            txbTongTien.Text = "";
 
             dtgvChiTietSuaChua.Rows.Clear();
             dtgvChiTietSuaChua.Refresh();
         }
 
-        
+        private void UC_ThanhToan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +13,63 @@ namespace GUI
 {
     public partial class MainForm : Form
     {
+        private int m_nLoaiNhanVien = 1;
+        private string m_strUsername;
+
         public MainForm()
         {
             InitializeComponent();
         }
+        public MainForm(int LoaiNhanVien, string strUsername)
+        {
+            InitializeComponent();
+
+            // ẩn thanh slide
+            
+
+            // quy định:
+            // 0 : admin
+            // 1 : nhân viên
+            this.m_nLoaiNhanVien = LoaiNhanVien;
+            this.m_strUsername = strUsername;
+
+
+            
+            
+        }
         private void AutoSlideBar(Button ct)
         {
+            slideBar.Show();
+
             slideBar.Height = ct.Height;
             slideBar.Top = ct.Top;
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            slideBar.Hide();
+
+            // event khi click vào avatar hoặc tên nhân viên
+            picAvatar.Click += new EventHandler(PanelUserAccount_Click);
+            lbTenNhanVien.Click += new EventHandler(PanelUserAccount_Click);
+
+
+            picAvatar.Image = Resources.avatar;
+
+            // kiểm tra là nhân viên hay là admin
+
+            if (m_nLoaiNhanVien == 0)
+            {
+                lbChucVu.Text = "Admin";
+            }
+            else
+            {
+                lbChucVu.Text = "Nhân Viên";
+            }
+
+            // load avatar, load tên, load chức vụ
+        }
+
         private void BtnDichVuSuaChua_Click(object sender, EventArgs e)
         {
             AutoSlideBar(BtnDichVuSuaChua);
@@ -97,6 +146,24 @@ namespace GUI
             }
         }
 
+        private void PanelUserAccount_Click(object sender, EventArgs e)
+        {
+            PanelContent.Controls.Clear();
+            slideBar.Hide();
+
+            if (!PanelSubButtons.Controls.Contains(QuanLiThongTinNhanVIen.UC_PanelSubButtons_QuanLyThongTinNhanVien.Instance))
+            {
+                PanelSubButtons.Controls.Add(QuanLiThongTinNhanVIen.UC_PanelSubButtons_QuanLyThongTinNhanVien.Instance);
+                QuanLiThongTinNhanVIen.UC_PanelSubButtons_QuanLyThongTinNhanVien.Instance.Dock = DockStyle.Fill;
+                QuanLiThongTinNhanVIen.UC_PanelSubButtons_QuanLyThongTinNhanVien.Instance.BringToFront();
+                QuanLiThongTinNhanVIen.UC_PanelSubButtons_QuanLyThongTinNhanVien.Instance.OnButtonClick += OnSubButtons_QuanLiNhanVien_Click;
+            }
+            else
+            {
+                QuanLiThongTinNhanVIen.UC_PanelSubButtons_QuanLyThongTinNhanVien.Instance.BringToFront();
+            }
+        }
+
         //========================= handle sự kiện trong button Dịch vụ sửa chữa ====================
 
         private void OnSubButtons_DichVuSuaChua_Click(object sender, EventArgs e)
@@ -111,9 +178,11 @@ namespace GUI
                     PanelContent.Controls.Add(DichVuSuaChua.UC_TiepNhanXe.Instance);
                     DichVuSuaChua.UC_TiepNhanXe.Instance.Dock = DockStyle.Fill;
                     DichVuSuaChua.UC_TiepNhanXe.Instance.BringToFront();
+                    DichVuSuaChua.UC_TiepNhanXe.Instance.OnButtonAddCustomerClick += OnButton_TiepNhanXe_Them_Click;
                 }
                 else
                 {
+                    DichVuSuaChua.UC_TiepNhanXe.Instance.XoaDuLieu();
                     DichVuSuaChua.UC_TiepNhanXe.Instance.BringToFront();
                 }
                 //MessageBox.Show("BtnTiepNhanXe");
@@ -128,6 +197,7 @@ namespace GUI
                 }
                 else
                 {
+                    DichVuSuaChua.UC_QuanLiXe.Instance.XoaDuLieu();
                     DichVuSuaChua.UC_QuanLiXe.Instance.BringToFront();
                 }
 
@@ -143,11 +213,30 @@ namespace GUI
                 }
                 else
                 {
+                    DichVuSuaChua.UC_LapPhieuSuaChua.Instance.XoaDuLieu();
                     DichVuSuaChua.UC_LapPhieuSuaChua.Instance.BringToFront();
                 }
 
                 //MessageBox.Show("BtnLapPhieu");
             }
+
+            if (btnClicked.Name == "BtnThanhToan")
+            {
+                if (!PanelContent.Controls.Contains(DichVuSuaChua.UC_ThanhToan.Instance))
+                {
+                    PanelContent.Controls.Add(DichVuSuaChua.UC_ThanhToan.Instance);
+                    DichVuSuaChua.UC_ThanhToan.Instance.Dock = DockStyle.Fill;
+                    DichVuSuaChua.UC_ThanhToan.Instance.BringToFront();
+                }
+                else
+                {
+                    DichVuSuaChua.UC_ThanhToan.Instance.XoaDuLieu();
+                    DichVuSuaChua.UC_ThanhToan.Instance.BringToFront();
+                }
+
+                //MessageBox.Show("BtnLapPhieu");
+            }
+
             if (btnClicked.Name == "BtnLichSuSuaChua")
             {
                 if (!PanelContent.Controls.Contains(DichVuSuaChua.UC_LichSuSuaChua.Instance))
@@ -158,6 +247,7 @@ namespace GUI
                 }
                 else
                 {
+                    DichVuSuaChua.UC_LichSuSuaChua.Instance.XoaDuLieu();
                     DichVuSuaChua.UC_LichSuSuaChua.Instance.BringToFront();
                 }
 
@@ -180,6 +270,7 @@ namespace GUI
                 }
                 else
                 {
+                    VatTuPhuTung.UC_DanhMucVatTu.Instance.XoaDuLieu();
                     VatTuPhuTung.UC_DanhMucVatTu.Instance.BringToFront();
                 }
                 //MessageBox.Show("BtnTiepNhanXe");
@@ -194,6 +285,7 @@ namespace GUI
                 }
                 else
                 {
+                    VatTuPhuTung.UC_CapNhatVatTu.Instance.XoaDuLieu();
                     VatTuPhuTung.UC_CapNhatVatTu.Instance.BringToFront();
                 }
 
@@ -209,6 +301,7 @@ namespace GUI
                 }
                 else
                 {
+                    VatTuPhuTung.UC_QuanLiNhapKho.Instance.XoaDuLieu();
                     VatTuPhuTung.UC_QuanLiNhapKho.Instance.BringToFront();
                 }
 
@@ -224,6 +317,7 @@ namespace GUI
                 }
                 else
                 {
+                    VatTuPhuTung.UC_KiemKeVatTu.Instance.XoaDuLieu();
                     VatTuPhuTung.UC_KiemKeVatTu.Instance.BringToFront();
                 }
 
@@ -246,6 +340,7 @@ namespace GUI
                 }
                 else
                 {
+                    QuanLiKhachHang.UC_QuanLiKhachHang.Instance.XoaDuLieu();
                     QuanLiKhachHang.UC_QuanLiKhachHang.Instance.BringToFront();
                 }
                 //MessageBox.Show("BtnTiepNhanXe");
@@ -260,6 +355,7 @@ namespace GUI
                 }
                 else
                 {
+                    QuanLiKhachHang.UC_XemThongTinKhachHang.Instance.XoaDuLieu();
                     QuanLiKhachHang.UC_XemThongTinKhachHang.Instance.BringToFront();
                 }
 
@@ -282,6 +378,7 @@ namespace GUI
                 }
                 else
                 {
+                    BaoCao.UC_BaoCaoDoanhThu.Instance.XoaDuLieu();
                     BaoCao.UC_BaoCaoDoanhThu.Instance.BringToFront();
                 }
                 //MessageBox.Show("BtnTiepNhanXe");
@@ -296,10 +393,65 @@ namespace GUI
                 }
                 else
                 {
+                    BaoCao.UC_BaoCaoTonKho.Instance.XoaDuLieu();
                     BaoCao.UC_BaoCaoTonKho.Instance.BringToFront();
                 }
 
                 //MessageBox.Show("BtnQuanLiXe");
+            }
+        }
+
+        private void OnSubButtons_QuanLiNhanVien_Click(object sender, EventArgs e)
+        {
+            Button BtnClicked = sender as Button;
+
+            if (BtnClicked.Name == "BtnXemThongTin")
+            {
+                if (!PanelContent.Controls.Contains(QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance))
+                {
+                    PanelContent.Controls.Add(QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance);
+                    QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance.Dock = DockStyle.Fill;
+                    QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance.BringToFront();
+                    QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance.GetUsername(m_strUsername);
+                }
+                else
+                {
+                    QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance.XoaDuLieu();
+                    QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance.BringToFront();
+                }
+            }
+
+            if (BtnClicked.Name== "BtnQuanLiNhanVien")
+            {
+                if (!PanelContent.Controls.Contains(QuanLiThongTinNhanVIen.UC_QuanLiThongTinNV.Instance))
+                {
+                    PanelContent.Controls.Add(QuanLiThongTinNhanVIen.UC_QuanLiThongTinNV.Instance);
+                    QuanLiThongTinNhanVIen.UC_QuanLiThongTinNV.Instance.Dock = DockStyle.Fill;
+                    QuanLiThongTinNhanVIen.UC_QuanLiThongTinNV.Instance.BringToFront();
+                }
+                else
+                {
+                    QuanLiThongTinNhanVIen.UC_QuanLiThongTinNV.Instance.XoaDuLieu();
+                    QuanLiThongTinNhanVIen.UC_QuanLiThongTinNV.Instance.BringToFront();
+                }
+            }
+        }
+
+
+        // ========================= event click button thêm trong tiếp nhận xe ===================
+
+        private void OnButton_TiepNhanXe_Them_Click(object sender, EventArgs e)
+        {
+            if (!PanelContent.Controls.Contains(QuanLiKhachHang.UC_QuanLiKhachHang.Instance))
+            {
+                PanelContent.Controls.Add(QuanLiKhachHang.UC_QuanLiKhachHang.Instance);
+                QuanLiKhachHang.UC_QuanLiKhachHang.Instance.Dock = DockStyle.Fill;
+                QuanLiKhachHang.UC_QuanLiKhachHang.Instance.BringToFront();
+            }
+            else
+            {
+                QuanLiKhachHang.UC_QuanLiKhachHang.Instance.XoaDuLieu();
+                QuanLiKhachHang.UC_QuanLiKhachHang.Instance.BringToFront();
             }
         }
     }

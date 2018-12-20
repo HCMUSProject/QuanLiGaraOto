@@ -112,6 +112,7 @@
             this.BtnThemKhachHang.TabIndex = 8;
             this.BtnThemKhachHang.Text = "Thêm";
             this.BtnThemKhachHang.UseVisualStyleBackColor = true;
+            this.BtnThemKhachHang.Click += new System.EventHandler(this.BtnThemKhachHang_Click);
             // 
             // label5
             // 

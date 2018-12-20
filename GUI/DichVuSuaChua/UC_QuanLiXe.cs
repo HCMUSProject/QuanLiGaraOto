@@ -29,5 +29,14 @@ namespace GUI.DichVuSuaChua
         {
             InitializeComponent();
         }
+
+        public void XoaDuLieu()
+        {
+            dtgvQuanLiXe.Rows.Clear();
+            dtgvQuanLiXe.Refresh();
+
+            TotalCars.Text = "";
+            NumOfCarsToday.Text = "";
+        }
     }
 }

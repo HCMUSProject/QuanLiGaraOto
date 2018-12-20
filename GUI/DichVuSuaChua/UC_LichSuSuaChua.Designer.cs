@@ -36,7 +36,7 @@
             this.KhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HieuXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BienSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgvChiTietSuaChua = new System.Windows.Forms.DataGridView();
             this.LoaiDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,11 +44,7 @@
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GrBoxChiTiet = new System.Windows.Forms.GroupBox();
-            this.txbTienKhachNo = new System.Windows.Forms.TextBox();
-            this.txbTienKhachTra = new System.Windows.Forms.TextBox();
             this.txbTongTien = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -81,7 +77,7 @@
             this.KhachHang,
             this.HieuXe,
             this.BienSo,
-            this.NgaySua,
+            this.NgayVao,
             this.NgayXuat});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -98,6 +94,7 @@
             this.dtgvLichSu.ReadOnly = true;
             this.dtgvLichSu.RowHeadersVisible = false;
             this.dtgvLichSu.RowTemplate.Height = 24;
+            this.dtgvLichSu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvLichSu.Size = new System.Drawing.Size(532, 494);
             this.dtgvLichSu.TabIndex = 2;
             // 
@@ -119,11 +116,11 @@
             this.BienSo.Name = "BienSo";
             this.BienSo.ReadOnly = true;
             // 
-            // NgaySua
+            // NgayVao
             // 
-            this.NgaySua.HeaderText = "Ngày sửa";
-            this.NgaySua.Name = "NgaySua";
-            this.NgaySua.ReadOnly = true;
+            this.NgayVao.HeaderText = "Ngày vào";
+            this.NgayVao.Name = "NgayVao";
+            this.NgayVao.ReadOnly = true;
             // 
             // NgayXuat
             // 
@@ -167,6 +164,7 @@
             this.dtgvChiTietSuaChua.Name = "dtgvChiTietSuaChua";
             this.dtgvChiTietSuaChua.ReadOnly = true;
             this.dtgvChiTietSuaChua.RowHeadersVisible = false;
+            this.dtgvChiTietSuaChua.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvChiTietSuaChua.Size = new System.Drawing.Size(437, 306);
             this.dtgvChiTietSuaChua.TabIndex = 3;
             // 
@@ -197,11 +195,7 @@
             // GrBoxChiTiet
             // 
             this.GrBoxChiTiet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.GrBoxChiTiet.Controls.Add(this.txbTienKhachNo);
-            this.GrBoxChiTiet.Controls.Add(this.txbTienKhachTra);
             this.GrBoxChiTiet.Controls.Add(this.txbTongTien);
-            this.GrBoxChiTiet.Controls.Add(this.label4);
-            this.GrBoxChiTiet.Controls.Add(this.label3);
             this.GrBoxChiTiet.Controls.Add(this.label2);
             this.GrBoxChiTiet.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GrBoxChiTiet.Location = new System.Drawing.Point(551, 409);
@@ -211,22 +205,6 @@
             this.GrBoxChiTiet.TabStop = false;
             this.GrBoxChiTiet.Text = "Thông tin chi tiết";
             // 
-            // txbTienKhachNo
-            // 
-            this.txbTienKhachNo.Location = new System.Drawing.Point(178, 94);
-            this.txbTienKhachNo.Name = "txbTienKhachNo";
-            this.txbTienKhachNo.ReadOnly = true;
-            this.txbTienKhachNo.Size = new System.Drawing.Size(130, 26);
-            this.txbTienKhachNo.TabIndex = 2;
-            // 
-            // txbTienKhachTra
-            // 
-            this.txbTienKhachTra.Location = new System.Drawing.Point(178, 60);
-            this.txbTienKhachTra.Name = "txbTienKhachTra";
-            this.txbTienKhachTra.ReadOnly = true;
-            this.txbTienKhachTra.Size = new System.Drawing.Size(130, 26);
-            this.txbTienKhachTra.TabIndex = 1;
-            // 
             // txbTongTien
             // 
             this.txbTongTien.Location = new System.Drawing.Point(178, 26);
@@ -234,24 +212,6 @@
             this.txbTongTien.ReadOnly = true;
             this.txbTongTien.Size = new System.Drawing.Size(130, 26);
             this.txbTongTien.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 19);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Tiền khách nợ:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Tiền khách trả:";
             // 
             // label2
             // 
@@ -326,26 +286,22 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dtgvLichSu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KhachHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HieuXe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BienSo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayXuat;
         private System.Windows.Forms.DataGridView dtgvChiTietSuaChua;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoaiDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhuTung;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.GroupBox GrBoxChiTiet;
-        private System.Windows.Forms.TextBox txbTienKhachNo;
-        private System.Windows.Forms.TextBox txbTienKhachTra;
         private System.Windows.Forms.TextBox txbTongTien;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtFrom;
         private System.Windows.Forms.DateTimePicker dtTo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HieuXe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BienSo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayVao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayXuat;
     }
 }

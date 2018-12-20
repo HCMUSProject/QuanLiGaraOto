@@ -29,5 +29,13 @@ namespace GUI.VatTuPhuTung
         {
             InitializeComponent();
         }
+
+        public void XoaDuLieu()
+        {
+            dtgvDanhMuc.Rows.Clear();
+            dtgvDanhMuc.Refresh();
+
+            txbDanhMuc.Text = "";
+        }
     }
 }

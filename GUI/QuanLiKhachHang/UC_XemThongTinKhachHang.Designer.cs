@@ -83,6 +83,7 @@
             this.dtgvKhachHang.Name = "dtgvKhachHang";
             this.dtgvKhachHang.ReadOnly = true;
             this.dtgvKhachHang.RowHeadersVisible = false;
+            this.dtgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvKhachHang.Size = new System.Drawing.Size(970, 275);
             this.dtgvKhachHang.TabIndex = 0;
             // 
@@ -146,6 +147,7 @@
             this.dtgvXe.Name = "dtgvXe";
             this.dtgvXe.ReadOnly = true;
             this.dtgvXe.RowHeadersVisible = false;
+            this.dtgvXe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvXe.Size = new System.Drawing.Size(970, 261);
             this.dtgvXe.TabIndex = 1;
             // 

@@ -88,6 +88,12 @@
     <Compile Include="DichVuSuaChua\UC_QuanLiXe.Designer.cs">
       <DependentUpon>UC_QuanLiXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="DichVuSuaChua\UC_ThanhToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DichVuSuaChua\UC_ThanhToan.Designer.cs">
+      <DependentUpon>UC_ThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="DichVuSuaChua\UC_TiepNhanXe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,6 +125,30 @@
     </Compile>
     <Compile Include="QuanLiKhachHang\UC_XemThongTinKhachHang.Designer.cs">
       <DependentUpon>UC_XemThongTinKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiThongTinNhanVIen\formDoiMatKau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiThongTinNhanVIen\formDoiMatKau.Designer.cs">
+      <DependentUpon>formDoiMatKau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiThongTinNhanVIen\UC_PanelSubButtons_QuanLyThongTinNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLiThongTinNhanVIen\UC_PanelSubButtons_QuanLyThongTinNhanVien.Designer.cs">
+      <DependentUpon>UC_PanelSubButtons_QuanLyThongTinNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiThongTinNhanVIen\UC_QuanLiThongTinNV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLiThongTinNhanVIen\UC_QuanLiThongTinNV.Designer.cs">
+      <DependentUpon>UC_QuanLiThongTinNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiThongTinNhanVIen\UC_XemThongTinNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLiThongTinNhanVIen\UC_XemThongTinNhanVien.Designer.cs">
+      <DependentUpon>UC_XemThongTinNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="VatTuPhuTung\UC_CapNhatVatTu.cs">
       <SubType>UserControl</SubType>
@@ -171,6 +201,9 @@
     <EmbeddedResource Include="DichVuSuaChua\UC_QuanLiXe.resx">
       <DependentUpon>UC_QuanLiXe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DichVuSuaChua\UC_ThanhToan.resx">
+      <DependentUpon>UC_ThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DichVuSuaChua\UC_TiepNhanXe.resx">
       <DependentUpon>UC_TiepNhanXe.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +218,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="QuanLiKhachHang\UC_PanelButtons_QuanLiKhachHang.resx">
       <DependentUpon>UC_PanelButtons_QuanLiKhachHang.cs</DependentUpon>
@@ -194,6 +228,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLiKhachHang\UC_XemThongTinKhachHang.resx">
       <DependentUpon>UC_XemThongTinKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiThongTinNhanVIen\formDoiMatKau.resx">
+      <DependentUpon>formDoiMatKau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiThongTinNhanVIen\UC_PanelSubButtons_QuanLyThongTinNhanVien.resx">
+      <DependentUpon>UC_PanelSubButtons_QuanLyThongTinNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiThongTinNhanVIen\UC_QuanLiThongTinNV.resx">
+      <DependentUpon>UC_QuanLiThongTinNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiThongTinNhanVIen\UC_XemThongTinNhanVien.resx">
+      <DependentUpon>UC_XemThongTinNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VatTuPhuTung\UC_CapNhatVatTu.resx">
       <DependentUpon>UC_CapNhatVatTu.cs</DependentUpon>
@@ -232,6 +278,21 @@
       <Project>{23a15a24-70f4-49bb-a501-94c53c933f85}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\result.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\steering-wheel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

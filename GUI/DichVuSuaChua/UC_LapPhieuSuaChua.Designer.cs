@@ -89,11 +89,13 @@
             this.dtgvChiTietSuaChua.Name = "dtgvChiTietSuaChua";
             this.dtgvChiTietSuaChua.RowHeadersVisible = false;
             this.dtgvChiTietSuaChua.RowTemplate.Height = 24;
+            this.dtgvChiTietSuaChua.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvChiTietSuaChua.Size = new System.Drawing.Size(668, 374);
             this.dtgvChiTietSuaChua.TabIndex = 5;
             // 
             // LoaiDichVu
             // 
+            this.LoaiDichVu.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.LoaiDichVu.HeaderText = "Loại dịch vụ";
             this.LoaiDichVu.Name = "LoaiDichVu";
             this.LoaiDichVu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -328,10 +330,10 @@
         private System.Windows.Forms.Button BtnLapPhieu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txbTongTien;
+        private System.Windows.Forms.ComboBox cmbNhanVienSuaChua;
         private System.Windows.Forms.DataGridViewComboBoxColumn LoaiDichVu;
         private System.Windows.Forms.DataGridViewComboBoxColumn PhuTung;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaTien;
-        private System.Windows.Forms.ComboBox cmbNhanVienSuaChua;
     }
 }

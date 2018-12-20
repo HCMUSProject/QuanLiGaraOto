@@ -90,6 +90,7 @@
             this.dtgvQuanLiNhapKho.Name = "dtgvQuanLiNhapKho";
             this.dtgvQuanLiNhapKho.ReadOnly = true;
             this.dtgvQuanLiNhapKho.RowHeadersVisible = false;
+            this.dtgvQuanLiNhapKho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvQuanLiNhapKho.Size = new System.Drawing.Size(677, 557);
             this.dtgvQuanLiNhapKho.TabIndex = 0;
             // 

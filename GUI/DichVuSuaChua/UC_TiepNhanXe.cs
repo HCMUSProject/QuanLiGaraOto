@@ -26,9 +26,26 @@ namespace GUI.DichVuSuaChua
             }
         }
 
+        public event EventHandler OnButtonAddCustomerClick;
+
         public UC_TiepNhanXe()
         {
             InitializeComponent();
+        }
+
+        public void XoaDuLieu()
+        {
+            cmbHangXe.Text = "";
+            cmbHangXe.DataSource = null;
+
+            cmbHieuXe.Text = "";
+            cmbHieuXe.DataSource = null;
+
+            cmbKhachHang.Text = "";
+            cmbKhachHang.DataSource = null;
+
+            txbBienSo.Text = "";
+            txbTenXe.Text = "";
         }
 
         private void UC_TiepNhanXe_Load(object sender, EventArgs e)
@@ -39,6 +56,11 @@ namespace GUI.DichVuSuaChua
         private void BtnTiepNhanXe_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void BtnThemKhachHang_Click(object sender, EventArgs e)
+        {
+            OnButtonAddCustomerClick?.Invoke(sender, e);
         }
     }
 }

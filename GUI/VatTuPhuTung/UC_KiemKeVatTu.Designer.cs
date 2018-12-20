@@ -79,6 +79,7 @@
             this.dtgvKiemKeVatTu.Name = "dtgvKiemKeVatTu";
             this.dtgvKiemKeVatTu.ReadOnly = true;
             this.dtgvKiemKeVatTu.RowHeadersVisible = false;
+            this.dtgvKiemKeVatTu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvKiemKeVatTu.Size = new System.Drawing.Size(969, 517);
             this.dtgvKiemKeVatTu.TabIndex = 0;
             // 
