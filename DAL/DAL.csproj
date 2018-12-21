@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_DBConnect.cs" />
+    <Compile Include="DAL_Quanlixe.cs" />
+    <Compile Include="DAL_Tiepnhanxe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

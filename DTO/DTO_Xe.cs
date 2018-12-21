@@ -46,7 +46,7 @@ namespace DTO
             }
             set
             {
-                _mahieuxe = value;
+                _mahangxe = value;
             }
         }
 

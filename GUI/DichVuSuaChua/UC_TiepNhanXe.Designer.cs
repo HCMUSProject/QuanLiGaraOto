@@ -65,6 +65,7 @@
             this.cmbKhachHang.Name = "cmbKhachHang";
             this.cmbKhachHang.Size = new System.Drawing.Size(338, 27);
             this.cmbKhachHang.TabIndex = 0;
+            this.cmbKhachHang.SelectedIndexChanged += new System.EventHandler(this.cmbKhachHang_SelectedIndexChanged);
             // 
             // cmbHangXe
             // 
@@ -76,6 +77,7 @@
             this.cmbHangXe.Name = "cmbHangXe";
             this.cmbHangXe.Size = new System.Drawing.Size(338, 27);
             this.cmbHangXe.TabIndex = 1;
+            this.cmbHangXe.SelectedIndexChanged += new System.EventHandler(this.cmbHangXe_SelectedIndexChanged);
             // 
             // cmbHieuXe
             // 

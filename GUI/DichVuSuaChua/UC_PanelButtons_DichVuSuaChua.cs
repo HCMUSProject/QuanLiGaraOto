@@ -33,9 +33,12 @@ namespace GUI.DichVuSuaChua
             InitializeComponent();
         }
 
+        UC_TiepNhanXe tnx = new UC_TiepNhanXe();
         private void BtnTiepNhanXe_Click(object sender, EventArgs e)
         {
+        
             OnButtonClick?.Invoke(sender, e);
+            
         }
 
         private void BtnQuanLiXe_Click(object sender, EventArgs e)
@@ -59,6 +62,11 @@ namespace GUI.DichVuSuaChua
         private void BtnThanhToan_Click(object sender, EventArgs e)
         {
             OnButtonClick?.Invoke(sender, e);
+        }
+
+        private void BtnTiepNhanXe_MouseClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

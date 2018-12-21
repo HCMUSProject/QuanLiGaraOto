@@ -179,11 +179,14 @@ namespace GUI
                     DichVuSuaChua.UC_TiepNhanXe.Instance.Dock = DockStyle.Fill;
                     DichVuSuaChua.UC_TiepNhanXe.Instance.BringToFront();
                     DichVuSuaChua.UC_TiepNhanXe.Instance.OnButtonAddCustomerClick += OnButton_TiepNhanXe_Them_Click;
+                   
                 }
                 else
                 {
                     DichVuSuaChua.UC_TiepNhanXe.Instance.XoaDuLieu();
                     DichVuSuaChua.UC_TiepNhanXe.Instance.BringToFront();
+                    DichVuSuaChua.UC_TiepNhanXe.Instance.Load2();
+
                 }
                 //MessageBox.Show("BtnTiepNhanXe");
             }

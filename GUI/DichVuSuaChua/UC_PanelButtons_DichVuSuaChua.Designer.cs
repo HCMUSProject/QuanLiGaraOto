@@ -90,6 +90,7 @@
             this.BtnTiepNhanXe.Text = "Tiếp nhận xe";
             this.BtnTiepNhanXe.UseVisualStyleBackColor = true;
             this.BtnTiepNhanXe.Click += new System.EventHandler(this.BtnTiepNhanXe_Click);
+            this.BtnTiepNhanXe.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnTiepNhanXe_MouseClick);
             // 
             // BtnThanhToan
             // 
