@@ -377,7 +377,7 @@ insert into XE values(N'Volkswagen Sharan 220','VOL','VOL-SHA','78A-4444',1,'12-
 insert into XE values(N'Lamborghini Aventador LP700-4 Lp2','LAM','LAM-AVELP','58A-6666',2,'12-02-18')
 insert into XE values(N'Ferrari F12 Berlinetta','FER','FER-F12B','34A-1444',3,'02-12-18')
 insert into XE values(N'Nissan Teana','NIS','NIS-TEA','68A-3444',4,'12-22-18')
-insert into XE values(N'Mitsubishi Outlander Sport','MIT','MIT-OLDS','58A-5444',5,'12-21-18')
+insert into XE values(N'Mitsubishi Outlander Sport','MIT','MIT-OLDS','58A-5444',4,'12-21-18')
 
 GO
 --Bảng Danh mục vật tư
