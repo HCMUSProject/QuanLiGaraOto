@@ -35,7 +35,9 @@ namespace GUI.DichVuSuaChua
             cmbKhachHang.Text = "";
             cmbKhachHang.DataSource = null;
 
-            txbBienSo.Text = "";
+            cmbBienSoXe.Text = "";
+            cmbBienSoXe.DataSource = null;
+
             txbDienThoai.Text = "";
             txbHieuXe.Text = "";
             txbMaPhieu.Text = "";

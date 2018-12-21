@@ -24,5 +24,10 @@ namespace GUI.QuanLiThongTinNhanVIen
 
             m_strUsername = username;
         }
+
+        private void formDoiMatKau_Load(object sender, EventArgs e)
+        {
+            txbTaiKhoan.Text = m_strUsername;
+        }
     }
 }

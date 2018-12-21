@@ -33,6 +33,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BtnThanhToan = new System.Windows.Forms.Button();
             this.dtgvChiTietSuaChua = new System.Windows.Forms.DataGridView();
+            this.LoaiDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbKhachHang = new System.Windows.Forms.ComboBox();
             this.txbDienThoai = new System.Windows.Forms.TextBox();
             this.txbMaPhieu = new System.Windows.Forms.TextBox();
@@ -43,14 +47,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txbHieuXe = new System.Windows.Forms.TextBox();
-            this.txbBienSo = new System.Windows.Forms.TextBox();
             this.txbNhanVien = new System.Windows.Forms.TextBox();
-            this.LoaiDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.dtpkNgayThanhToan = new System.Windows.Forms.DateTimePicker();
+            this.cmbBienSoXe = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvChiTietSuaChua)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,7 +103,7 @@
             this.dtgvChiTietSuaChua.BackgroundColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -125,6 +125,32 @@
             this.dtgvChiTietSuaChua.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvChiTietSuaChua.Size = new System.Drawing.Size(668, 374);
             this.dtgvChiTietSuaChua.TabIndex = 22;
+            // 
+            // LoaiDichVu
+            // 
+            this.LoaiDichVu.HeaderText = "Loại dịch vụ";
+            this.LoaiDichVu.Name = "LoaiDichVu";
+            this.LoaiDichVu.ReadOnly = true;
+            this.LoaiDichVu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // PhuTung
+            // 
+            this.PhuTung.HeaderText = "Phụ tùng";
+            this.PhuTung.Name = "PhuTung";
+            this.PhuTung.ReadOnly = true;
+            this.PhuTung.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            // 
+            // GiaTien
+            // 
+            this.GiaTien.HeaderText = "Đơn giá";
+            this.GiaTien.Name = "GiaTien";
+            this.GiaTien.ReadOnly = true;
             // 
             // cmbKhachHang
             // 
@@ -235,16 +261,6 @@
             this.txbHieuXe.Size = new System.Drawing.Size(172, 26);
             this.txbHieuXe.TabIndex = 32;
             // 
-            // txbBienSo
-            // 
-            this.txbBienSo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBienSo.Location = new System.Drawing.Point(130, 297);
-            this.txbBienSo.Margin = new System.Windows.Forms.Padding(2);
-            this.txbBienSo.Name = "txbBienSo";
-            this.txbBienSo.ReadOnly = true;
-            this.txbBienSo.Size = new System.Drawing.Size(172, 26);
-            this.txbBienSo.TabIndex = 33;
-            // 
             // txbNhanVien
             // 
             this.txbNhanVien.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -254,32 +270,6 @@
             this.txbNhanVien.ReadOnly = true;
             this.txbNhanVien.Size = new System.Drawing.Size(172, 26);
             this.txbNhanVien.TabIndex = 34;
-            // 
-            // LoaiDichVu
-            // 
-            this.LoaiDichVu.HeaderText = "Loại dịch vụ";
-            this.LoaiDichVu.Name = "LoaiDichVu";
-            this.LoaiDichVu.ReadOnly = true;
-            this.LoaiDichVu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // PhuTung
-            // 
-            this.PhuTung.HeaderText = "Phụ tùng";
-            this.PhuTung.Name = "PhuTung";
-            this.PhuTung.ReadOnly = true;
-            this.PhuTung.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
-            // 
-            // GiaTien
-            // 
-            this.GiaTien.HeaderText = "Đơn giá";
-            this.GiaTien.Name = "GiaTien";
-            this.GiaTien.ReadOnly = true;
             // 
             // label7
             // 
@@ -302,15 +292,25 @@
             this.dtpkNgayThanhToan.Size = new System.Drawing.Size(172, 26);
             this.dtpkNgayThanhToan.TabIndex = 36;
             // 
+            // cmbBienSoXe
+            // 
+            this.cmbBienSoXe.Font = new System.Drawing.Font("Consolas", 12F);
+            this.cmbBienSoXe.FormattingEnabled = true;
+            this.cmbBienSoXe.Location = new System.Drawing.Point(130, 297);
+            this.cmbBienSoXe.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbBienSoXe.Name = "cmbBienSoXe";
+            this.cmbBienSoXe.Size = new System.Drawing.Size(172, 27);
+            this.cmbBienSoXe.TabIndex = 37;
+            // 
             // UC_ThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.cmbBienSoXe);
             this.Controls.Add(this.dtpkNgayThanhToan);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txbNhanVien);
-            this.Controls.Add(this.txbBienSo);
             this.Controls.Add(this.txbHieuXe);
             this.Controls.Add(this.txbTongTien);
             this.Controls.Add(this.label2);
@@ -351,7 +351,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbHieuXe;
-        private System.Windows.Forms.TextBox txbBienSo;
         private System.Windows.Forms.TextBox txbNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoaiDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhuTung;
@@ -359,5 +358,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaTien;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpkNgayThanhToan;
+        private System.Windows.Forms.ComboBox cmbBienSoXe;
     }
 }

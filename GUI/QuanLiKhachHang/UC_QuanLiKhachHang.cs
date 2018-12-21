@@ -43,5 +43,7 @@ namespace GUI.QuanLiKhachHang
             txbTimKiemSDT.Text = "";
             txbTimKiemTen.Text = "";
         }
+
+        
     }
 }
