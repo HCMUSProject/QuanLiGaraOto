@@ -73,7 +73,11 @@ namespace GUI.DichVuSuaChua
         }
         private void UC_TiepNhanXe_Load(object sender, EventArgs e)
         {
-
+            cmbHangXe.Enabled = false;
+            cmbHieuXe.Enabled = false;
+            txbBienSo.Enabled = false;
+            txbTenXe.Enabled = false;
+            dateNhapXe.Enabled = false;
             for (int i = 0; i < busTNX.getKhachhang().Rows.Count; i++)
             {
                 cmbKhachHang.Items.Add(busTNX.getKhachhang().Rows[i][0] + " - " + busTNX.getKhachhang().Rows[i][1]);
@@ -87,6 +91,11 @@ namespace GUI.DichVuSuaChua
         }
        public void Load2()
         {
+            cmbHangXe.Enabled = false;
+            cmbHieuXe.Enabled = false;
+            txbBienSo.Enabled = false;
+            txbTenXe.Enabled = false;
+            dateNhapXe.Enabled = false;
             for (int i = 0; i < busTNX.getKhachhang().Rows.Count; i++)
             {
                 cmbKhachHang.Items.Add(busTNX.getKhachhang().Rows[i][0] + " - " + busTNX.getKhachhang().Rows[i][1]);
@@ -155,6 +164,10 @@ namespace GUI.DichVuSuaChua
 
         private void cmbKhachHang_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cmbHangXe.Enabled = true;
+            cmbHangXe.Text = "";
+            cmbHangXe.Items.Clear();
+            cmbHangXe.SelectedIndex = -1;
             foreach (DataRow dr in busTNX.getHangxe().Rows)
             {
                 cmbHangXe.Items.Add(dr["Tenhangxe"].ToString());
@@ -163,12 +176,30 @@ namespace GUI.DichVuSuaChua
 
         private void cmbHangXe_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            cmbHieuXe.Text = "";
+            cmbHieuXe.Items.Clear();
+            cmbHieuXe.SelectedIndex = -1;
+            cmbHieuXe.Enabled = true;
             //MessageBox.Show(getHangxe());
             foreach (DataRow dr in busTNX.getHieuxe(getHangxe()).Rows)
             {
                 cmbHieuXe.Items.Add(dr["Tenhieuxe"].ToString());
             }
+        }
+
+        private void cmbHieuXe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txbTenXe.Enabled = true;
+        }
+
+        private void txbTenXe_TextChanged(object sender, EventArgs e)
+        {
+            txbBienSo.Enabled = true;
+        }
+
+        private void txbBienSo_TextChanged(object sender, EventArgs e)
+        {
+            dateNhapXe.Enabled = true;
         }
     }
 }

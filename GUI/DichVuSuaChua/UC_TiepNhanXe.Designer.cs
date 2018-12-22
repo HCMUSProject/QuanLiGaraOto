@@ -89,6 +89,7 @@
             this.cmbHieuXe.Name = "cmbHieuXe";
             this.cmbHieuXe.Size = new System.Drawing.Size(338, 27);
             this.cmbHieuXe.TabIndex = 2;
+            this.cmbHieuXe.SelectedIndexChanged += new System.EventHandler(this.cmbHieuXe_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -192,6 +193,7 @@
             this.txbTenXe.Name = "txbTenXe";
             this.txbTenXe.Size = new System.Drawing.Size(338, 20);
             this.txbTenXe.TabIndex = 3;
+            this.txbTenXe.TextChanged += new System.EventHandler(this.txbTenXe_TextChanged);
             // 
             // txbBienSo
             // 
@@ -200,6 +202,7 @@
             this.txbBienSo.Name = "txbBienSo";
             this.txbBienSo.Size = new System.Drawing.Size(338, 20);
             this.txbBienSo.TabIndex = 4;
+            this.txbBienSo.TextChanged += new System.EventHandler(this.txbBienSo_TextChanged);
             // 
             // UC_TiepNhanXe
             // 
