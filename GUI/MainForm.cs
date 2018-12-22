@@ -202,6 +202,7 @@ namespace GUI
                 {
                     DichVuSuaChua.UC_QuanLiXe.Instance.XoaDuLieu();
                     DichVuSuaChua.UC_QuanLiXe.Instance.BringToFront();
+                    DichVuSuaChua.UC_QuanLiXe.Instance.Load2();
                 }
 
                 //MessageBox.Show("BtnQuanLiXe");

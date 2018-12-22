@@ -204,6 +204,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_QuanLiXe";
             this.Size = new System.Drawing.Size(1000, 600);
+            this.Load += new System.EventHandler(this.UC_QuanLiXe_Load);
             this.GroupBoxBasicInfo.ResumeLayout(false);
             this.GroupBoxBasicInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvQuanLiXe)).EndInit();
