@@ -71,6 +71,9 @@ namespace GUI.DichVuSuaChua
 
         private void UC_LapPhieuSuaChua_Load(object sender, EventArgs e)
         {
+            btnAdd.Enabled = false;
+            btnSub.Enabled = false;
+            dtgvChiTietSuaChua.AllowUserToAddRows = false;
             txbDienThoai.Enabled = false;
             cmbLoaiXe.Enabled = false;
             cmbBienSoXe.Enabled = false;
@@ -88,8 +91,15 @@ namespace GUI.DichVuSuaChua
 
             txbMaPhieu.Text = id.ToString();
         }
+        /// <summary>
+        /// load lại khi change form
+        /// </summary>
         public void Load2()
         {
+            btnAdd.Enabled = false;
+            btnSub.Enabled = false;
+
+            dtgvChiTietSuaChua.AllowUserToAddRows = false;
             this.txbTongTien.Text = "0";
             txbDienThoai.Enabled = false;
             cmbLoaiXe.Enabled = false;
@@ -107,33 +117,85 @@ namespace GUI.DichVuSuaChua
 
             txbMaPhieu.Text = id.ToString();
         }
+        /// <summary>
+        /// get cmnd từ cmbKhachhang
+        /// </summary>
+        /// <returns></returns>
         public string getCMND()
         {
             return this.cmbKhachHang.GetItemText(this.cmbKhachHang.SelectedItem).Substring((
                 (this.cmbKhachHang.GetItemText(this.cmbKhachHang.SelectedItem)).LastIndexOf('-') + 1)).Trim();
         }
+        /// <summary>
+        /// get cmnd từ cmbNhanviensuachua
+        /// </summary>
+        /// <returns></returns>
         public string getCMNDnhanvien()
         {
             return this.cmbNhanVienSuaChua.GetItemText(this.cmbNhanVienSuaChua.SelectedItem).Substring((
                (this.cmbNhanVienSuaChua.GetItemText(this.cmbNhanVienSuaChua.SelectedItem)).LastIndexOf('-') + 1)).Trim();
 
         }
+        /// <summary>
+        /// get tên hiệu xe từ cmbHieuxe
+        /// </summary>
+        /// <returns></returns>
         public string getHieuxe()
         {
             return this.cmbLoaiXe.GetItemText(this.cmbLoaiXe.SelectedItem);
         }
+        /// <summary>
+        /// get biển số từ cmbBienso
+        /// </summary>
+        /// <returns></returns>
         public string getBienso()
         {
             return this.cmbBienSoXe.GetItemText(this.cmbBienSoXe.SelectedItem);
         }
+        /// <summary>
+        /// get value trong cmbNhanviensuachua
+        /// </summary>
+        /// <returns></returns>
         public string getNhanviensua()
         {
             return this.cmbNhanVienSuaChua.GetItemText(this.cmbNhanVienSuaChua.SelectedItem);
         }
-        //public string getLoaidichvu()
-        //{
-        //    return this.cmbLoaiXe.GetItemText(this.cmbLoaiXe.SelectedItem);
-        //}
+        /// <summary>
+        /// get mã vật tư từ cmbDatagridview
+        /// </summary>
+        /// <param name="row"></param>
+        /// <returns></returns>
+        public int getMavattu(int row)
+        {
+            string tmp = this.dtgvChiTietSuaChua.Rows[row].Cells[1].Value.ToString();
+            return Int32.Parse(tmp.Substring(tmp.LastIndexOf('-') + 1).Trim());
+        }
+        /// <summary>
+        /// get số lượng từ txbdatagridview
+        /// </summary>
+        /// <param name="row"></param>
+        /// <returns></returns>
+        public int getSoluong(int row)
+        {
+            string tmp = this.dtgvChiTietSuaChua.Rows[row].Cells[2].Value.ToString();
+            return Int32.Parse(tmp.Trim());
+        }
+        /// <summary>
+        /// get loại dịch vụ từ cmbdatagirdview
+        /// </summary>
+        /// <param name="row"></param>
+        /// <returns></returns>
+        public string getLoaidichvu(int row)
+        {
+            string tmp = this.dtgvChiTietSuaChua.Rows[row].Cells[0].Value.ToString();
+            return tmp;
+        }
+
+        /// <summary>
+        /// handle event cmbKhachHang_SelectedIndexChanged
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbKhachHang_SelectedIndexChanged(object sender, EventArgs e)
 
         {
@@ -145,6 +207,11 @@ namespace GUI.DichVuSuaChua
             // txbDienThoai.Enabled = true;
         }
 
+        /// <summary>
+        /// handle event txbDienThoai_TextChanged
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbDienThoai_TextChanged(object sender, EventArgs e)
         {
             cmbLoaiXe.Enabled = true;
@@ -153,7 +220,11 @@ namespace GUI.DichVuSuaChua
                 cmbLoaiXe.Items.Add(dr["Tenhieuxe"].ToString());
             }
         }
-
+        /// <summary>
+        /// handle event cmbBienSoXe_SelectedIndexChanged
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbBienSoXe_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbNhanVienSuaChua.Enabled = true;
@@ -162,7 +233,11 @@ namespace GUI.DichVuSuaChua
                 cmbNhanVienSuaChua.Items.Add(lpsc.getNhanvien().Rows[i][0] + " - " + lpsc.getNhanvien().Rows[i][1]);
             }
         }
-
+        /// <summary>
+        /// handle event cmbLoaiXe_SelectedIndexChanged
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbLoaiXe_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbBienSoXe.Text = "";
@@ -175,7 +250,11 @@ namespace GUI.DichVuSuaChua
                 cmbBienSoXe.Items.Add(dr["Bienso"].ToString());
             }
         }
-
+        /// <summary>
+        /// handle event cmbNhanVienSuaChua_SelectedIndexChanged
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbNhanVienSuaChua_SelectedIndexChanged(object sender, EventArgs e)
         {
             dtgvChiTietSuaChua.Enabled = true;
@@ -183,8 +262,14 @@ namespace GUI.DichVuSuaChua
             {
                 LoaiDichVu.Items.Add(dr["Tendichvu"].ToString());
             }
+            btnAdd.Enabled = true;
+            btnSub.Enabled = true;
 
         }
+        /// <summary>
+        /// load data vào collection auto complete textbox control
+        /// </summary>
+        /// <param name="autoCol"></param>
         private void LoadLocalDataCollection(AutoCompleteStringCollection autoCol)
         {
             for (int i = 0; i < lpsc.getVattu().Rows.Count; i++)
@@ -192,7 +277,11 @@ namespace GUI.DichVuSuaChua
                 autoCol.Add(lpsc.getVattu().Rows[i][0].ToString() + " - " + lpsc.getVattu().Rows[i][1].ToString());
             }
         }
-
+        /// <summary>
+        /// handel event BtnLapPhieu_Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnLapPhieu_Click(object sender, EventArgs e)
         {
             if (getCMND() == "")
@@ -220,6 +309,11 @@ namespace GUI.DichVuSuaChua
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin đơn hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
+            else if(dtgvChiTietSuaChua.RowCount<=0)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin đơn hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
             else
             {
                 DTO_Donhangsuachua dh = new DTO_Donhangsuachua(0, Int32.Parse(lpsc.getManhanvien(getCMNDnhanvien())), Int32.Parse(lpsc.getManhanvien(getCMNDnhanvien())),
@@ -237,28 +331,23 @@ namespace GUI.DichVuSuaChua
                 }
                 if (result == DialogResult.OK)
                 {
-                    for (int i = 0; i < dtgvChiTietSuaChua.RowCount - 1; i++)
+                    for (int i = 0; i < dtgvChiTietSuaChua.RowCount; i++)
                     {
-                        if (CheckrowIsempty(i) == false)
+                        DTO_Chitietdonhang ct = new DTO_Chitietdonhang(0, Int32.Parse(txbMaPhieu.Text), getMavattu(i), getSoluong(i), Int32.Parse(lpsc.getMadichvu(getLoaidichvu(i))));
+                        if (ct == null)
                         {
-                            DTO_Chitietdonhang ct = new DTO_Chitietdonhang(0, Int32.Parse(txbMaPhieu.Text), getMavattu(i), getSoluong(i), Int32.Parse(lpsc.getMadichvu(getLoaidichvu(i))));
-                            if (ct == null)
-                            {
-                                i++;
-                            }
-                            else
-                            {
-                                if (lpsc.chitietdonhang(ct) == false)
-                                    MessageBox.Show("Fail1");
-                                int tmp = Int32.Parse(this.dtgvChiTietSuaChua.Rows[i].Cells[2].Value.ToString());
-                                int tmp2 = Int32.Parse(lpsc.getSoluongvattu(getMavattu(i)));
-                                if (lpsc.updateVattu(getMavattu(i), tmp2-tmp )== false)
-                                    MessageBox.Show("Fail2");
-
-                            }
+                            i++;
                         }
                         else
-                            i++;
+                        {
+                            if (lpsc.chitietdonhang(ct) == false)
+                                MessageBox.Show("Fail1");
+                            int tmp = Int32.Parse(this.dtgvChiTietSuaChua.Rows[i].Cells[2].Value.ToString());
+                            int tmp2 = Int32.Parse(lpsc.getSoluongvattu(getMavattu(i)));
+                            if (lpsc.updateVattu(getMavattu(i), tmp2 - tmp) == false)
+                                MessageBox.Show("Fail2");
+
+                        }
                     }
                     XoaDuLieu();
                     UC_LapPhieuSuaChua_Load(sender, e);
@@ -272,6 +361,11 @@ namespace GUI.DichVuSuaChua
 
         }
 
+        /// <summary>
+        /// handle event "auto complete textbox dtgv control"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dtgvChiTietSuaChua_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             int column = dtgvChiTietSuaChua.CurrentCell.ColumnIndex;
@@ -301,32 +395,23 @@ namespace GUI.DichVuSuaChua
                 autoText.AutoCompleteMode = AutoCompleteMode.None;
             }
         }
-        public bool CheckrowIsempty(int row)
-        {
-            return (this.dtgvChiTietSuaChua.Rows[row].Cells[0] == null || this.dtgvChiTietSuaChua.Rows[row].Cells[1] ==
-                null || this.dtgvChiTietSuaChua.Rows[row].Cells[2] == null) ? true : false;
-        }
-        public int getMavattu(int row)
-        {
-            string tmp = this.dtgvChiTietSuaChua.Rows[row].Cells[1].Value.ToString();
-            return Int32.Parse(tmp.Substring(tmp.LastIndexOf('-') + 1).Trim());
-        }
-        public int getSoluong(int row)
-        {
-            string tmp = this.dtgvChiTietSuaChua.Rows[row].Cells[2].Value.ToString();
-            return Int32.Parse(tmp.Trim());
-        }
-        public string getLoaidichvu(int row)
-        {
-            string tmp = this.dtgvChiTietSuaChua.Rows[row].Cells[0].Value.ToString();
-            return tmp;
-        }
+        //public bool CheckrowIsempty(int row)
+        //{
+        //    return (this.dtgvChiTietSuaChua.Rows[row].Cells[0] == null || this.dtgvChiTietSuaChua.Rows[row].Cells[1] ==
+        //        null || this.dtgvChiTietSuaChua.Rows[row].Cells[2] == null) ? true : false;
+        //}
+        
         private void dtgvChiTietSuaChua_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+        /// <summary>
+        /// check a row in dtgv is full?
+        /// </summary>
+        /// <returns></returns>
         public bool Checkfullrow()
         {
+            if (dtgvChiTietSuaChua.RowCount <= 0) return false;
             int row = dtgvChiTietSuaChua.CurrentCell.RowIndex;
             if (this.dtgvChiTietSuaChua.Rows[row].Cells[0].Value != null && this.dtgvChiTietSuaChua.Rows[row].Cells[1].Value != null
                && this.dtgvChiTietSuaChua.Rows[row].Cells[2].Value != null)
@@ -335,11 +420,18 @@ namespace GUI.DichVuSuaChua
                 return true;
             return false;
         }
+
+        /// <summary>
+        /// handle event "khi 1 ô trong datagridview editing"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dtgvChiTietSuaChua_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             //   int row = dtgvChiTietSuaChua.CurrentCell.RowIndex;
             this.txbTongTien.Text = "0";
-           // int soluongtam = 0;
+            dtgvChiTietSuaChua.AllowUserToAddRows = false;
+            // int soluongtam = 0;
             for (int row = 0; row < dtgvChiTietSuaChua.RowCount; row++)
             {
                 
@@ -349,7 +441,7 @@ namespace GUI.DichVuSuaChua
                     int soluongtam = Int32.Parse(lpsc.getSoluongvattu(getMavattu(row)));
                     for (int temp = 0; temp < row; temp++)
                     {
-                        if (this.dtgvChiTietSuaChua.Rows[temp].Cells[2].Value == this.dtgvChiTietSuaChua.Rows[row].Cells[2].Value)
+                        if (getMavattu(temp) == getMavattu(row))
                         {
                             soluongtam -= Int32.Parse(this.dtgvChiTietSuaChua.Rows[temp].Cells[2].Value.ToString());
                         }
@@ -360,6 +452,8 @@ namespace GUI.DichVuSuaChua
                         MessageBox.Show("Vượt quá số lượng vật tư trong kho", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         this.dtgvChiTietSuaChua.Rows[row].Cells[3].Value = null;
                         this.dtgvChiTietSuaChua.Rows[row].Cells[2].Value = null;
+                        this.dtgvChiTietSuaChua.Rows[row].Cells[2].Selected = true;
+                        this.dtgvChiTietSuaChua.MultiSelect = false;
                     }
                 }
                 if (this.dtgvChiTietSuaChua.Rows[row].Cells[0].Value == null || this.dtgvChiTietSuaChua.Rows[row].Cells[1].Value == null
@@ -377,12 +471,12 @@ namespace GUI.DichVuSuaChua
                     }
                     else
                     {
-                        if (dtgvChiTietSuaChua.CurrentCell.ColumnIndex > 0)
-                        {
-                            this.dtgvChiTietSuaChua.Rows[row + 1].Cells[1].ReadOnly = true;
-                            this.dtgvChiTietSuaChua.Rows[row + 1].Cells[2].ReadOnly = true;
-                            this.dtgvChiTietSuaChua.Rows[row + 1].Cells[0].ReadOnly = true;
-                        }
+                        //if (dtgvChiTietSuaChua.CurrentCell.ColumnIndex > 0)
+                        //{
+                        //    this.dtgvChiTietSuaChua.Rows[row + 1].Cells[1].ReadOnly = true;
+                        //    this.dtgvChiTietSuaChua.Rows[row + 1].Cells[2].ReadOnly = true;
+                        //    this.dtgvChiTietSuaChua.Rows[row + 1].Cells[0].ReadOnly = true;
+                        //}
 
                         this.dtgvChiTietSuaChua.Rows[row].Cells[1].ReadOnly = false;
                         if (this.dtgvChiTietSuaChua.Rows[row].Cells[1].Value == null)
@@ -407,19 +501,44 @@ namespace GUI.DichVuSuaChua
 
                     this.dtgvChiTietSuaChua.Rows[row].Cells[3].Value = bill.ToString();
                     this.txbTongTien.Text = (Int32.Parse(this.txbTongTien.Text) + Int32.Parse(this.dtgvChiTietSuaChua.Rows[row].Cells[3].Value.ToString())).ToString();
-                    this.dtgvChiTietSuaChua.NotifyCurrentCellDirty(true);
-                    dtgvChiTietSuaChua.Refresh();
-                    if (dtgvChiTietSuaChua.CurrentCell.ColumnIndex > 0)
-                    {
-                        this.dtgvChiTietSuaChua.Rows[row + 1].Cells[1].ReadOnly = true;
-                        this.dtgvChiTietSuaChua.Rows[row + 1].Cells[2].ReadOnly = true;
-                        this.dtgvChiTietSuaChua.Rows[row + 1].Cells[0].ReadOnly = false;
-                    }
+                    //this.dtgvChiTietSuaChua.NotifyCurrentCellDirty(true);
+                    //dtgvChiTietSuaChua.Refresh();
+                    //if (dtgvChiTietSuaChua.CurrentCell.ColumnIndex > 0)
+                    //{
+                    //    this.dtgvChiTietSuaChua.Rows[row + 1].Cells[1].ReadOnly = true;
+                    //    this.dtgvChiTietSuaChua.Rows[row + 1].Cells[2].ReadOnly = true;
+                    //    this.dtgvChiTietSuaChua.Rows[row + 1].Cells[0].ReadOnly = false;
+                    //}
                 }
 
             }
 
 
+        }
+
+        /// <summary>
+        /// handle event click btnAdd (để thêm 1 dòng vào dtgv)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            dtgvChiTietSuaChua.AllowUserToAddRows = true;
+        }
+
+        /// <summary>
+        /// handle event click btnSub (để xóa 1 dòng khỏi dtgv)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSub_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dtgvChiTietSuaChua.SelectedRows)
+            {
+                if (item.IsNewRow) //nếu đó là dòng mới của dtgv
+                    this.dtgvChiTietSuaChua.AllowUserToAddRows = false;
+               else  dtgvChiTietSuaChua.Rows.RemoveAt(item.Index);
+            }
         }
     }
 }

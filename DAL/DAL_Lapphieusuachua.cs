@@ -10,6 +10,12 @@ namespace DAL
 {
     public class DAL_Lapphieusuachua:DAL_DBConnect
     {
+        /// <summary>
+        /// get biển số để đưa vao cmbBienso
+        /// </summary>
+        /// <param name="cmnd"></param>
+        /// <param name="hieuxe"></param>
+        /// <returns></returns>
         public DataTable getbienso(string cmnd,string hieuxe)
         {
             string query = string.Format("SELECT XE.Bienso FROM XE,KHACHHANGSUACHUA,HIEUXE WHERE KHACHHANGSUACHUA.CMND='{0}' " +
@@ -19,7 +25,10 @@ namespace DAL
             bienso.Fill(result);
             return result;
         }
-        
+        /// <summary>
+        /// get nhân viên để đưa vào cmbNhanviensuachua
+        /// </summary>
+        /// <returns></returns>
         public DataTable getNhanvien()
         {
             string query = string.Format("SELECT Ten,CMND FROM NHANVIEN");
@@ -28,6 +37,11 @@ namespace DAL
             nhanvien.Fill(result);
             return result;
         }
+        /// <summary>
+        /// get mã khách hàng để đưa vào csdl
+        /// </summary>
+        /// <param name="cmnd"></param>
+        /// <returns></returns>
         public string getMakhachhang(string cmnd)
         {
             string query = string.Format("SElECT Makhachhang FROM KHACHHANGSUACHUA WHERE CMND='{0}'",cmnd);
@@ -36,6 +50,11 @@ namespace DAL
             dichvu.Fill(result);
             return result.Rows[0][0].ToString();
         }
+        /// <summary>
+        /// get IDxe để đưa vào csdl
+        /// </summary>
+        /// <param name="bienso"></param>
+        /// <returns></returns>
         public string getIDxe(string bienso)
         {
             string query = string.Format("SElECT IDXe FROM XE WHERE Bienso='{0}'", bienso);
@@ -44,6 +63,11 @@ namespace DAL
             dichvu.Fill(result);
             return result.Rows[0][0].ToString();
         }
+        /// <summary>
+        /// get mã nhân viên để đưa vào csdl
+        /// </summary>
+        /// <param name="cmnd"></param>
+        /// <returns></returns>
         public string getManhanvien(string cmnd)
         {
             string query = string.Format("SElECT Manhanvien FROM NHANVIEN WHERE CMND='{0}'", cmnd);
@@ -52,6 +76,11 @@ namespace DAL
             dichvu.Fill(result);
             return result.Rows[0][0].ToString();
         }
+        /// <summary>
+        /// get mã dịch vụ để đưa vào csdl
+        /// </summary>
+        /// <param name="tendichvu"></param>
+        /// <returns></returns>
         public string getMadichvu(string tendichvu)
         {
             string query = string.Format("SElECT Madichvu FROM LOAIDICHVU WHERE Tendichvu=N'{0}'", tendichvu);
@@ -60,6 +89,10 @@ namespace DAL
             dichvu.Fill(result);
             return result.Rows[0][0].ToString();
         }
+        /// <summary>
+        /// get loại dịch vụ để đưa vào cmb datagridview
+        /// </summary>
+        /// <returns></returns>
         public DataTable getloaidichvu()
         {
             string query = string.Format("SElECT Tendichvu FROM LOAIDICHVU");
@@ -69,6 +102,10 @@ namespace DAL
             return result;
 
         }
+        /// <summary>
+        /// get vật tư để đưa vào cmb datagridview
+        /// </summary>
+        /// <returns></returns>
         public DataTable getVattu()
         {
             string query = string.Format("SElECT Tenvattu,Mavattu FROM VATTU");
@@ -77,6 +114,11 @@ namespace DAL
             vattu.Fill(result);
             return result;
         }
+        /// <summary>
+        /// get giá thành vật tư để tính đơn giá
+        /// </summary>
+        /// <param name="mavt"></param>
+        /// <returns></returns>
         public string getGiathanh(int mavt)
         {
             string query = string.Format("SElECT Giathanh FROM LICHSUNHAPKHO WHERE Mavattu='{0}'",mavt);
@@ -86,6 +128,11 @@ namespace DAL
 
             return result.Rows[0][0].ToString();
         }
+        /// <summary>
+        /// get hiệu xe để đưa vào cmbHieuxe
+        /// </summary>
+        /// <param name="cmnd"></param>
+        /// <returns></returns>
         public DataTable getHieuxe(string cmnd)
         {
             string query = string.Format("SElECT HIEUXE.Tenhieuxe  FROM XE,HIEUXE,KHACHHANGSUACHUA WHERE " +
@@ -95,6 +142,11 @@ namespace DAL
             dichvu.Fill(result);
             return result;
         }
+        /// <summary>
+        /// get giá dịch vụ để tính đơn giá
+        /// </summary>
+        /// <param name="tendichvu"></param>
+        /// <returns></returns>
         public string getGiadichvu(string tendichvu)
         {
             string query = string.Format("SElECT Giadichvu FROM LOAIDICHVU WHERE Tendichvu= N'{0}'", tendichvu);
@@ -104,6 +156,11 @@ namespace DAL
 
             return result.Rows[0][0].ToString();
         }
+        /// <summary>
+        /// get số điện thoại để đưa vào txbSodienthoai
+        /// </summary>
+        /// <param name="cmnd"></param>
+        /// <returns></returns>
         public DataTable getSodienthoai(string cmnd)
         {
             string query = string.Format("SElECT Sodienthoai FROM KHACHHANGSUACHUA WHERE CMND='{0}'",cmnd);
@@ -112,6 +169,10 @@ namespace DAL
             dichvu.Fill(result);
             return result;
         }
+        /// <summary>
+        /// get khách hàng để đưa vào cmbKhachhang
+        /// </summary>
+        /// <returns></returns>
         public DataTable getKhachhang()
         {
             string query = string.Format("SELECT DISTINCT KHACHHANGSUACHUA.Ten,KHACHHANGSUACHUA.CMND FROM XE,KHACHHANGSUACHUA WHERE XE.Makhachhang=KHACHHANGSUACHUA.Makhachhang");
@@ -120,6 +181,10 @@ namespace DAL
             khachhang.Fill(result);
             return result;
         }
+        /// <summary>
+        /// get id lớn nhất của bảng hóa đơn. tăng 1 để thành id hóa đơn hiện tại
+        /// </summary>
+        /// <returns></returns>
         public string getMaxid()
         {
             string query = string.Format("SElECT MAX(Madonhang) FROM DONHANGSUACHUA ");
@@ -128,6 +193,11 @@ namespace DAL
             dichvu.Fill(result);
             return result.Rows[0][0].ToString();
         }
+        /// <summary>
+        /// get số lượng vật tư để tính đơn giá và check &update lại csdl
+        /// </summary>
+        /// <param name="mavt"></param>
+        /// <returns></returns>
         public string getsoluongvattu(int mavt)
         {
             string query = string.Format("SElECT Soluong FROM VATTU WHERE Mavattu='{0}'",mavt);
@@ -136,6 +206,12 @@ namespace DAL
             dichvu.Fill(result);
             return result.Rows[0][0].ToString();
         }
+        /// <summary>
+        /// update lại số lượng bảng vật  tư sau khi dùng vật tư
+        /// </summary>
+        /// <param name="mavt"></param>
+        /// <param name="soluong"></param>
+        /// <returns></returns>
         public bool updateVattu( int mavt,int soluong)
         {
             try
@@ -165,6 +241,11 @@ namespace DAL
 
             return false;
         }
+        /// <summary>
+        /// lập hóa đơn
+        /// </summary>
+        /// <param name="dh"></param>
+        /// <returns></returns>
         public bool lapphieusuachua(DTO_Donhangsuachua dh)
         {
             try
@@ -195,6 +276,11 @@ namespace DAL
 
             return false;
         }
+        /// <summary>
+        /// lập phiếu chi tiết hóa đơn
+        /// </summary>
+        /// <param name="ct"></param>
+        /// <returns></returns>
         public bool chitiethoadon(DTO_Chitietdonhang ct)
         {
             try
