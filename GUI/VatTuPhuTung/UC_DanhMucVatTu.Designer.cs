@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txbDanhMuc = new System.Windows.Forms.TextBox();
             this.BtnThem = new System.Windows.Forms.Button();
             this.BtnSua = new System.Windows.Forms.Button();
-            this.BtnXoa = new System.Windows.Forms.Button();
             this.dtgvDanhMuc = new System.Windows.Forms.DataGridView();
-            this.DanhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnXoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhMuc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,39 +63,28 @@
             this.BtnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnThem.AutoSize = true;
             this.BtnThem.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnThem.Location = new System.Drawing.Point(598, 139);
+            this.BtnThem.Location = new System.Drawing.Point(613, 146);
             this.BtnThem.Name = "BtnThem";
             this.BtnThem.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.BtnThem.Size = new System.Drawing.Size(92, 33);
             this.BtnThem.TabIndex = 3;
             this.BtnThem.Text = "Thêm";
             this.BtnThem.UseVisualStyleBackColor = true;
+            this.BtnThem.Click += new System.EventHandler(this.BtnThem_Click);
             // 
             // BtnSua
             // 
             this.BtnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnSua.AutoSize = true;
             this.BtnSua.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSua.Location = new System.Drawing.Point(728, 139);
+            this.BtnSua.Location = new System.Drawing.Point(735, 146);
             this.BtnSua.Name = "BtnSua";
             this.BtnSua.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.BtnSua.Size = new System.Drawing.Size(92, 33);
             this.BtnSua.TabIndex = 4;
             this.BtnSua.Text = "Sửa";
             this.BtnSua.UseVisualStyleBackColor = true;
-            // 
-            // BtnXoa
-            // 
-            this.BtnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnXoa.AutoSize = true;
-            this.BtnXoa.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnXoa.Location = new System.Drawing.Point(858, 139);
-            this.BtnXoa.Name = "BtnXoa";
-            this.BtnXoa.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.BtnXoa.Size = new System.Drawing.Size(92, 33);
-            this.BtnXoa.TabIndex = 5;
-            this.BtnXoa.Text = "Xóa";
-            this.BtnXoa.UseVisualStyleBackColor = true;
+            this.BtnSua.Click += new System.EventHandler(this.BtnSua_Click);
             // 
             // dtgvDanhMuc
             // 
@@ -110,25 +97,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvDanhMuc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDanhMuc.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvDanhMuc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvDanhMuc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvDanhMuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDanhMuc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DanhMuc});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvDanhMuc.DefaultCellStyle = dataGridViewCellStyle4;
             this.dtgvDanhMuc.Location = new System.Drawing.Point(15, 35);
             this.dtgvDanhMuc.MultiSelect = false;
             this.dtgvDanhMuc.Name = "dtgvDanhMuc";
@@ -137,20 +114,31 @@
             this.dtgvDanhMuc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDanhMuc.Size = new System.Drawing.Size(556, 551);
             this.dtgvDanhMuc.TabIndex = 6;
+            this.dtgvDanhMuc.TabStop = false;
+            this.dtgvDanhMuc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDanhMuc_CellClick);
+            this.dtgvDanhMuc.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDanhMuc_RowEnter);
             // 
-            // DanhMuc
+            // BtnXoa
             // 
-            this.DanhMuc.HeaderText = "Danh mục";
-            this.DanhMuc.Name = "DanhMuc";
-            this.DanhMuc.ReadOnly = true;
+            this.BtnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnXoa.AutoSize = true;
+            this.BtnXoa.Enabled = false;
+            this.BtnXoa.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnXoa.Location = new System.Drawing.Point(857, 146);
+            this.BtnXoa.Name = "BtnXoa";
+            this.BtnXoa.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.BtnXoa.Size = new System.Drawing.Size(92, 33);
+            this.BtnXoa.TabIndex = 7;
+            this.BtnXoa.Text = "Xóa";
+            this.BtnXoa.UseVisualStyleBackColor = true;
             // 
             // UC_DanhMucVatTu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.dtgvDanhMuc);
             this.Controls.Add(this.BtnXoa);
+            this.Controls.Add(this.dtgvDanhMuc);
             this.Controls.Add(this.BtnSua);
             this.Controls.Add(this.BtnThem);
             this.Controls.Add(this.txbDanhMuc);
@@ -158,6 +146,7 @@
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UC_DanhMucVatTu";
             this.Size = new System.Drawing.Size(1000, 600);
+            this.Click += new System.EventHandler(this.UC_DanhMucVatTu_CLick);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhMuc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -169,8 +158,7 @@
         private System.Windows.Forms.TextBox txbDanhMuc;
         private System.Windows.Forms.Button BtnThem;
         private System.Windows.Forms.Button BtnSua;
-        private System.Windows.Forms.Button BtnXoa;
         private System.Windows.Forms.DataGridView dtgvDanhMuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DanhMuc;
+        private System.Windows.Forms.Button BtnXoa;
     }
 }

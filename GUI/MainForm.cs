@@ -272,11 +272,13 @@ namespace GUI
                     PanelContent.Controls.Add(VatTuPhuTung.UC_DanhMucVatTu.Instance);
                     VatTuPhuTung.UC_DanhMucVatTu.Instance.Dock = DockStyle.Fill;
                     VatTuPhuTung.UC_DanhMucVatTu.Instance.BringToFront();
+                    VatTuPhuTung.UC_DanhMucVatTu.Instance.UC_DanhMucVatTu_Load();
                 }
                 else
                 {
                     VatTuPhuTung.UC_DanhMucVatTu.Instance.XoaDuLieu();
                     VatTuPhuTung.UC_DanhMucVatTu.Instance.BringToFront();
+                    VatTuPhuTung.UC_DanhMucVatTu.Instance.UC_DanhMucVatTu_Load();
                 }
                 //MessageBox.Show("BtnTiepNhanXe");
             }

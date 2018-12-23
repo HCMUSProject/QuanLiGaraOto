@@ -11,6 +11,6 @@ namespace DAL
 {
     public class DAL_DBConnect
     {
-        protected SqlConnection _conn = new SqlConnection("Data Source=DESKTOP-EQ5RP11;Initial Catalog=QuanLiGara;Integrated Security=True");
+        protected SqlConnection _conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLiGara;Integrated Security=True");
     }
 }
