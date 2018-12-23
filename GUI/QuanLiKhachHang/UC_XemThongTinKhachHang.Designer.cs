@@ -33,10 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvKhachHang = new System.Windows.Forms.DataGridView();
-            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgvXe = new System.Windows.Forms.DataGridView();
             this.HangXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HieuXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,11 +61,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgvKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenKH,
-            this.CMND,
-            this.SDT,
-            this.DiaChi});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -86,30 +77,6 @@
             this.dtgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvKhachHang.Size = new System.Drawing.Size(970, 275);
             this.dtgvKhachHang.TabIndex = 0;
-            // 
-            // TenKH
-            // 
-            this.TenKH.HeaderText = "Tên khách hàng";
-            this.TenKH.Name = "TenKH";
-            this.TenKH.ReadOnly = true;
-            // 
-            // CMND
-            // 
-            this.CMND.HeaderText = "CMND";
-            this.CMND.Name = "CMND";
-            this.CMND.ReadOnly = true;
-            // 
-            // SDT
-            // 
-            this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.ReadOnly = true;
             // 
             // dtgvXe
             // 
@@ -192,10 +159,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgvKhachHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridView dtgvXe;
         private System.Windows.Forms.DataGridViewTextBoxColumn HangXe;
         private System.Windows.Forms.DataGridViewTextBoxColumn HieuXe;
