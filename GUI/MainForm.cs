@@ -342,6 +342,7 @@ namespace GUI
                     PanelContent.Controls.Add(QuanLiKhachHang.UC_QuanLiKhachHang.Instance);
                     QuanLiKhachHang.UC_QuanLiKhachHang.Instance.Dock = DockStyle.Fill;
                     QuanLiKhachHang.UC_QuanLiKhachHang.Instance.BringToFront();
+                    QuanLiKhachHang.UC_QuanLiKhachHang.Instance.UC_QuanLyKhachHang_Load();
                 }
                 else
                 {
@@ -357,6 +358,7 @@ namespace GUI
                     PanelContent.Controls.Add(QuanLiKhachHang.UC_XemThongTinKhachHang.Instance);
                     QuanLiKhachHang.UC_XemThongTinKhachHang.Instance.Dock = DockStyle.Fill;
                     QuanLiKhachHang.UC_XemThongTinKhachHang.Instance.BringToFront();
+                    QuanLiKhachHang.UC_XemThongTinKhachHang.Instance.UC_XemThongTinKhachHang_Load();
                 }
                 else
                 {

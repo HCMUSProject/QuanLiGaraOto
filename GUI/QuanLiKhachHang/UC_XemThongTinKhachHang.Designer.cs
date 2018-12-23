@@ -77,6 +77,7 @@
             this.dtgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvKhachHang.Size = new System.Drawing.Size(970, 275);
             this.dtgvKhachHang.TabIndex = 0;
+            this.dtgvKhachHang.Click += new System.EventHandler(this.dtgvKhachHang_Click);
             // 
             // dtgvXe
             // 
