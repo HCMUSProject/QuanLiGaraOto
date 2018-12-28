@@ -237,6 +237,7 @@ namespace GUI
                 {
                     DichVuSuaChua.UC_ThanhToan.Instance.XoaDuLieu();
                     DichVuSuaChua.UC_ThanhToan.Instance.BringToFront();
+                    DichVuSuaChua.UC_ThanhToan.Instance.Load_2();
                 }
 
                 //MessageBox.Show("BtnLapPhieu");

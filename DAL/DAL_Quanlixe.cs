@@ -16,7 +16,7 @@ namespace DAL
         /// <returns></returns>
         public int demSoxe()
         {
-            string sql_query = string.Format("SELECT * FROM XE");
+            string sql_query = string.Format("SELECT * FROM XE, DONHANGSUACHUA, THANHTOAN WHERE XE.IDXe=DONHANGSUACHUA.IDXe AND DONHANGSUACHUA.Madonhang ");
             SqlDataAdapter db = new SqlDataAdapter(sql_query, _conn);
             DataTable dbXe = new DataTable();
             db.Fill(dbXe);
@@ -28,10 +28,10 @@ namespace DAL
         /// <returns></returns>
         public DataTable getXe()
         {
-           
-            string sql_query = string.Format("SELECT KHACHHANGSUACHUA.Ten,KHACHHANGSUACHUA.CMND,KHACHHANGSUACHUA.Diachi," +
-                "HANGXE.Tenhangxe,HIEUXE.Tenhieuxe,XE.Bienso,XE.Ngaynhapgara  FROM KHACHHANGSUACHUA,HANGXE,HIEUXE,XE WHERE" +
-                " KHACHHANGSUACHUA.Makhachhang=XE.Makhachhang AND XE.Mahangxe=HANGXE.IDHangxe AND XE.Mahieuxe=HIEUXE.IDHieuxe");
+            var date = (DateTime.Now.Date).ToString("yyyy-MM-dd");
+            string sql_query = string.Format("SELECT DISTINCT KHACHHANGSUACHUA.Ten,KHACHHANGSUACHUA.CMND,KHACHHANGSUACHUA.Diachi" +
+                ", HANGXE.Tenhangxe,HIEUXE.Tenhieuxe,XE.Bienso,XE.Ngaynhapgara  FROM KHACHHANGSUACHUA,HANGXE,HIEUXE,XE " +
+                " WHERE KHACHHANGSUACHUA.Makhachhang=XE.Makhachhang AND XE.Mahangxe=HANGXE.IDHangxe AND XE.Mahieuxe=HIEUXE.IDHieuxe AND XE.IDXe  NOT IN (SELECT DISTINCT XE.IDXe FROM XE, DONHANGSUACHUA,THANHTOAN WHERE XE.IDXe=DONHANGSUACHUA.IDXe AND DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang AND THANHTOAN.Ngayxuat<='{0}')", date.ToString());
             SqlDataAdapter a = new SqlDataAdapter(sql_query, _conn);
             DataTable dbKH = new DataTable();
             a.Fill(dbKH);
@@ -45,7 +45,7 @@ namespace DAL
         public int getsoluongxehomnay()
         {
             var date = (DateTime.Now.Date).ToString("yyyy-MM-dd");
-            string query = string.Format("SELECT * FROM XE WHERE  convert(varchar(10), Ngaynhapgara, 120)='{0}'", date.ToString());
+            string query = string.Format("SELECT DISTINCT * FROM XE  WHERE  convert(varchar(10), Ngaynhapgara, 120)='{0}'  AND XE.IDXe  NOT IN (SELECT DISTINCT XE.IDXe FROM XE, DONHANGSUACHUA,THANHTOAN WHERE XE.IDXe=DONHANGSUACHUA.IDXe AND DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang AND THANHTOAN.Ngayxuat<='{0}')", date.ToString());
             SqlDataAdapter count = new SqlDataAdapter(query, _conn);
             DataTable slxeToday = new DataTable();
             count.Fill(slxeToday);
@@ -57,7 +57,9 @@ namespace DAL
         /// <returns></returns>
         public int getsoluongxegara()
         {
-            string query = string.Format("SELECT * FROM XE");
+            var date = (DateTime.Now.Date).ToString("yyyy-MM-dd");
+
+            string query = string.Format("SELECT DISTINCT * FROM XE  WHERE  XE.IDXe  NOT IN (SELECT DISTINCT XE.IDXe FROM XE, DONHANGSUACHUA,THANHTOAN WHERE XE.IDXe=DONHANGSUACHUA.IDXe AND DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang AND THANHTOAN.Ngayxuat<='{0}')", date.ToString());
             SqlDataAdapter count = new SqlDataAdapter(query, _conn);
             DataTable slxe = new DataTable();
             count.Fill(slxe);

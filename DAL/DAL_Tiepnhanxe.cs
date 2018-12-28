@@ -95,7 +95,8 @@ namespace DAL
         /// <returns></returns>
         public bool Checkbienso(string bienso)
         {
-            string sql_query2 = string.Format("SELECT IDXe FROM XE WHERE Bienso='{0}'", bienso);
+            var date = (DateTime.Now.Date).ToString("yyyy-MM-dd");
+            string sql_query2 = string.Format("SELECT IDXe FROM XE WHERE Bienso='{0}' AND XE.IDXe  NOT IN (SELECT DISTINCT XE.IDXe FROM XE, DONHANGSUACHUA,THANHTOAN WHERE XE.IDXe=DONHANGSUACHUA.IDXe AND DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang AND THANHTOAN.Ngayxuat>'{1}')", bienso,date.ToString());
             SqlDataAdapter da = new SqlDataAdapter(sql_query2, _conn);
             DataTable daBienso = new DataTable();
             da.Fill(daBienso);

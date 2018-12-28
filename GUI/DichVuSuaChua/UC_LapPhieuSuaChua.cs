@@ -203,6 +203,9 @@ namespace GUI.DichVuSuaChua
             cmbLoaiXe.DataSource = null;
             cmbLoaiXe.Items.Clear();
             cmbLoaiXe.SelectedIndex = -1;
+
+            
+
             txbDienThoai.Text = lpsc.getSodienthoai(getCMND()).Rows[0][0].ToString();
             // txbDienThoai.Enabled = true;
         }
@@ -226,7 +229,13 @@ namespace GUI.DichVuSuaChua
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void cmbBienSoXe_SelectedIndexChanged(object sender, EventArgs e)
+
         {
+            cmbNhanVienSuaChua.Text = "";
+            cmbNhanVienSuaChua.DataSource = null;
+            cmbNhanVienSuaChua.Items.Clear();
+            cmbNhanVienSuaChua.SelectedIndex = -1;
+
             cmbNhanVienSuaChua.Enabled = true;
             for (int i = 0; i < lpsc.getNhanvien().Rows.Count; i++)
             {
@@ -257,6 +266,8 @@ namespace GUI.DichVuSuaChua
         /// <param name="e"></param>
         private void cmbNhanVienSuaChua_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LoaiDichVu.DataSource = null;
+            LoaiDichVu.Items.Clear();
             dtgvChiTietSuaChua.Enabled = true;
             foreach (DataRow dr in lpsc.getDichvu().Rows)
             {
@@ -312,6 +323,12 @@ namespace GUI.DichVuSuaChua
             else if(dtgvChiTietSuaChua.RowCount<=0)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin đơn hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+            else if(lpsc.CheckExitsCar(getBienso())==true)
+            {
+                MessageBox.Show("Hóa đơn cho xe này vẫn chưa thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -412,6 +429,8 @@ namespace GUI.DichVuSuaChua
         public bool Checkfullrow()
         {
             if (dtgvChiTietSuaChua.RowCount <= 0) return false;
+            if (dtgvChiTietSuaChua.Rows[0].Cells[0].Value==null)
+                return false;
             int row = dtgvChiTietSuaChua.CurrentCell.RowIndex;
             if (this.dtgvChiTietSuaChua.Rows[row].Cells[0].Value != null && this.dtgvChiTietSuaChua.Rows[row].Cells[1].Value != null
                && this.dtgvChiTietSuaChua.Rows[row].Cells[2].Value != null)
@@ -540,5 +559,18 @@ namespace GUI.DichVuSuaChua
                else  dtgvChiTietSuaChua.Rows.RemoveAt(item.Index);
             }
         }
+
+        //private void cmbNhanVienSuaChua_Click(object sender, EventArgs e)
+        //{
+        //    cmbNhanVienSuaChua.Text = "";
+        //    cmbNhanVienSuaChua.DataSource = null;
+        //    cmbNhanVienSuaChua.Items.Clear();
+        //    cmbNhanVienSuaChua.SelectedIndex = -1;
+
+        //    for (int i = 0; i < lpsc.getNhanvien().Rows.Count; i++)
+        //    {
+        //        cmbNhanVienSuaChua.Items.Add(lpsc.getNhanvien().Rows[i][0] + " - " + lpsc.getNhanvien().Rows[i][1]);
+        //    }
+        //}
     }
 }

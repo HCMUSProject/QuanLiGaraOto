@@ -40,6 +40,10 @@ namespace BUS
         {
             return psc.getKhachhang();
         }
+        public bool CheckExitsCar(string bienso)
+        {
+            return psc.CheckExitsCar(bienso);
+        }
         public DataTable getVattu()
         {
             return psc.getVattu();
