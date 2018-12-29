@@ -15,6 +15,7 @@ namespace GUI.QuanLiKhachHang
     public partial class UC_QuanLiKhachHang : UserControl
     {
         BUS_Khachhangsuachua BUS_KHSC = new BUS_Khachhangsuachua();
+        string CMND;//kiểm tra Có đang sửa CMND hay không
         public static void CapNhatDtgvKhachHang(DataGridView dtgvKhachHang, UC_QuanLiKhachHang KHSC)
         {
             dtgvKhachHang.DataSource = null;
@@ -108,6 +109,9 @@ namespace GUI.QuanLiKhachHang
             txbCMND.Text = row.Cells[1].Value.ToString().Trim();
             txbSDT.Text = row.Cells[5].Value.ToString().Trim();
 
+            //kiểm tra trong chức năng sửa có sửa CMND hay không
+            CMND = txbCMND.Text;
+
             if (row.Cells[4].Value.ToString() == "Nam")
             {
                 rbNam.Checked = true;
@@ -137,7 +141,7 @@ namespace GUI.QuanLiKhachHang
                 //kiểm tra các trường dữ liệu đầu vào
                 if (txbCMND.Text.All(char.IsDigit) == false || (txbCMND.Text.Length != 9 && txbCMND.Text.Length != 12))
                 {
-                    MessageBox.Show("CMND không hợp lệ!");
+                    MessageBox.Show("CMND không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txbCMND.Text = "";
                     return;
                 }
@@ -151,7 +155,7 @@ namespace GUI.QuanLiKhachHang
 
                     if (dttb.Rows.Count > 0)
                     {
-                        MessageBox.Show("Người này đã tồn tại!");
+                        MessageBox.Show("Người này đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);                       
                         CapNhatDtgvKhachHang(dtgvKhachHang, this);
                         return;
                     }
@@ -161,7 +165,7 @@ namespace GUI.QuanLiKhachHang
 
                 if (txbSDT.Text.All(char.IsDigit) == false)
                 {
-                    MessageBox.Show("SĐT không hợp lệ!");
+                    MessageBox.Show("SĐT không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);                    
                     txbSDT.Text = "";
                     return;
                 }
@@ -183,31 +187,57 @@ namespace GUI.QuanLiKhachHang
 
                 // Them
                 if (BUS_KHSC.themKhachHangSuaChua(KHSC))
-                {
-                    MessageBox.Show("Thêm thành công");
+                {                   
+                    MessageBox.Show("Thêm thành công!");
                     UC_QuanLiKhachHang This = this;
                     CapNhatDtgvKhachHang(dtgvKhachHang, This);
 
                 }
                 else
                 {
-                    MessageBox.Show("Thêm không thành công!");
+                    MessageBox.Show("Thêm không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);                   
                 }
                 // dtgvKhachHang.ClearSelection();
             }
             else
             {
-                MessageBox.Show("Xin nhập vào không đầy đủ!");
+                MessageBox.Show("Xin nhập vào không đầy đủ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                
             }
         }
 
         private void BtnSua_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("trước" + CMND);
             capNhatGroupBoxQuanLyThongTin(dtgvKhachHang, this);
             if (dtgvKhachHang.SelectedRows.Count > 0)
             {
                 if (txbTen.Text != "" && txbCMND.Text != "" && txbSDT.Text != "" && txbDiaChi.Text != "" && (rbNam.Checked == true || rbNu.Checked == true))
                 {
+                    //kiểm tra các trường dữ liệu đầu vào
+                    if (txbCMND.Text.All(char.IsDigit) == false || (txbCMND.Text.Length != 9 && txbCMND.Text.Length != 12))
+                    {
+                        MessageBox.Show("CMND không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txbCMND.Text = "";
+                        return;
+                    }
+                    else
+                    {
+                        // Tạo DTo
+                        DTO_Khachhangsuachua khCMND = new DTO_Khachhangsuachua(0, txbCMND.Text, "", "", "", "", dtpkNgaySinh.Value.Date);
+                        // Tìm kiếm
+                        DataTable dttb = null;
+                        dttb = BUS_KHSC.getKhachHangSuaChua(khCMND);
+                        MessageBox.Show("sau" + CMND + "txb" + txbCMND.Text);
+                        if (dttb.Rows.Count >= 1 && CMND != txbCMND.Text)
+                        {
+                            MessageBox.Show("Người này đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);                            
+                            CapNhatDtgvKhachHang(dtgvKhachHang, this);
+                            return;
+                        }
+
+
+                    }
+
                     // Lấy row hiện tại
                     DataGridViewRow row = dtgvKhachHang.SelectedRows[0];
                     int ID = Convert.ToInt16(row.Cells[0].Value.ToString());
@@ -218,24 +248,26 @@ namespace GUI.QuanLiKhachHang
                     // Sửa
                     if (BUS_KHSC.suaKhachHangSuaChua(KHSC))
                     {
-                        MessageBox.Show("Sửa thành công");
+                        MessageBox.Show("Sửa thành công!");
                         CapNhatDtgvKhachHang(dtgvKhachHang, this);
 
                     }
                     else
                     {
-                        MessageBox.Show("Sửa ko thành công");
+                        MessageBox.Show("Sửa không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        
                     }
                     //dtgvKhachHang.ClearSelection();
                 }
                 else
                 {
-                    MessageBox.Show("Xin hãy nhập đầy đủ");
+                    MessageBox.Show("Xin hãy nhập đầy đủ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);                    
                 }
             }
             else
             {
-                MessageBox.Show("Hãy chọn thành viên muốn sửa");
+                MessageBox.Show("Hãy chọn thành viên muốn sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
             }
         }
 
@@ -252,20 +284,22 @@ namespace GUI.QuanLiKhachHang
                 // Xóa
                 if (BUS_KHSC.xoaKhachHangSuaChua(ID))
                 {
-                    MessageBox.Show("Xóa thành công");
+                    MessageBox.Show("Xóa thành công!");
                     CapNhatDtgvKhachHang(dtgvKhachHang, this);
                     //dtgvKhachHang.DataSource = busTV.getThanhVien(); // refresh datagridview
 
                 }
                 else
                 {
-                    MessageBox.Show("Xóa ko thành công");
+                    MessageBox.Show("Xóa ko thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    
                 }
                 //dtgvKhachHang.ClearSelection();
             }
             else
             {
-                MessageBox.Show("Hãy chọn thành viên muốn xóa");
+                MessageBox.Show("Hãy chọn thành viên muốn xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
             }
         }
 
@@ -273,7 +307,8 @@ namespace GUI.QuanLiKhachHang
         {
             if (txbTimKiemTen.Text == "" && txbTimKiemCMND.Text == "" && txbTimKiemSDT.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập thông tin tìm kiếm!");
+                MessageBox.Show("Vui lòng nhập thông tin tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
             }
             else
             {
@@ -306,6 +341,11 @@ namespace GUI.QuanLiKhachHang
                 dtgvKhachHang.Columns["Ngaysinh"].FillWeight = 80;
                 dtgvKhachHang.Columns["Gioitinh"].FillWeight = 40;
             }
+        }
+
+        private void txbCMND_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
