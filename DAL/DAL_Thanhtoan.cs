@@ -12,6 +12,11 @@ namespace DAL
 {
     public class DAL_Thanhtoan:DAL_DBConnect
     {
+        /// <summary>
+        /// get ma don hang
+        /// </summary>
+        /// <param name="bienso"></param>
+        /// <returns></returns>
         public string getMadonhang(string bienso)
         {
             string query = string.Format("SELECT DH.Madonhang FROM  DONHANGSUACHUA as DH , XE WHERE XE.Bienso ='{0}' " +
@@ -22,16 +27,25 @@ namespace DAL
             return result.Rows[0][0].ToString();
         }
 
-        
+        /// <summary>
+        /// get bang khach hang de dua vao cmbKhachhang
+        /// </summary>
+        /// <returns></returns>
         public DataTable getKhachhang()
         {
             string query = string.Format("SELECT DISTINCT KHACHHANGSUACHUA.Ten,KHACHHANGSUACHUA.CMND FROM " +
-                "KHACHHANGSUACHUA,DONHANGSUACHUA,THANHTOAN WHERE KHACHHANGSUACHUA.Makhachhang=DONHANGSUACHUA.Makhachhang AND DONHANGSUACHUA.Madonhang NOT IN(SELECT DISTINCT DONHANGSUACHUA.Madonhang FROM DONHANGSUACHUA,THANHTOAN WHERE DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang)");
+                "KHACHHANGSUACHUA,DONHANGSUACHUA WHERE KHACHHANGSUACHUA.Makhachhang=DONHANGSUACHUA.Makhachhang AND DONHANGSUACHUA.Madonhang NOT IN(SELECT DISTINCT DONHANGSUACHUA.Madonhang FROM DONHANGSUACHUA, THANHTOAN WHERE DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang)");
             SqlDataAdapter kh = new SqlDataAdapter(query, _conn);
             DataTable result = new DataTable();
             kh.Fill(result);
             return result;
         }
+
+        /// <summary>
+        /// get so dien thoai de dua vao txbSodienthoai
+        /// </summary>
+        /// <param name="cmnd"></param>
+        /// <returns></returns>
         public string getSodienthoai(string cmnd)
         {
             string query = string.Format("SELECT Sodienthoai FROM KHACHHANGSUACHUA WHERE CMND='{0}'",cmnd);
@@ -40,6 +54,11 @@ namespace DAL
             dt.Fill(result);
             return result.Rows[0][0].ToString();
         }
+        /// <summary>
+        /// get Hieu xe de dua vao cmbHieuxe
+        /// </summary>
+        /// <param name="cmnd"></param>
+        /// <returns></returns>
         public DataTable getHieuxe(string cmnd)
         {
             string query = string.Format("SELECT DISTINCT HX.Tenhieuxe FROM KHACHHANGSUACHUA as KH,DONHANGSUACHUA as DH," +
@@ -49,6 +68,12 @@ namespace DAL
             hieuxe.Fill(result);
             return result;
         }
+        /// <summary>
+        /// get Bien so de dua vao cmbBienso
+        /// </summary>
+        /// <param name="cmnd"></param>
+        /// <param name="hieuxe"></param>
+        /// <returns></returns>
         public DataTable getBienso(string cmnd, string hieuxe)
         {
             string query = string.Format("SELECT DISTINCT XE.Bienso FROM KHACHHANGSUACHUA as KH, DONHANGSUACHUA as DH,XE,HIEUXE " +
@@ -59,6 +84,11 @@ namespace DAL
             bienso.Fill(result);
             return result;
         }
+        /// <summary>
+        /// get nhan vien sua chua de dua vao txbNhanviensua
+        /// </summary>
+        /// <param name="bienso"></param>
+        /// <returns></returns>
         public string getNhanviensua(string bienso)
         {
             string query = string.Format("SELECT DISTINCT NV.Ten,NV.CMND FROM NHANVIEN as NV, XE, DONHANGSUACHUA as DH WHERE XE.Bienso='{0}' AND " +
@@ -68,6 +98,10 @@ namespace DAL
             nv.Fill(result);
             return result.Rows[0][0].ToString()+"-"+result.Rows[0][1].ToString();
         }
+        /// <summary>
+        /// get id max de tao thanh id cua phieu thanh toan hien tai
+        /// </summary>
+        /// <returns></returns>
         public string getMaxid()
         {
             string query = string.Format("SElECT MAX(IDThanhToan) FROM THANHTOAN");
@@ -76,6 +110,11 @@ namespace DAL
             maxid.Fill(result);
             return result.Rows[0][0].ToString();
         }
+        /// <summary>
+        /// get so luong chi tiet don hang của 1 ma don hang
+        /// </summary>
+        /// <param name="bienso"></param>
+        /// <returns></returns>
         public int getSoluongctdh(string bienso)
         {
             string query = string.Format("SElECT * FROM CHITIETDONHANG WHERE Madonhang = '{0}' AND Madonhang DH.Madonhang NOT IN (SELECT DISTINCT DONHANGSUACHUA.Madonhang FROM DONHANGSUACHUA,THANHTOAN WHERE DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang)", getMadonhang(bienso));
@@ -84,6 +123,11 @@ namespace DAL
             maxid.Fill(result);
             return result.Rows.Count;
         }
+        /// <summary>
+        /// get data de dua vao dtgvChitietsuachua
+        /// </summary>
+        /// <param name="bienso"></param>
+        /// <returns></returns>
         public DataTable getDataGird(string bienso)
         {
             string query = string.Format("SELECT DV.Tendichvu,VT.Tenvattu,CT.Soluong FROM LOAIDICHVU as DV , VATTU as VT, CHITIETDONHANG as CT,XE,DONHANGSUACHUA as DH WHERE XE.Bienso ='{0}' AND XE.IDXe = DH.IDXe AND DH.Madonhang=CT.Madonhang AND CT.Mavattu=VT.Mavattu AND CT.Madichvu=DV.Madichvu AND DH.Madonhang NOT IN (SELECT DISTINCT DONHANGSUACHUA.Madonhang FROM DONHANGSUACHUA,THANHTOAN WHERE DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang)", bienso);

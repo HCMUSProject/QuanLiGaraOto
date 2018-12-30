@@ -65,7 +65,7 @@ namespace DAL
         }
         public bool CheckExitsCar(string bienso)
         {
-            string query = string.Format("SElECT Madonhang FROM DONHANGSUACHUA WHERE IDXe='{0}'AND Madonhang DH.Madonhang NOT IN (SELECT DISTINCT DONHANGSUACHUA.Madonhang FROM DONHANGSUACHUA,THANHTOAN WHERE DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang)", getIDxe(bienso));
+            string query = string.Format("SElECT Madonhang FROM DONHANGSUACHUA WHERE IDXe='{0}'AND Madonhang NOT IN (SELECT DISTINCT DONHANGSUACHUA.Madonhang FROM DONHANGSUACHUA,THANHTOAN WHERE DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang)", getIDxe(bienso));
             SqlDataAdapter dichvu = new SqlDataAdapter(query, _conn);
             DataTable result = new DataTable();
             dichvu.Fill(result);

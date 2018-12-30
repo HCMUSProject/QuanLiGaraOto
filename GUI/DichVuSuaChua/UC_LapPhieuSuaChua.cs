@@ -200,9 +200,7 @@ namespace GUI.DichVuSuaChua
 
         {
             cmbLoaiXe.Text = "";
-            cmbLoaiXe.DataSource = null;
-            cmbLoaiXe.Items.Clear();
-            cmbLoaiXe.SelectedIndex = -1;
+           
 
             
 
@@ -217,6 +215,9 @@ namespace GUI.DichVuSuaChua
         /// <param name="e"></param>
         private void txbDienThoai_TextChanged(object sender, EventArgs e)
         {
+            cmbLoaiXe.DataSource = null;
+            cmbLoaiXe.Items.Clear();
+            cmbLoaiXe.SelectedIndex = -1;
             cmbLoaiXe.Enabled = true;
             foreach (DataRow dr in lpsc.getHieuxe(getCMND()).Rows)
             {
@@ -329,7 +330,7 @@ namespace GUI.DichVuSuaChua
             else if(lpsc.CheckExitsCar(getBienso())==true)
             {
                 MessageBox.Show("Hóa đơn cho xe này vẫn chưa thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                XoaDuLieu();
             }
             else
             {

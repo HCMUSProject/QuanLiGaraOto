@@ -119,6 +119,8 @@ Ngaylapdonhang datetime not null,
 Tongtien bigint not null,
 constraint PK_DHSC primary key(Madonhang)
 )
+
+
 Go
 --10.Tao bang chi tiet don hang
 CREATE TABLE CHITIETDONHANG
@@ -368,8 +370,8 @@ GO
 insert into KHACHHANGSUACHUA values('221441222',N'Đào Thị Như Quỳnh',N'Phú Yên',N'Nữ','0330022015','05-28-00')
 insert into KHACHHANGSUACHUA values('221441223',N'Trần Văn Quý',N'Nam Định',N'Nam','0330022016','05-02-94')
 insert into KHACHHANGSUACHUA values('221441224',N'Hồ Tuấn Thanh',N'Lạng Sơn',N'Nam','0330022017','06-28-95')
-insert into KHACHHANGSUACHUA values('221441222',N'Trần Duy Quang',N'Bạc Liêu',N'Nam','0330022018','03-18-95')
-insert into KHACHHANGSUACHUA values('221441222',N'Thái Lê Vinh',N'Cà Mau',N'Nam','0330022019','05-12-94')
+insert into KHACHHANGSUACHUA values('221441225',N'Trần Duy Quang',N'Bạc Liêu',N'Nam','0330022018','03-18-95')
+insert into KHACHHANGSUACHUA values('221441226',N'Thái Lê Vinh',N'Cà Mau',N'Nam','0330022019','05-12-94')
 
 GO
 --Bảng Xe

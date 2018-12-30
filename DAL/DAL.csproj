@@ -45,6 +45,7 @@
     <Compile Include="DAL_DBConnect.cs" />
     <Compile Include="DAL_Khachhangsuachua.cs" />
     <Compile Include="DAL_Lapphieusuachua.cs" />
+    <Compile Include="DAL_Lichsusuachua.cs" />
     <Compile Include="DAL_Quanlixe.cs" />
     <Compile Include="DAL_Thanhtoan.cs" />
     <Compile Include="DAL_Tiepnhanxe.cs" />
