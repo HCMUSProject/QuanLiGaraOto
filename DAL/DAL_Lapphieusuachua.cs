@@ -130,7 +130,7 @@ namespace DAL
         /// <returns></returns>
         public string getGiathanh(int mavt)
         {
-            string query = string.Format("SElECT Giathanh FROM LICHSUNHAPKHO WHERE Mavattu='{0}'",mavt);
+            string query = string.Format("SElECT LS.Giathanh FROM LICHSUNHAPKHO AS LS WHERE LS.Mavattu='{0}' AND LS.Ngaynhapkho=(select MAX(LICHSUNHAPKHO.Ngaynhapkho)from LICHSUNHAPKHO WHERE LICHSUNHAPKHO.Mavattu=LS.Mavattu)", mavt);
             SqlDataAdapter vattu = new SqlDataAdapter(query, _conn);
             DataTable result = new DataTable();
             vattu.Fill(result);

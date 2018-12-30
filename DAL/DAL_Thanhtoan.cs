@@ -20,7 +20,7 @@ namespace DAL
         public string getMadonhang(string bienso)
         {
             string query = string.Format("SELECT DH.Madonhang FROM  DONHANGSUACHUA as DH , XE WHERE XE.Bienso ='{0}' " +
-                "AND DH.IDXe = XE.IDXe", bienso);
+                "AND DH.IDXe = XE.IDXe AND DH.Madonhang NOT IN(SELECT DISTINCT DONHANGSUACHUA.Madonhang FROM DONHANGSUACHUA, THANHTOAN WHERE DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang)", bienso);
             SqlDataAdapter dt = new SqlDataAdapter(query, _conn);
             DataTable result = new DataTable();
             dt.Fill(result);
@@ -135,7 +135,7 @@ namespace DAL
             DataTable result = new DataTable();
             a.Fill(result);
 
-            string query1 = string.Format("SELECT LS.Giathanh FROM LICHSUNHAPKHO as LS, XE, DONHANGSUACHUA as DH, CHITIETDONHANG as CT WHERE XE.Bienso ='{0}' AND XE.IDXe = DH.IDXe AND DH.Madonhang=CT.Madonhang AND CT.Mavattu=LS.Mavattu AND DH.Madonhang NOT IN (SELECT DISTINCT DONHANGSUACHUA.Madonhang FROM DONHANGSUACHUA,THANHTOAN WHERE DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang)", bienso);
+            string query1 = string.Format("SELECT LS.Giathanh FROM LICHSUNHAPKHO as LS, XE, DONHANGSUACHUA as DH, CHITIETDONHANG as CT WHERE XE.Bienso ='{0}' AND XE.IDXe = DH.IDXe AND DH.Madonhang=CT.Madonhang AND CT.Mavattu=LS.Mavattu AND LS.Ngaynhapkho=(select MAX(LICHSUNHAPKHO.Ngaynhapkho)from LICHSUNHAPKHO WHERE LICHSUNHAPKHO.Mavattu=LS.Mavattu) AND DH.Madonhang NOT IN (SELECT DISTINCT DONHANGSUACHUA.Madonhang FROM DONHANGSUACHUA,THANHTOAN WHERE DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang)", bienso);
             string query2 = string.Format("SELECT DV.Giadichvu FROM LOAIDICHVU as DV, XE, DONHANGSUACHUA as DH, CHITIETDONHANG as CT WHERE XE.Bienso ='{0}' AND XE.IDXe = DH.IDXe AND DH.Madonhang=CT.Madonhang AND CT.Madichvu=DV.Madichvu AND DH.Madonhang NOT IN (SELECT DISTINCT DONHANGSUACHUA.Madonhang FROM DONHANGSUACHUA,THANHTOAN WHERE DONHANGSUACHUA.Madonhang=THANHTOAN.Madonhang)", bienso);
 
             SqlDataAdapter a1 = new SqlDataAdapter(query1, _conn);

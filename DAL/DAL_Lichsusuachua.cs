@@ -41,7 +41,7 @@ namespace DAL
 
             /*DataTable don gia*/
             string query1 = string.Format("select DV.Giadichvu from CHITIETDONHANG as CT, LOAIDICHVU as DV where CT.Madonhang='{0}' and CT.Madichvu=DV.Madichvu",madonhang);
-            string query2 = string.Format("select LS.Giathanh from CHITIETDONHANG as CT, LICHSUNHAPKHO as LS where CT.Madonhang='{0}' and CT.Mavattu=LS.Mavattu",madonhang);
+            string query2 = string.Format("select LS.Giathanh from CHITIETDONHANG as CT, LICHSUNHAPKHO as LS where CT.Madonhang='{0}' and CT.Mavattu=LS.Mavattu AND LS.Ngaynhapkho=(select MAX(LICHSUNHAPKHO.Ngaynhapkho)from LICHSUNHAPKHO WHERE LICHSUNHAPKHO.Mavattu=LS.Mavattu)", madonhang);
 
             SqlDataAdapter a1 = new SqlDataAdapter(query2, _conn);
             SqlDataAdapter a2 = new SqlDataAdapter(query1, _conn);
