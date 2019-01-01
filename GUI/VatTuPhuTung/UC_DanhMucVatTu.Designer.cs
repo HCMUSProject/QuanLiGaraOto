@@ -116,7 +116,6 @@
             this.dtgvDanhMuc.TabIndex = 6;
             this.dtgvDanhMuc.TabStop = false;
             this.dtgvDanhMuc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDanhMuc_CellClick);
-            this.dtgvDanhMuc.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDanhMuc_RowEnter);
             // 
             // BtnXoa
             // 

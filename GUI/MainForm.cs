@@ -15,6 +15,7 @@ namespace GUI
     {
         private int m_nLoaiNhanVien = 1;
         private string m_strUsername;
+        private int m_MaNhanVien = 1;
 
         public MainForm()
         {
@@ -290,11 +291,15 @@ namespace GUI
                     PanelContent.Controls.Add(VatTuPhuTung.UC_CapNhatVatTu.Instance);
                     VatTuPhuTung.UC_CapNhatVatTu.Instance.Dock = DockStyle.Fill;
                     VatTuPhuTung.UC_CapNhatVatTu.Instance.BringToFront();
+                    VatTuPhuTung.UC_CapNhatVatTu.Instance.UC_CapNhatVatTu_Load();
+
+                    VatTuPhuTung.UC_CapNhatVatTu.Instance.GetMaNhanVien(m_MaNhanVien);
                 }
                 else
                 {
                     VatTuPhuTung.UC_CapNhatVatTu.Instance.XoaDuLieu();
                     VatTuPhuTung.UC_CapNhatVatTu.Instance.BringToFront();
+                    VatTuPhuTung.UC_CapNhatVatTu.Instance.UC_CapNhatVatTu_Load();
                 }
 
                 //MessageBox.Show("BtnQuanLiXe");

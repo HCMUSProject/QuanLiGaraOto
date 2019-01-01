@@ -48,21 +48,6 @@ namespace GUI.VatTuPhuTung
             isLoaded = false;
         }
 
-        
-
-        private void dtgvDanhMuc_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            //if (isLoaded == true)
-            //{
-            //    BtnThem.Enabled = false;
-            //    BtnSua.Enabled = true;
-
-            //    isFocusGridView = true;
-
-            //    txbDanhMuc.Text = dtgvDanhMuc.SelectedRows[0].Cells["Tendanhmuc"].Value.ToString();
-            //}
-        }
-
         private void UC_DanhMucVatTu_CLick(object sender, EventArgs e)
         {
             BtnThem.Enabled = true;
@@ -112,6 +97,19 @@ namespace GUI.VatTuPhuTung
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
+            // kiểm tranh danh mục có trùng với danh mục đã có
+
+            foreach(DataGridViewRow row in dtgvDanhMuc.Rows)
+            {
+                if (row.Cells["Tendanhmuc"].Value.ToString().ToLower() == strThemDanhMuc.ToLower())
+                {
+                    MessageBox.Show($"Tên danh mục '{ strThemDanhMuc}' bị trùng!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
 
             DialogResult rs = MessageBox.Show($"Thêm danh mục {strThemDanhMuc} ?", "Thông báo",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Information);

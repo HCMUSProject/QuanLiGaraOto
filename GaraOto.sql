@@ -99,7 +99,6 @@ CREATE TABLE LICHSUNHAPKHO
 (
 IDLichsunhapkho int identity(0,1) not null,
 Mavattu int not null,
-Tenvattu nvarchar(45) not null,
 Giathanh bigint not null,
 Ngaynhapkho datetime not null,
 Manhanviennhap int not null,

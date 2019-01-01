@@ -21,7 +21,7 @@ namespace BUS
 
         public DataTable GetDanhMucVatTu()
         {
-            return dal_DanhMuc.GetDanhMucVatTu(); ;
+            return dal_DanhMuc.GetDanhMucVatTu();
         }
 
         public List<DTO_Danhmucvt> TimKiemDanhMuc(string TenDanhMuc)
