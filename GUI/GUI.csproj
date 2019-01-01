@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ChreneLib">
+      <HintPath>..\..\..\ChreneLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -305,6 +308,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user-login-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-username.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_quit_37278.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

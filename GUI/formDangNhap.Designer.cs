@@ -28,111 +28,175 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txbMatKhau = new System.Windows.Forms.TextBox();
-            this.txbTaiKhoan = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.BtnDangNhap = new System.Windows.Forms.Button();
-            this.picAvatar = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnExits = new System.Windows.Forms.Button();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.ctxbPassword = new ChreneLib.Controls.TextBoxes.CTextBox();
+            this.cTxbUserName = new ChreneLib.Controls.TextBoxes.CTextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txbMatKhau
+            // panel1
             // 
-            this.txbMatKhau.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txbMatKhau.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMatKhau.Location = new System.Drawing.Point(327, 210);
-            this.txbMatKhau.Name = "txbMatKhau";
-            this.txbMatKhau.Size = new System.Drawing.Size(234, 26);
-            this.txbMatKhau.TabIndex = 8;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.cTxbUserName);
+            this.panel1.Controls.Add(this.ctxbPassword);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(0, 105);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(400, 177);
+            this.panel1.TabIndex = 6;
             // 
-            // txbTaiKhoan
+            // panel2
             // 
-            this.txbTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txbTaiKhoan.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTaiKhoan.Location = new System.Drawing.Point(327, 138);
-            this.txbTaiKhoan.Name = "txbTaiKhoan";
-            this.txbTaiKhoan.Size = new System.Drawing.Size(234, 26);
-            this.txbTaiKhoan.TabIndex = 7;
+            this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(38, 177);
+            this.panel2.TabIndex = 0;
             // 
-            // label2
+            // btnLogin
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(218, 213);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 19);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Mật khẩu";
+            this.btnLogin.AutoSize = true;
+            this.btnLogin.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLogin.FlatAppearance.BorderSize = 4;
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(260, 350);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(128, 49);
+            this.btnLogin.TabIndex = 8;
+            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // label1
+            // btnExits
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(218, 141);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 19);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Tài khoản";
+            this.btnExits.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnExits.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnExits.FlatAppearance.BorderSize = 4;
+            this.btnExits.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnExits.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExits.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExits.ForeColor = System.Drawing.Color.White;
+            this.btnExits.Location = new System.Drawing.Point(139, 351);
+            this.btnExits.Name = "btnExits";
+            this.btnExits.Size = new System.Drawing.Size(77, 48);
+            this.btnExits.TabIndex = 7;
+            this.btnExits.Text = "Thoát";
+            this.btnExits.UseVisualStyleBackColor = false;
+            this.btnExits.Click += new System.EventHandler(this.btnExits_Click);
             // 
-            // label3
+            // lblLogin
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(159, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(258, 56);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Đăng Nhập";
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogin.Font = new System.Drawing.Font("Century", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.ForeColor = System.Drawing.Color.White;
+            this.lblLogin.Location = new System.Drawing.Point(25, 31);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(204, 41);
+            this.lblLogin.TabIndex = 5;
+            this.lblLogin.Text = "Đăng nhập";
             // 
-            // BtnDangNhap
+            // ctxbPassword
             // 
-            this.BtnDangNhap.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnDangNhap.AutoSize = true;
-            this.BtnDangNhap.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDangNhap.Location = new System.Drawing.Point(225, 283);
-            this.BtnDangNhap.Name = "BtnDangNhap";
-            this.BtnDangNhap.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.BtnDangNhap.Size = new System.Drawing.Size(110, 33);
-            this.BtnDangNhap.TabIndex = 10;
-            this.BtnDangNhap.Text = "Đăng nhập";
-            this.BtnDangNhap.UseVisualStyleBackColor = true;
+            this.ctxbPassword.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctxbPassword.Location = new System.Drawing.Point(126, 85);
+            this.ctxbPassword.Name = "ctxbPassword";
+            this.ctxbPassword.Size = new System.Drawing.Size(214, 31);
+            this.ctxbPassword.TabIndex = 7;
+            this.ctxbPassword.WaterMark = "Nhập mật khẩu";
+            this.ctxbPassword.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
+            this.ctxbPassword.WaterMarkFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctxbPassword.WaterMarkForeColor = System.Drawing.Color.LightGray;
+            this.ctxbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ctxbPassword_KeyDown);
             // 
-            // picAvatar
+            // cTxbUserName
             // 
-            this.picAvatar.Location = new System.Drawing.Point(22, 109);
-            this.picAvatar.Name = "picAvatar";
-            this.picAvatar.Size = new System.Drawing.Size(160, 160);
-            this.picAvatar.TabIndex = 11;
-            this.picAvatar.TabStop = false;
+            this.cTxbUserName.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cTxbUserName.Location = new System.Drawing.Point(126, 20);
+            this.cTxbUserName.Name = "cTxbUserName";
+            this.cTxbUserName.Size = new System.Drawing.Size(214, 31);
+            this.cTxbUserName.TabIndex = 8;
+            this.cTxbUserName.WaterMark = "Nhập tên đăng nhập";
+            this.cTxbUserName.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
+            this.cTxbUserName.WaterMarkFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cTxbUserName.WaterMarkForeColor = System.Drawing.Color.LightGray;
+            this.cTxbUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cTxbUserName_KeyDown);
+            this.cTxbUserName.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cTxbUserName_PreviewKeyDown);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BackgroundImage = global::GUI.Properties.Resources.iconfinder_quit_37278;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(360, -1);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 38);
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::GUI.Properties.Resources.icon_username;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(53, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 32);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.icon_password;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(53, 85);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // formDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(584, 361);
-            this.Controls.Add(this.picAvatar);
-            this.Controls.Add(this.BtnDangNhap);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txbMatKhau);
-            this.Controls.Add(this.txbTaiKhoan);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(400, 450);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.btnExits);
+            this.Controls.Add(this.lblLogin);
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(600, 400);
-            this.MinimumSize = new System.Drawing.Size(600, 400);
             this.Name = "formDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập - Quản lý Gara Oto";
             this.Load += new System.EventHandler(this.formDangNhap_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.formDangNhap_Paint);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,12 +204,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txbMatKhau;
-        private System.Windows.Forms.TextBox txbTaiKhoan;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button BtnDangNhap;
-        private System.Windows.Forms.PictureBox picAvatar;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel1;
+        private ChreneLib.Controls.TextBoxes.CTextBox cTxbUserName;
+        private ChreneLib.Controls.TextBoxes.CTextBox ctxbPassword;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnExits;
+        private System.Windows.Forms.Label lblLogin;
     }
 }

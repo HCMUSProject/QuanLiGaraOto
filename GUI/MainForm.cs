@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
 
 namespace GUI
 {
     public partial class MainForm : Form
     {
+        BUS_Nhanvien nv = new BUS_Nhanvien();
+        formDangNhap dangnhap = new formDangNhap();
         private int m_nLoaiNhanVien = 1;
         private string m_strUsername;
         private int m_MaNhanVien = 1;
@@ -21,7 +24,7 @@ namespace GUI
         {
             InitializeComponent();
         }
-        public MainForm(int LoaiNhanVien, string strUsername)
+        public MainForm(int LoaiNhanVien, string strUsername,int Manhanvien)
         {
             InitializeComponent();
 
@@ -33,11 +36,12 @@ namespace GUI
             // 1 : nhân viên
             this.m_nLoaiNhanVien = LoaiNhanVien;
             this.m_strUsername = strUsername;
-
+            this.m_MaNhanVien = Manhanvien;
 
             
             
         }
+        
         private void AutoSlideBar(Button ct)
         {
             slideBar.Show();
@@ -69,6 +73,7 @@ namespace GUI
             }
 
             // load avatar, load tên, load chức vụ
+            lbTenNhanVien.Text = this.m_strUsername;
         }
 
         private void BtnDichVuSuaChua_Click(object sender, EventArgs e)

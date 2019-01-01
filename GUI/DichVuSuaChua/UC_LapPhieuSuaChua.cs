@@ -342,35 +342,36 @@ namespace GUI.DichVuSuaChua
                 if (lpsc.lapdonhang(dh))
                 {
                     result = MessageBox.Show("Thêm đơn hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        for (int i = 0; i < dtgvChiTietSuaChua.RowCount; i++)
+                        {
+                            DTO_Chitietdonhang ct = new DTO_Chitietdonhang(0, Int32.Parse(txbMaPhieu.Text), getMavattu(i), getSoluong(i), Int32.Parse(lpsc.getMadichvu(getLoaidichvu(i))));
+                            if (ct == null)
+                            {
+                                i++;
+                            }
+                            else
+                            {
+                                if (lpsc.chitietdonhang(ct) == false)
+                                    MessageBox.Show("Fail1");
+                                int tmp = Int32.Parse(this.dtgvChiTietSuaChua.Rows[i].Cells[2].Value.ToString());
+                                int tmp2 = Int32.Parse(lpsc.getSoluongvattu(getMavattu(i)));
+                                if (lpsc.updateVattu(getMavattu(i), tmp2 - tmp) == false)
+                                    MessageBox.Show("Fail2");
+
+                            }
+                        }
+                        XoaDuLieu();
+                        UC_LapPhieuSuaChua_Load(sender, e);
+                    }
+
+
                 }
                 else
                 {
                     result = MessageBox.Show("Thêm đơn hàng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                if (result == DialogResult.OK)
-                {
-                    for (int i = 0; i < dtgvChiTietSuaChua.RowCount; i++)
-                    {
-                        DTO_Chitietdonhang ct = new DTO_Chitietdonhang(0, Int32.Parse(txbMaPhieu.Text), getMavattu(i), getSoluong(i), Int32.Parse(lpsc.getMadichvu(getLoaidichvu(i))));
-                        if (ct == null)
-                        {
-                            i++;
-                        }
-                        else
-                        {
-                            if (lpsc.chitietdonhang(ct) == false)
-                                MessageBox.Show("Fail1");
-                            int tmp = Int32.Parse(this.dtgvChiTietSuaChua.Rows[i].Cells[2].Value.ToString());
-                            int tmp2 = Int32.Parse(lpsc.getSoluongvattu(getMavattu(i)));
-                            if (lpsc.updateVattu(getMavattu(i), tmp2 - tmp) == false)
-                                MessageBox.Show("Fail2");
-
-                        }
-                    }
-                    XoaDuLieu();
-                    UC_LapPhieuSuaChua_Load(sender, e);
-                }
-
             }
         }
 
