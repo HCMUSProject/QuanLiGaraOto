@@ -33,6 +33,9 @@ namespace GUI.QuanLiKhachHang
             dtgvKhachHang.Columns["Ten"].DisplayIndex = 0;
             dtgvKhachHang.Columns["CMND"].DisplayIndex = 1;
             dtgvKhachHang.Columns["Ngaysinh"].DisplayIndex = 2;
+            dtgvKhachHang.Columns["Ngaysinh"].DefaultCellStyle.Format= "dd/MM/yyyy";
+            // dtgvVatTu.Columns["Ngaynhapkho"].DefaultCellStyle.Format = "dd/mm/yy hh:mm tt";
+
             dtgvKhachHang.Columns["Gioitinh"].DisplayIndex = 3;
             dtgvKhachHang.Columns["Sodienthoai"].DisplayIndex = 2;
             dtgvKhachHang.Columns["Diachi"].DisplayIndex = 5;
@@ -125,12 +128,16 @@ namespace GUI.QuanLiKhachHang
             txbDiaChi.Text = row.Cells[3].Value.ToString();
 
             //phần xử lý cho ngày sinh
-            string NgaySinh = row.Cells[6].Value.ToString();
+            //dtpkNgayNhap.Value = (DateTime)dtgvVatTu.SelectedRows[0].Cells["Ngaynhapkho"].Value;
+           // dtgvVatTu.Columns["Ngaynhapkho"].DefaultCellStyle.Format = "dd/mm/yy hh:mm tt";
+          
+            dtpkNgaySinh.Value = (DateTime)row.Cells[6].Value;
+            /*string NgaySinh = row.Cells[6].Value.ToString();
             string[] SortNgaySinh = NgaySinh.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
             string dt = dtpkNgaySinh.Value.ToShortDateString();
             DateTimePicker dateTimePicker = new DateTimePicker();
             dateTimePicker.Value = DateTime.ParseExact(SortNgaySinh[0].ToString(), "M/d/yyyy", CultureInfo.InvariantCulture);
-            dtpkNgaySinh.Value = dateTimePicker.Value;
+            dtpkNgaySinh.Value = dateTimePicker.Value;*/
         }
 
         private void BtnThem_Click(object sender, EventArgs e)

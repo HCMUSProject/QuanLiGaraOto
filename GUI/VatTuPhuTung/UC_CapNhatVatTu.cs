@@ -493,5 +493,10 @@ namespace GUI.VatTuPhuTung
                 
             }
         }
+
+        private void dtgvVatTu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

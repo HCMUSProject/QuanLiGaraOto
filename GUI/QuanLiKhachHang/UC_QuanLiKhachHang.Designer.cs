@@ -277,7 +277,8 @@
             // 
             // dtpkNgaySinh
             // 
-            this.dtpkNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpkNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpkNgaySinh.Location = new System.Drawing.Point(133, 256);
             this.dtpkNgaySinh.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dtpkNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
