@@ -46,9 +46,11 @@
     <Compile Include="DAL_DanhMucVatTu.cs" />
     <Compile Include="DAL_DBConnect.cs" />
     <Compile Include="DAL_Khachhangsuachua.cs" />
+    <Compile Include="DAL_KiemKeVatTu.cs" />
     <Compile Include="DAL_Lapphieusuachua.cs" />
     <Compile Include="DAL_Lichsusuachua.cs" />
     <Compile Include="DAL_Nhanvien.cs" />
+    <Compile Include="DAL_QuanLiNhapKho.cs" />
     <Compile Include="DAL_Quanlixe.cs" />
     <Compile Include="DAL_Thanhtoan.cs" />
     <Compile Include="DAL_Tiepnhanxe.cs" />

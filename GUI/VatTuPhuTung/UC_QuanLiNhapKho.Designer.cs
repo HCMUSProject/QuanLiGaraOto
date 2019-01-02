@@ -31,13 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvQuanLiNhapKho = new System.Windows.Forms.DataGridView();
-            this.DanhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HangSanXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VatTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NhanVienNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpkTo = new System.Windows.Forms.DateTimePicker();
             this.dtpkFrom = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,6 +40,7 @@
             this.lbSoLuongVatTu = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.BtnXem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvQuanLiNhapKho)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -69,14 +63,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgvQuanLiNhapKho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvQuanLiNhapKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvQuanLiNhapKho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DanhMuc,
-            this.HangSanXuat,
-            this.VatTu,
-            this.SoLuong,
-            this.DonGia,
-            this.NgayNhap,
-            this.NhanVienNhap});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,53 +80,12 @@
             this.dtgvQuanLiNhapKho.Size = new System.Drawing.Size(677, 557);
             this.dtgvQuanLiNhapKho.TabIndex = 0;
             // 
-            // DanhMuc
-            // 
-            this.DanhMuc.HeaderText = "Danh mục";
-            this.DanhMuc.Name = "DanhMuc";
-            this.DanhMuc.ReadOnly = true;
-            // 
-            // HangSanXuat
-            // 
-            this.HangSanXuat.HeaderText = "Hãng sản xuất";
-            this.HangSanXuat.Name = "HangSanXuat";
-            this.HangSanXuat.ReadOnly = true;
-            // 
-            // VatTu
-            // 
-            this.VatTu.HeaderText = "Vật tư";
-            this.VatTu.Name = "VatTu";
-            this.VatTu.ReadOnly = true;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
-            // 
-            // DonGia
-            // 
-            this.DonGia.HeaderText = "Đơn giá";
-            this.DonGia.Name = "DonGia";
-            this.DonGia.ReadOnly = true;
-            // 
-            // NgayNhap
-            // 
-            this.NgayNhap.HeaderText = "Ngày nhập";
-            this.NgayNhap.Name = "NgayNhap";
-            this.NgayNhap.ReadOnly = true;
-            // 
-            // NhanVienNhap
-            // 
-            this.NhanVienNhap.HeaderText = "Nhân viên nhập";
-            this.NhanVienNhap.Name = "NhanVienNhap";
-            this.NhanVienNhap.ReadOnly = true;
-            // 
             // dtpkTo
             // 
             this.dtpkTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpkTo.CustomFormat = "dd/MM/yy";
             this.dtpkTo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpkTo.Location = new System.Drawing.Point(887, 106);
             this.dtpkTo.Name = "dtpkTo";
             this.dtpkTo.Size = new System.Drawing.Size(101, 26);
@@ -149,8 +94,9 @@
             // dtpkFrom
             // 
             this.dtpkFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpkFrom.CustomFormat = "dd/MM/yy";
             this.dtpkFrom.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpkFrom.Location = new System.Drawing.Point(733, 106);
             this.dtpkFrom.Name = "dtpkFrom";
             this.dtpkFrom.Size = new System.Drawing.Size(101, 26);
@@ -186,7 +132,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(712, 167);
+            this.groupBox1.Location = new System.Drawing.Point(713, 211);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(275, 165);
             this.groupBox1.TabIndex = 12;
@@ -196,7 +142,7 @@
             // lbTongTien
             // 
             this.lbTongTien.AutoSize = true;
-            this.lbTongTien.Location = new System.Drawing.Point(171, 121);
+            this.lbTongTien.Location = new System.Drawing.Point(138, 120);
             this.lbTongTien.Name = "lbTongTien";
             this.lbTongTien.Size = new System.Drawing.Size(18, 19);
             this.lbTongTien.TabIndex = 3;
@@ -205,7 +151,7 @@
             // lbSoLuongVatTu
             // 
             this.lbSoLuongVatTu.AutoSize = true;
-            this.lbSoLuongVatTu.Location = new System.Drawing.Point(171, 61);
+            this.lbSoLuongVatTu.Location = new System.Drawing.Point(138, 60);
             this.lbSoLuongVatTu.Name = "lbSoLuongVatTu";
             this.lbSoLuongVatTu.Size = new System.Drawing.Size(18, 19);
             this.lbSoLuongVatTu.TabIndex = 2;
@@ -227,11 +173,26 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Số lượng vật tư nhập";
             // 
+            // BtnXem
+            // 
+            this.BtnXem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnXem.AutoSize = true;
+            this.BtnXem.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnXem.Location = new System.Drawing.Point(733, 155);
+            this.BtnXem.Name = "BtnXem";
+            this.BtnXem.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.BtnXem.Size = new System.Drawing.Size(92, 33);
+            this.BtnXem.TabIndex = 13;
+            this.BtnXem.Text = "Xem";
+            this.BtnXem.UseVisualStyleBackColor = true;
+            this.BtnXem.Click += new System.EventHandler(this.BtnXem_Click);
+            // 
             // UC_QuanLiNhapKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.BtnXem);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtpkTo);
             this.Controls.Add(this.dtpkFrom);
@@ -260,12 +221,6 @@
         private System.Windows.Forms.Label lbSoLuongVatTu;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DanhMuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HangSanXuat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VatTu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NhanVienNhap;
+        private System.Windows.Forms.Button BtnXem;
     }
 }

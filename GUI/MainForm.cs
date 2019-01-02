@@ -316,11 +316,13 @@ namespace GUI
                     PanelContent.Controls.Add(VatTuPhuTung.UC_QuanLiNhapKho.Instance);
                     VatTuPhuTung.UC_QuanLiNhapKho.Instance.Dock = DockStyle.Fill;
                     VatTuPhuTung.UC_QuanLiNhapKho.Instance.BringToFront();
+                    VatTuPhuTung.UC_QuanLiNhapKho.Instance.UC_QuanLiVatTu_Load();
                 }
                 else
                 {
                     VatTuPhuTung.UC_QuanLiNhapKho.Instance.XoaDuLieu();
                     VatTuPhuTung.UC_QuanLiNhapKho.Instance.BringToFront();
+                    VatTuPhuTung.UC_QuanLiNhapKho.Instance.UC_QuanLiVatTu_Load();
                 }
 
                 //MessageBox.Show("BtnLapPhieu");
@@ -332,11 +334,13 @@ namespace GUI
                     PanelContent.Controls.Add(VatTuPhuTung.UC_KiemKeVatTu.Instance);
                     VatTuPhuTung.UC_KiemKeVatTu.Instance.Dock = DockStyle.Fill;
                     VatTuPhuTung.UC_KiemKeVatTu.Instance.BringToFront();
+                    VatTuPhuTung.UC_KiemKeVatTu.Instance.UC_KiemKeVatTu_Load();
                 }
                 else
                 {
                     VatTuPhuTung.UC_KiemKeVatTu.Instance.XoaDuLieu();
                     VatTuPhuTung.UC_KiemKeVatTu.Instance.BringToFront();
+                    VatTuPhuTung.UC_KiemKeVatTu.Instance.UC_KiemKeVatTu_Load();
                 }
 
                 //MessageBox.Show("BtnLichSuSuaChua");

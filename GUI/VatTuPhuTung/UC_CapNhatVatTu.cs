@@ -73,7 +73,6 @@ namespace GUI.VatTuPhuTung
         {
             // tắt/ bật các button
             BtnThem.Enabled = true;
-            BtnImport.Enabled = true;
             BtnSua.Enabled = false;
 
             // khởi tạo mặc định
@@ -148,7 +147,6 @@ namespace GUI.VatTuPhuTung
             if (isLoaded == true)
             {
                 // bat tat cac button
-                BtnImport.Enabled = false;
                 BtnThem.Enabled = false;
                 BtnSua.Enabled = true;
 
@@ -171,7 +169,6 @@ namespace GUI.VatTuPhuTung
             if (isLoaded == true && isFocusGridView == true)
             {
                 // bat tat cac button
-                BtnImport.Enabled = true;
                 BtnThem.Enabled = true;
                 BtnSua.Enabled = false;
 

@@ -46,7 +46,6 @@
             this.dtpkNgayNhap = new System.Windows.Forms.DateTimePicker();
             this.dtpkGioNhap = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.BtnImport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvVatTu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -252,26 +251,11 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Thời gian";
             // 
-            // BtnImport
-            // 
-            this.BtnImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnImport.AutoSize = true;
-            this.BtnImport.Enabled = false;
-            this.BtnImport.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnImport.Location = new System.Drawing.Point(677, 528);
-            this.BtnImport.Name = "BtnImport";
-            this.BtnImport.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.BtnImport.Size = new System.Drawing.Size(146, 33);
-            this.BtnImport.TabIndex = 17;
-            this.BtnImport.Text = "Nhập từ Excel";
-            this.BtnImport.UseVisualStyleBackColor = true;
-            // 
             // UC_CapNhatVatTu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.BtnImport);
             this.Controls.Add(this.dtpkGioNhap);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dtpkNgayNhap);
@@ -315,6 +299,5 @@
         private System.Windows.Forms.DateTimePicker dtpkNgayNhap;
         private System.Windows.Forms.DateTimePicker dtpkGioNhap;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button BtnImport;
     }
 }
