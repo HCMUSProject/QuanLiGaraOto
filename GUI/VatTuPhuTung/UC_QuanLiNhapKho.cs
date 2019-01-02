@@ -8,13 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
-using System.Data;
 
 namespace GUI.VatTuPhuTung
 {
     public partial class UC_QuanLiNhapKho : UserControl
     {
-        BUS_QuanLiNhapKho bus_QuanLi = new BUS_QuanLiNhapKho();        
+        BUS_QuanLiNhapKho bus_QuanLi = new BUS_QuanLiNhapKho();
 
         private static UC_QuanLiNhapKho _instance;
         public static UC_QuanLiNhapKho Instance
