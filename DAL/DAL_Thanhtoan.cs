@@ -153,7 +153,7 @@ namespace DAL
                 int sl = Int32.Parse(result.Rows[i][2].ToString());
                 // DataRow destRow = dongia.NewRow();
                 // destRow[i] = (gt * sl + gdv).ToString();
-                object[] o = { (gt * sl + gdv).ToString()};
+                object[] o = { (gt *2* sl + gdv).ToString()};
                  dongia.Rows.Add(o);
             }
             DataTable final = new DataTable();

@@ -517,7 +517,7 @@ namespace GUI.DichVuSuaChua
                     int soluong = getSoluong(row);
                     int giathanh = Int32.Parse(lpsc.getGiathanh(getMavattu(row)));
                     int giadichvu = Int32.Parse(lpsc.getGiadichvu(getLoaidichvu(row)));
-                    int bill = soluong * giathanh + giadichvu;
+                    int bill = soluong * giathanh*2 + giadichvu;
 
 
                     this.dtgvChiTietSuaChua.Rows[row].Cells[3].Value = bill.ToString();
