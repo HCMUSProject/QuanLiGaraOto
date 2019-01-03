@@ -21,5 +21,18 @@ namespace BUS
         {
             return dalNhanVien.themNhanVien(NV, AC);
         }
+
+        public DataTable getNhanVien(DTO_NhanVien NV,DTO_Account AC)
+        {
+            return dalNhanVien.getNhanVien(NV, AC);
+        }
+        public bool suaNhanVien(DTO_NhanVien NV)
+        {
+            return dalNhanVien.suaNhanVien(NV);
+        }
+        public bool xoaNhanVien(int MaNV)
+        {
+            return dalNhanVien.xoaNhanVien(MaNV);
+        }
     }
 }

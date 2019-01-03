@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvXemNhanVIen = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,14 +66,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvXemNhanVIen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvXemNhanVIen.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvXemNhanVIen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvXemNhanVIen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvXemNhanVIen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvXemNhanVIen.Location = new System.Drawing.Point(13, 28);
             this.dtgvXemNhanVIen.MultiSelect = false;
@@ -285,6 +285,7 @@
             this.BtnXoa.TabIndex = 10;
             this.BtnXoa.Text = "Xóa";
             this.BtnXoa.UseVisualStyleBackColor = true;
+            this.BtnXoa.Click += new System.EventHandler(this.BtnXoa_Click);
             // 
             // BtnSua
             // 
@@ -298,6 +299,7 @@
             this.BtnSua.TabIndex = 9;
             this.BtnSua.Text = "Sửa";
             this.BtnSua.UseVisualStyleBackColor = true;
+            this.BtnSua.Click += new System.EventHandler(this.BtnSua_Click);
             // 
             // BtnThem
             // 
@@ -311,6 +313,7 @@
             this.BtnThem.TabIndex = 8;
             this.BtnThem.Text = "Thêm";
             this.BtnThem.UseVisualStyleBackColor = true;
+            this.BtnThem.Click += new System.EventHandler(this.BtnThem_Click);
             // 
             // UC_QuanLiThongTinNV
             // 

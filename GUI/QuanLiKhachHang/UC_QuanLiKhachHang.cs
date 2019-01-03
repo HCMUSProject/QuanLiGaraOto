@@ -215,7 +215,7 @@ namespace GUI.QuanLiKhachHang
 
         private void BtnSua_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("trước" + CMND);
+           
             capNhatGroupBoxQuanLyThongTin(dtgvKhachHang, this);
             if (dtgvKhachHang.SelectedRows.Count > 0)
             {
@@ -235,7 +235,7 @@ namespace GUI.QuanLiKhachHang
                         // Tìm kiếm
                         DataTable dttb = null;
                         dttb = BUS_KHSC.getKhachHangSuaChua(khCMND);
-                        MessageBox.Show("sau" + CMND + "txb" + txbCMND.Text);
+                       // MessageBox.Show("sau" + CMND + "txb" + txbCMND.Text);
                         if (dttb.Rows.Count >= 1 && CMND != txbCMND.Text)
                         {
                             MessageBox.Show("Người này đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);                            

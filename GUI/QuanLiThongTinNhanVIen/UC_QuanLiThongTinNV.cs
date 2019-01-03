@@ -93,6 +93,7 @@ namespace GUI.QuanLiThongTinNhanVIen
         {
             if (dtgvXemNhanVIen.SelectedRows.Count > 0)
             {
+                txbTaiKhoan.ReadOnly = false;                
                 DataGridViewRow row;//dòng đang chọn
                 row = dtgvXemNhanVIen.SelectedRows[0];
 
@@ -120,6 +121,187 @@ namespace GUI.QuanLiThongTinNhanVIen
 
                 dtpkNgaySinh.Value = (DateTime)row.Cells[2].Value;
                 dtpkNgayLam.Value = (DateTime)row.Cells[7].Value;
+            }
+           
+        }
+
+        private void BtnThem_Click(object sender, EventArgs e)
+        {
+            if (txbTaiKhoan.Text != "" && txbHoTen.Text!="" && txbCMND.Text != "" && txbSDT.Text != "" && txbDiaChi.Text != "" && (rbNam.Checked == true || rbNu.Checked == true))
+            {
+
+                //kiểm tra các trường dữ liệu đầu vào
+                if (txbCMND.Text.All(char.IsDigit) == false || (txbCMND.Text.Length != 9 && txbCMND.Text.Length != 12))
+                {
+                    MessageBox.Show("CMND không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txbCMND.Text = "";
+                    return;
+                }
+                else
+                {
+                    // Tạo DTo
+                    DTO_Account AC1 = new DTO_Account(0,txbTaiKhoan.Text,"123456", 1, 0);
+                    DTO_NhanVien NV1 = new DTO_NhanVien(0, "", txbCMND.Text, 0, "", "", "", dtpkNgayLam.Value.Date, dtpkNgaySinh.Value.Date);
+                   // DTO_Khachhangsuachua khCMND = new DTO_Khachhangsuachua(0, txbCMND.Text, "", "", "", "", dtpkNgaySinh.Value.Date);
+                    // Tìm kiếm
+                    DataTable dttb = null;
+                    dttb = BUS_NV.getNhanVien(NV1,AC1);
+                    //dttb = BUS_KHSC.getKhachHangSuaChua(khCMND);
+
+                    if (dttb.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Nhân viên hoặc tài khoản đã có rồi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //CapNhatDtgvKhachHang(dtgvKhachHang, this);
+                       // capNhatdtgvNhanVien(dtgvXemNhanVIen, this);
+                        return;
+                    }
+
+
+                }
+
+                if (txbSDT.Text.All(char.IsDigit) == false)
+                {
+                    MessageBox.Show("SĐT không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txbSDT.Text = "";
+                    return;
+                }
+
+                string gioiTinh = "Khác";
+                if (rbNam.Checked == true)
+                {
+                    gioiTinh = "Nam";
+                }
+                else
+                {
+                    gioiTinh = "Nữ";
+                }
+
+                // Tạo DTO
+                DTO_NhanVien NV = new DTO_NhanVien(0, txbHoTen.Text, txbCMND.Text, 20, txbDiaChi.Text, gioiTinh, txbSDT.Text, dtpkNgayLam.Value.Date, dtpkNgaySinh.Value.Date);
+                DTO_Account AC = new DTO_Account(0, txbTaiKhoan.Text, "123456", 1, 0);
+                //DTO_Khachhangsuachua KHSC = new DTO_Khachhangsuachua(0, txbCMND.Text, txbTen.Text, txbDiaChi.Text, gioiTinh, txbSDT.Text, dtpkNgaySinh.Value.Date);
+                //DTO_ThanhVien tv = new DTO_ThanhVien(0, txtName.Text, txtSDT.Text, txtEmail.Text); // Vì ID tự tăng nên để ID số gì cũng dc
+
+                // Them
+                if (BUS_NV.themNhanVien(NV,AC))
+                {
+                    MessageBox.Show("Thêm thành công!");
+                    capNhatdtgvNhanVien(dtgvXemNhanVIen, this);                   
+                }
+                else
+                {
+                    MessageBox.Show("Thêm không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                // dtgvKhachHang.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("Xin nhập vào không đầy đủ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        public static void capNhatGroupBoxThongTinChiTiet(DataGridView dtgv, UC_QuanLiThongTinNV NV)
+        {
+            DataGridViewRow row = dtgv.SelectedRows[0];//chọn dòng hiện tại                                                       
+        }
+        private void BtnSua_Click(object sender, EventArgs e)
+        {
+
+            capNhatGroupBoxThongTinChiTiet(dtgvXemNhanVIen, this);
+            if (dtgvXemNhanVIen.SelectedRows.Count > 0)
+            {
+                if (txbHoTen.Text != "" && txbCMND.Text != "" && txbSDT.Text != "" && txbDiaChi.Text != "" && (rbNam.Checked == true || rbNu.Checked == true))
+                {
+                    //kiểm tra các trường dữ liệu đầu vào
+                    if (txbCMND.Text.All(char.IsDigit) == false || (txbCMND.Text.Length != 9 && txbCMND.Text.Length != 12))
+                    {
+                        MessageBox.Show("CMND không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txbCMND.Text = "";
+                        return;
+                    }
+                    else
+                    {
+                        // Tạo DTo
+                        DTO_Account AC = new DTO_Account();
+                        DTO_NhanVien NV1 = new DTO_NhanVien(0, "", txbCMND.Text, 0, "", "", "", dtpkNgayLam.Value.Date, dtpkNgaySinh.Value.Date);
+                        //DTO_Khachhangsuachua khCMND = new DTO_Khachhangsuachua(0, txbCMND.Text, "", "", "", "", dtpkNgaySinh.Value.Date);
+                        // Tìm kiếm
+                        DataTable dttb = null;
+                        dttb = BUS_NV.getNhanVien(NV1,AC);
+                       // MessageBox.Show("sau" + CMND + "txb" + txbCMND.Text);
+                        if (dttb.Rows.Count >= 1 && CMND != txbCMND.Text)
+                        {
+                            MessageBox.Show("Nhân viên này đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            capNhatdtgvNhanVien(dtgvXemNhanVIen, this);                            
+                            return;
+                        }
+
+
+                    }
+
+                    // Lấy row hiện tại
+                    DataGridViewRow row = dtgvXemNhanVIen.SelectedRows[0];
+                    int ID = Convert.ToInt16(row.Cells[8].Value.ToString());
+
+                    string gioiTinh = rbNam.Checked == true ? gioiTinh = "Nam" : gioiTinh = "Nữ";
+                    // Tạo DTo
+                    DTO_NhanVien NV = new DTO_NhanVien(ID, txbHoTen.Text, txbCMND.Text, 20, txbDiaChi.Text, gioiTinh, txbSDT.Text, dtpkNgayLam.Value.Date, dtpkNgaySinh.Value.Date);
+                    //DTO_Khachhangsuachua KHSC = new DTO_Khachhangsuachua(ID, txbCMND.Text, txbTen.Text, txbDiaChi.Text, gioiTinh, txbSDT.Text, dtpkNgaySinh.Value.Date);
+                    // Sửa
+                    if (BUS_NV.suaNhanVien(NV))
+                    {
+                        MessageBox.Show("Sửa thành công!");
+                        capNhatdtgvNhanVien(dtgvXemNhanVIen, this);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
+                    //dtgvKhachHang.ClearSelection();
+                }
+                else
+                {
+                    MessageBox.Show("Xin hãy nhập đầy đủ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn thành viên muốn sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+        }
+
+        private void BtnXoa_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra nếu có chọn table rồi
+            if (dtgvXemNhanVIen.SelectedRows.Count > 0)
+            {
+
+                // Lấy row hiện tại
+                DataGridViewRow row = dtgvXemNhanVIen.SelectedRows[0];
+                int ID = Convert.ToInt16(row.Cells["Manhanvien"].Value.ToString());
+
+                // Xóa
+                if (BUS_NV.xoaNhanVien(ID))
+                {
+                    MessageBox.Show("Xóa thành công!");
+                    capNhatdtgvNhanVien(dtgvXemNhanVIen, this);
+                    //dtgvKhachHang.DataSource = busTV.getThanhVien(); // refresh datagridview
+
+                }
+                else
+                {
+                    MessageBox.Show("Xóa ko thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+                //dtgvKhachHang.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn nhân viên muốn xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
             }
         }
     }
