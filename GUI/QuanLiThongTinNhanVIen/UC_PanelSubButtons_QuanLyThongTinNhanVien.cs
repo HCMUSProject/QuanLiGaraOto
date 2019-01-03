@@ -35,11 +35,13 @@ namespace GUI.QuanLiThongTinNhanVIen
 
         private void BtnQuanLiNhanVien_Click(object sender, EventArgs e)
         {
+            UC_QuanLiThongTinNV.Instance.UC_QuanLyThongTinNV_Load();
             OnButtonClick?.Invoke(sender, e);
         }
 
         private void BtnXemThongTin_Click(object sender, EventArgs e)
         {
+            
             OnButtonClick?.Invoke(sender, e);
         }
     }

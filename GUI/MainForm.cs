@@ -440,7 +440,7 @@ namespace GUI
                 }
                 else
                 {
-                    QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance.XoaDuLieu();
+                    //QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance.XoaDuLieu();
                     QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance.BringToFront();
                 }
             }
@@ -452,6 +452,7 @@ namespace GUI
                     PanelContent.Controls.Add(QuanLiThongTinNhanVIen.UC_QuanLiThongTinNV.Instance);
                     QuanLiThongTinNhanVIen.UC_QuanLiThongTinNV.Instance.Dock = DockStyle.Fill;
                     QuanLiThongTinNhanVIen.UC_QuanLiThongTinNV.Instance.BringToFront();
+                    QuanLiThongTinNhanVIen.UC_QuanLiThongTinNV.Instance.UC_QuanLyThongTinNV_Load();
                 }
                 else
                 {
