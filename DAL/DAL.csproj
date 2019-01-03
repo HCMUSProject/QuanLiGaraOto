@@ -54,6 +54,7 @@
     <Compile Include="DAL_Quanlixe.cs" />
     <Compile Include="DAL_Thanhtoan.cs" />
     <Compile Include="DAL_Tiepnhanxe.cs" />
+    <Compile Include="DAL_DoanhThuSuaChua.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

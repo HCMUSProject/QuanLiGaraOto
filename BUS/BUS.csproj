@@ -44,6 +44,7 @@
     <Compile Include="BUS_Account.cs" />
     <Compile Include="BUS_CapNhatVatTu.cs" />
     <Compile Include="BUS_DanhMucVatTu.cs" />
+    <Compile Include="BUS_DoanhThuSuaChua.cs" />
     <Compile Include="BUS_Khachhangsuachua.cs" />
     <Compile Include="BUS_KiemKeVatTu.cs" />
     <Compile Include="BUS_Lapphieusuachua.cs" />
