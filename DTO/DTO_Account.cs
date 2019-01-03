@@ -72,6 +72,7 @@ namespace DTO
         {
 
         }
+
         public DTO_Account(int id,string user,string pass,int loai,int mnv)
         {
             this.IDACCOUNT = id;

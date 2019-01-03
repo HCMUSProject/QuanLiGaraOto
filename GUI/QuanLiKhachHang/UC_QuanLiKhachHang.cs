@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using DTO;
 using BUS;
+
 namespace GUI.QuanLiKhachHang
 {
     public partial class UC_QuanLiKhachHang : UserControl

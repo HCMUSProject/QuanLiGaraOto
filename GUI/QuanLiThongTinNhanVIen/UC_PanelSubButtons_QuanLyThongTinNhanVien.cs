@@ -41,7 +41,7 @@ namespace GUI.QuanLiThongTinNhanVIen
 
         private void BtnXemThongTin_Click(object sender, EventArgs e)
         {
-            
+            UC_XemThongTinNhanVien.Instance.UC_XemThongTinNhanVien_Load();
             OnButtonClick?.Invoke(sender, e);
         }
     }

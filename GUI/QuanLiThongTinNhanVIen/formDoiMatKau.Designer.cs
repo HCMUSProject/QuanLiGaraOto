@@ -72,6 +72,7 @@
             this.txbTaiKhoan.ReadOnly = true;
             this.txbTaiKhoan.Size = new System.Drawing.Size(234, 26);
             this.txbTaiKhoan.TabIndex = 3;
+            this.txbTaiKhoan.TextChanged += new System.EventHandler(this.txbTaiKhoan_TextChanged);
             // 
             // txbMatKhauCu
             // 

@@ -9,7 +9,7 @@ using DTO;
 
 namespace DAL
 {
-    public class DAL_Account
+    public class DAL_Account: DAL_DBConnect
     {
         DAL_DBConnect connection = new DAL_DBConnect();
 
@@ -45,6 +45,16 @@ namespace DAL
             DataTable result = new DataTable();
             acc.Fill(result);
             return result.Rows[0][0].ToString();
+        }
+
+        public DataTable getThongTinAccountNhanVien(DTO_Account AC)
+        {
+            string SQL = string.Format("SELECT USERNAME,Ten,Ngaysinh,Gioitinh,CMND,Sodienthoai,Diachi,Ngayvaolam " +
+                "FROM ACCOUNT AC, NHANVIEN NV WHERE AC.Manhanvien = NV.Manhanvien and AC.username like N'{0}'", AC.USERNAME);
+            SqlDataAdapter da = new SqlDataAdapter(SQL, _conn);
+            DataTable dtThongTinAccountNhanVien = new DataTable();
+            da.Fill(dtThongTinAccountNhanVien);
+            return dtThongTinAccountNhanVien;
         }
     }
 }

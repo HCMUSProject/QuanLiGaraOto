@@ -29,5 +29,10 @@ namespace GUI.QuanLiThongTinNhanVIen
         {
             txbTaiKhoan.Text = m_strUsername;
         }
+
+        private void txbTaiKhoan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
