@@ -421,6 +421,7 @@ namespace GUI
                 {
                     BaoCao.UC_BaoCaoTonKho.Instance.XoaDuLieu();
                     BaoCao.UC_BaoCaoTonKho.Instance.BringToFront();
+                    BaoCao.UC_BaoCaoTonKho.Instance.UC_BaoCaoTonKho_Load();
                 }
 
                 //MessageBox.Show("BtnQuanLiXe");

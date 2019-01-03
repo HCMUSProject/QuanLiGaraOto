@@ -50,21 +50,21 @@ namespace GUI.BaoCao
             dtgvTonKho.Columns["Tenvattu"].HeaderText = "Tên vật tư";
             dtgvTonKho.Columns["Soluong"].HeaderText = "Số lượng còn lại";
 
-            //ẩn cột mã khách hàng
-            //dtgvTonKho.Columns["Makhachhang"].Visible = false;
-            dtgvTonKho.Columns["HangSanXuat"].Visible = false;
-            dtgvTonKho.Columns["VatTu"].Visible = false;
-            dtgvTonKho.Columns["SoLuongNhap"].Visible = false;
-            dtgvTonKho.Columns["SoLuongDung"].Visible = false;
-            dtgvTonKho.Columns["SoLuongConLai"].Visible = false;
+            //ẩn cột 
+            
+            //dtgvTonKho.Columns["HangSanXuat"].Visible = false;
+            //dtgvTonKho.Columns["VatTu"].Visible = false;
+            //dtgvTonKho.Columns["SoLuongNhap"].Visible = false;
+            //dtgvTonKho.Columns["SoLuongDung"].Visible = false;
+            //dtgvTonKho.Columns["SoLuongConLai"].Visible = false;
 
             //điều chỉnh thứ tự các cột
-            dtgvTonKho.Columns["Tendanhmuc"].DisplayIndex = 0;
-            dtgvTonKho.Columns["Mavattu"].DisplayIndex = 1;
-            dtgvTonKho.Columns["Tenvattu"].DisplayIndex = 2;
+            //dtgvTonKho.Columns["Tendanhmuc"].DisplayIndex = 0;
+            //dtgvTonKho.Columns["Mavattu"].DisplayIndex = 1;
+            //dtgvTonKho.Columns["Tenvattu"].DisplayIndex = 2;
             //dtgvTonKho.Columns["Soluong"].DisplayIndex = 3;
             //dtgvTonKho.Columns["SoLuongDung"].DisplayIndex = 4;
-            dtgvTonKho.Columns["SoLuongConLai"].DisplayIndex = 3;
+            //dtgvTonKho.Columns["SoLuongConLai"].DisplayIndex = 3;
         }
         public void XoaDuLieu()
         {
@@ -72,12 +72,27 @@ namespace GUI.BaoCao
         }
         public void UC_BaoCaoTonKho_Load()
         {
-            capNhatdtgvTonKho();
+            dtpkFrom.Value = DateTime.Now;
+            dtpkTo.Value = DateTime.Now;
+            
         }
         public UC_BaoCaoTonKho()
         {
             InitializeComponent();
         }
 
+        private void BtnXemTonKho_Click_1(object sender, EventArgs e)
+        {
+            if (dtpkFrom.Value == dtpkTo.Value)
+
+            {
+                MessageBox.Show("Ngày bắt đầu và ngày kết thúc phải khác nhau!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                capNhatdtgvTonKho();
+            }
+        }
     }
 }
