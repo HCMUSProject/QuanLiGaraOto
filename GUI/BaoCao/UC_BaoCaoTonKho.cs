@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using DTO;
+using BUS;
 
 namespace GUI.BaoCao
 {
@@ -24,15 +27,56 @@ namespace GUI.BaoCao
                 return _instance;
             }
         }
-
-        public UC_BaoCaoTonKho()
+        public void capNhatdtgvTonKho()
         {
-            InitializeComponent();
+            dtgvTonKho.DataSource = null;
+
+            BUS_KiemKeVatTu bus_KiemKe = new BUS_KiemKeVatTu();
+            // load bảng vật tư từ database
+
+            DataTable dtThongTinVatTu = bus_KiemKe.BUS_GetThongTinVatTu();
+
+            Exception ex = bus_KiemKe.GetException();
+            if (ex != null)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+            dtgvTonKho.DataSource = dtThongTinVatTu;
+
+            dtgvTonKho.Columns["Tendanhmuc"].HeaderText = "Tên danh mục";
+            dtgvTonKho.Columns["Mavattu"].HeaderText = "Mã vật tư";
+            dtgvTonKho.Columns["Tenvattu"].HeaderText = "Tên vật tư";
+            dtgvTonKho.Columns["Soluong"].HeaderText = "Số lượng còn lại";
+
+            //ẩn cột mã khách hàng
+            //dtgvTonKho.Columns["Makhachhang"].Visible = false;
+            dtgvTonKho.Columns["HangSanXuat"].Visible = false;
+            dtgvTonKho.Columns["VatTu"].Visible = false;
+            dtgvTonKho.Columns["SoLuongNhap"].Visible = false;
+            dtgvTonKho.Columns["SoLuongDung"].Visible = false;
+            dtgvTonKho.Columns["SoLuongConLai"].Visible = false;
+
+            //điều chỉnh thứ tự các cột
+            dtgvTonKho.Columns["Tendanhmuc"].DisplayIndex = 0;
+            dtgvTonKho.Columns["Mavattu"].DisplayIndex = 1;
+            dtgvTonKho.Columns["Tenvattu"].DisplayIndex = 2;
+            //dtgvTonKho.Columns["Soluong"].DisplayIndex = 3;
+            //dtgvTonKho.Columns["SoLuongDung"].DisplayIndex = 4;
+            dtgvTonKho.Columns["SoLuongConLai"].DisplayIndex = 3;
         }
         public void XoaDuLieu()
         {
-            dtgvTonKho.Rows.Clear();
             dtgvTonKho.Refresh();
+        }
+        public void UC_BaoCaoTonKho_Load()
+        {
+            capNhatdtgvTonKho();
+        }
+        public UC_BaoCaoTonKho()
+        {
+            InitializeComponent();
         }
 
     }

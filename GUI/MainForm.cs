@@ -399,6 +399,7 @@ namespace GUI
                     PanelContent.Controls.Add(BaoCao.UC_BaoCaoDoanhThu.Instance);
                     BaoCao.UC_BaoCaoDoanhThu.Instance.Dock = DockStyle.Fill;
                     BaoCao.UC_BaoCaoDoanhThu.Instance.BringToFront();
+                    BaoCao.UC_BaoCaoDoanhThu.Instance.UC_BaoCaoDoanhThu_Load();
                 }
                 else
                 {
@@ -414,6 +415,7 @@ namespace GUI
                     PanelContent.Controls.Add(BaoCao.UC_BaoCaoTonKho.Instance);
                     BaoCao.UC_BaoCaoTonKho.Instance.Dock = DockStyle.Fill;
                     BaoCao.UC_BaoCaoTonKho.Instance.BringToFront();
+                    BaoCao.UC_BaoCaoTonKho.Instance.UC_BaoCaoTonKho_Load();
                 }
                 else
                 {
