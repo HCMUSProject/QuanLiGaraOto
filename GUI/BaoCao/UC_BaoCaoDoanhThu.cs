@@ -15,8 +15,9 @@ namespace GUI.BaoCao
 {
     public partial class UC_BaoCaoDoanhThu : UserControl
     {
-        BUS_QuanLiNhapKho bus_QuanLi = new BUS_QuanLiNhapKho();
+
         BUS_DoanhThuSuaChua bus_DoanhThuSuaChua = new BUS_DoanhThuSuaChua();
+        BUS_DoanhThuVatTu bus_DoanhThuVatTu = new BUS_DoanhThuVatTu();
         private static UC_BaoCaoDoanhThu _instance;
         public static UC_BaoCaoDoanhThu Instance
         {
@@ -29,7 +30,7 @@ namespace GUI.BaoCao
                 return _instance;
             }
         }
-        
+
         public void UC_BaoCaoDoanhThu_Load()
         {
             dtpkFrom.Value = DateTime.Now;
@@ -56,9 +57,9 @@ namespace GUI.BaoCao
         {
             if (dtpkFrom.Value != dtpkTo.Value)
             {
-                DataTable dt = bus_QuanLi.BUS_GetLichSuVatTu(dtpkFrom.Value, dtpkTo.Value);
+                DataTable dt = bus_DoanhThuVatTu.BUS_GetDoanhThuVatTu(dtpkFrom.Value, dtpkTo.Value);
 
-                Exception ex = bus_QuanLi.GetException();
+                Exception ex = bus_DoanhThuVatTu.GetException();
 
                 if (ex != null)
                 {
@@ -70,28 +71,28 @@ namespace GUI.BaoCao
 
                 dtgvTienNhapVatTu.Columns["Tendanhmuc"].HeaderText = "Tên danh mục";
                 dtgvTienNhapVatTu.Columns["Tenvattu"].HeaderText = "Tên vật tư";
-                dtgvTienNhapVatTu.Columns["Giathanh"].HeaderText = "Đơn giá";
-                dtgvTienNhapVatTu.Columns["Soluongnhap"].HeaderText = "Số lượng";
-                dtgvTienNhapVatTu.Columns["Ngaynhapkho"].HeaderText = "Ngày nhập kho";
-                dtgvTienNhapVatTu.Columns["Ten"].HeaderText = "Tên nhân viên";
+                //dtgvTienNhapVatTu.Columns["Giathanh"].HeaderText = "Đơn giá";
+                dtgvTienNhapVatTu.Columns["Soluongdung"].HeaderText = "Số lượng đã dùng";
+                dtgvTienNhapVatTu.Columns["Tienlai"].HeaderText = "Tiền lãi";
+                //dtgvTienNhapVatTu.Columns["Ngaynhapkho"].HeaderText = "Ngày nhập kho";
+                //dtgvTienNhapVatTu.Columns["Ten"].HeaderText = "Tên nhân viên";
 
-                dtgvTienNhapVatTu.Columns["Ngaynhapkho"].DefaultCellStyle.Format = "dd/MM/yyyy hh:mm tt";
+                //dtgvTienNhapVatTu.Columns["Ngaynhapkho"].DefaultCellStyle.Format = "dd/MM/yyyy hh:mm tt";
 
-                dtgvTienNhapVatTu.Columns["Giathanh"].DefaultCellStyle.FormatProvider = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
-                dtgvTienNhapVatTu.Columns["Giathanh"].DefaultCellStyle.Format = "C";
+                dtgvTienNhapVatTu.Columns["Tienlai"].DefaultCellStyle.FormatProvider = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+                dtgvTienNhapVatTu.Columns["Tienlai"].DefaultCellStyle.Format = "C";
 
-                //lbDoanhThu.Text = dtgvTienNhapVatTu.Rows.Count.ToString();
 
-                int TongTien = 0;
+
+                int TongTienVatTu = 0;
                 foreach (DataGridViewRow row in dtgvTienNhapVatTu.Rows)
                 {
-                    TongTien += int.Parse(row.Cells["Giathanh"].Value.ToString()) * int.Parse(row.Cells["Soluongnhap"].Value.ToString());
+                    TongTienVatTu += int.Parse(row.Cells["Tienlai"].Value.ToString());
                 }
-
-                //lbTongTienNhapVatTu.Text = TongTien.ToString();
+                lbTongTienNhapVatTu.Text = TongTienVatTu.ToString();
 
                 //ẩn cột tên
-                dtgvTienNhapVatTu.Columns["Ten"].Visible = false;
+                //dtgvTienNhapVatTu.Columns["Ten"].Visible = false;
 
                 DataTable dtsc = bus_DoanhThuSuaChua.BUS_GetDoanhThuSuaChua(dtpkFrom.Value, dtpkTo.Value);
                 Exception exdt = bus_DoanhThuSuaChua.GetException();
@@ -101,9 +102,17 @@ namespace GUI.BaoCao
                     return;
                 }
                 dtgvTienPhiSuaChua.DataSource = dtsc;
-                //dtgvTienNhapVatTu.Columns["Madonhang"].HeaderText = "Mã đơn hàng";
-                //dtgvTienNhapVatTu.Columns["Ngayxuat"].DefaultCellStyle.Format = "dd/MM/yyyy hh:mm tt";
-
+                dtgvTienPhiSuaChua.Columns["Madonhang"].HeaderText = "Mã đơn hàng";
+                dtgvTienPhiSuaChua.Columns["Ngayxuat"].HeaderText = "Ngày xuất";
+                dtgvTienPhiSuaChua.Columns["Tiendichvu"].HeaderText = "Tiền dịch vụ";
+                //dtgvTienPhiSuaChua.Columns["Ngayxuat"].DefaultCellStyle.Format = "dd/MM/yyyy hh:mm tt";
+                int TongTienSuaChua = 0;
+                foreach (DataGridViewRow row in dtgvTienPhiSuaChua.Rows)
+                {
+                    TongTienSuaChua += int.Parse(row.Cells["Tiendichvu"].Value.ToString());
+                }
+                int TongTien = TongTienVatTu + TongTienSuaChua;
+                lbDoanhThu.Text = TongTien.ToString();
             }
             else
             {

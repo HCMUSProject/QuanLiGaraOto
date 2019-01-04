@@ -45,6 +45,7 @@
     <Compile Include="DAL_CapNhatVatTu.cs" />
     <Compile Include="DAL_DanhMucVatTu.cs" />
     <Compile Include="DAL_DBConnect.cs" />
+    <Compile Include="DAL_DoanhThuVatTu.cs" />
     <Compile Include="DAL_Khachhangsuachua.cs" />
     <Compile Include="DAL_KiemKeVatTu.cs" />
     <Compile Include="DAL_Lapphieusuachua.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="DAL_Thanhtoan.cs" />
     <Compile Include="DAL_Tiepnhanxe.cs" />
     <Compile Include="DAL_DoanhThuSuaChua.cs" />
+    <Compile Include="DAL_TonKho.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

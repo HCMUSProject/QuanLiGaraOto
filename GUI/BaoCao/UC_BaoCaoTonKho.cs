@@ -15,6 +15,7 @@ namespace GUI.BaoCao
 {
     public partial class UC_BaoCaoTonKho : UserControl
     {
+        BUS_TonKho bus_TonKho = new BUS_TonKho();
         private static UC_BaoCaoTonKho _instance;
         public static UC_BaoCaoTonKho Instance
         {
@@ -51,7 +52,7 @@ namespace GUI.BaoCao
             dtgvTonKho.Columns["Soluong"].HeaderText = "Số lượng còn lại";
 
             //ẩn cột 
-            
+
             //dtgvTonKho.Columns["HangSanXuat"].Visible = false;
             //dtgvTonKho.Columns["VatTu"].Visible = false;
             //dtgvTonKho.Columns["SoLuongNhap"].Visible = false;
@@ -74,7 +75,7 @@ namespace GUI.BaoCao
         {
             dtpkFrom.Value = DateTime.Now;
             dtpkTo.Value = DateTime.Now;
-            
+
         }
         public UC_BaoCaoTonKho()
         {
@@ -91,7 +92,23 @@ namespace GUI.BaoCao
             }
             else
             {
-                capNhatdtgvTonKho();
+                DataTable dt = bus_TonKho.BUS_GetTonKho(dtpkFrom.Value, dtpkTo.Value);
+
+                Exception ex = bus_TonKho.GetException();
+
+                if (ex != null)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+
+                dtgvTonKho.DataSource = dt;
+                dtgvTonKho.Columns["Tendanhmuc"].HeaderText = "Tên danh mục";
+                //dtgvTonKho.Columns["Mavattu"].HeaderText = "Mã vật tư";
+                dtgvTonKho.Columns["Tenvattu"].HeaderText = "Tên vật tư";
+                dtgvTonKho.Columns["Soluongnhap"].HeaderText = "Số lượng nhập";
+                dtgvTonKho.Columns["Soluongdung"].HeaderText = "Số lượng dùng";
+                dtgvTonKho.Columns["Soluongconlai"].HeaderText = "Số lượng còn lại";
             }
         }
     }

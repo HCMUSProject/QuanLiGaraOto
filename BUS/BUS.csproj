@@ -45,6 +45,7 @@
     <Compile Include="BUS_CapNhatVatTu.cs" />
     <Compile Include="BUS_DanhMucVatTu.cs" />
     <Compile Include="BUS_DoanhThuSuaChua.cs" />
+    <Compile Include="BUS_DoanhThuVatTu.cs" />
     <Compile Include="BUS_Khachhangsuachua.cs" />
     <Compile Include="BUS_KiemKeVatTu.cs" />
     <Compile Include="BUS_Lapphieusuachua.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="BUS_Quanlixe.cs" />
     <Compile Include="BUS_Thanhtoan.cs" />
     <Compile Include="BUS_Tiepnhanxe.cs" />
+    <Compile Include="BUS_TonKho.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

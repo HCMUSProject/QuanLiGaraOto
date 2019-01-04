@@ -19,7 +19,7 @@ namespace DAL
 
             try
             {
-                string query = String.Format($"select THANHTOAN.Madonhang, THANHTOAN.Ngayxuat from THANHTOAN order by THANHTOAN.Ngayxuat desc");
+                string query = String.Format($"select distinct CHITIETDONHANG.Madonhang,THANHTOAN.Ngayxuat, sum (LOAIDICHVU.Giadichvu) as Tiendichvu  from THANHTOAN, LOAIDICHVU, CHITIETDONHANG where CHITIETDONHANG.Madonhang = THANHTOAN.Madonhang and CHITIETDONHANG.Madichvu = LOAIDICHVU.Madichvu and THANHTOAN.Ngayxuat between '{from}' and '{to}' group by CHITIETDONHANG.Madonhang, THANHTOAN.Ngayxuat order by THANHTOAN.Ngayxuat desc");
 
                 SqlDataAdapter da = new SqlDataAdapter(query, _conn);
 
