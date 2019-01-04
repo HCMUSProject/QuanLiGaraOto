@@ -205,10 +205,9 @@ insert into NHANVIEN values (N'Nguyễn Long Hồ','221441685',20,N'Tiền Giang
 insert into NHANVIEN values (N'Hoàng Hùng Đức','221441686',20,N'Quảng Trị',N'Nam','0343698243','03-12-2018','01-02-98')
 
 --Bảng Account
-insert into ACCOUNT values ('admin','1234',0,0)
-insert into ACCOUNT values ('user1','1234',1,1)
-insert into ACCOUNT values ('user2','1234',1,2)
-insert into ACCOUNT values ('user3','1234',1,3)
+insert into ACCOUNT values ('admin','Admin123#',0,0)
+insert into ACCOUNT values ('user1','Admin123#',1,1)
+
 
 --Bảng Hãng xe
 insert into HANGXE values('SUZ',N'Suzuki')
@@ -409,108 +408,69 @@ insert into LOAIDICHVU values(N'Đổ xăng',1000000)
 insert into LOAIDICHVU values(N'Đổ dầu',1100000)
 
 --Bảng vật tư
-insert into VATTU values(0,N'Lốp Bridgestone',100)
-insert into VATTU values(0,N'Lốp Michelin',120)
-insert into VATTU values(0,N'Lốp Goodyear Dunlop',200)
-insert into VATTU values(0,N'Lốp Pirelli',50)
-insert into VATTU values(0,N'Lốp Maxxis',110)
+-- insert into VATTU values(0,N'Lốp Bridgestone',100)
+-- insert into VATTU values(0,N'Lốp Michelin',120)
+-- insert into VATTU values(0,N'Lốp Goodyear Dunlop',200)
+-- insert into VATTU values(0,N'Lốp Pirelli',50)
+-- insert into VATTU values(0,N'Lốp Maxxis',110)
 
-insert into VATTU values(1,N'Săm DRC',200)
-insert into VATTU values(1,N'Săm Yokohama',400)
-insert into VATTU values(1,N'Săm Chengshin',600)
-insert into VATTU values(1,N'Săm Makuro',800)
-insert into VATTU values(1,N'Săm Birla',100)
+-- insert into VATTU values(1,N'Săm DRC',200)
+-- insert into VATTU values(1,N'Săm Yokohama',400)
+-- insert into VATTU values(1,N'Săm Chengshin',600)
+-- insert into VATTU values(1,N'Săm Makuro',800)
+-- insert into VATTU values(1,N'Săm Birla',100)
 
-insert into VATTU values(2,N'Sơn R-M',200)
-insert into VATTU values(2,N'Sơn Dupont',200)
-insert into VATTU values(2,N'Sơn Sikens',200)
-insert into VATTU values(2,N'Sơn PPG',200)
-insert into VATTU values(2,N'Sơn Nippon',200)
-insert into VATTU values(2,N'Sơn Dee Beer',200)
-insert into VATTU values(2,N'Sơn Dulux',200)
+-- insert into VATTU values(2,N'Sơn R-M',200)
+-- insert into VATTU values(2,N'Sơn Dupont',200)
+-- insert into VATTU values(2,N'Sơn Sikens',200)
+-- insert into VATTU values(2,N'Sơn PPG',200)
+-- insert into VATTU values(2,N'Sơn Nippon',200)
+-- insert into VATTU values(2,N'Sơn Dee Beer',200)
+-- insert into VATTU values(2,N'Sơn Dulux',200)
 
-insert into VATTU values(3,N'Mobil 1 Advanced Fuel Economy',200)
-insert into VATTU values(3,N'Castrol GTX Magnatec',200)
-insert into VATTU values(3,N'Total Quartz',200)
-insert into VATTU values(3,N'Valvoline Full Synthetic MaxLife',200)
-insert into VATTU values(3,N'Pennzoil Platinum',200)
-insert into VATTU values(3,N'Motul 8100 X-CLEAN',200)
+-- insert into VATTU values(3,N'Mobil 1 Advanced Fuel Economy',200)
+-- insert into VATTU values(3,N'Castrol GTX Magnatec',200)
+-- insert into VATTU values(3,N'Total Quartz',200)
+-- insert into VATTU values(3,N'Valvoline Full Synthetic MaxLife',200)
+-- insert into VATTU values(3,N'Pennzoil Platinum',200)
+-- insert into VATTU values(3,N'Motul 8100 X-CLEAN',200)
 
-insert into VATTU values (4,N'Dầu Diesel',200)
-insert into VATTU values (4,N'Dầu Do',200)
-insert into VATTU values (4,N'Dầu Fo',200)
-insert into VATTU values (4,N'Dầu D2',200)
+-- insert into VATTU values (4,N'Dầu Diesel',200)
+-- insert into VATTU values (4,N'Dầu Do',200)
+-- insert into VATTU values (4,N'Dầu Fo',200)
+-- insert into VATTU values (4,N'Dầu D2',200)
 
-insert into VATTU values (5,N'Xăng E5',200)
-insert into VATTU values (5,N'Xăng A95',200)
-insert into VATTU values (5,N'Xăng A92',200)
+-- insert into VATTU values (5,N'Xăng E5',200)
+-- insert into VATTU values (5,N'Xăng A95',200)
+-- insert into VATTU values (5,N'Xăng A92',200)
 
-insert into VATTU values (6,N'Acquy nước GS NS60LS E',200)
-insert into VATTU values (6,N'Acquy nước GS N120E',200)
-insert into VATTU values (6,N'Acquy nước GS N100E',200)
-insert into VATTU values (6,N'Acquy nước GS NS40Z E',200)
-insert into VATTU values (6,N'Acquy nước GS N150 E',200)
-insert into VATTU values (6,N'Acquy nước GS N200 E',200)
-insert into VATTU values (6,N'Acquy nước GS 95D31R-E',200)
-insert into VATTU values (6,N'Acquy khô GS 12V-60AH',200)
-insert into VATTU values (6,N'Acquy Rocket GS 12V-200AH',200)
+-- insert into VATTU values (6,N'Acquy nước GS NS60LS E',200)
+-- insert into VATTU values (6,N'Acquy nước GS N120E',200)
+-- insert into VATTU values (6,N'Acquy nước GS N100E',200)
+-- insert into VATTU values (6,N'Acquy nước GS NS40Z E',200)
+-- insert into VATTU values (6,N'Acquy nước GS N150 E',200)
+-- insert into VATTU values (6,N'Acquy nước GS N200 E',200)
+-- insert into VATTU values (6,N'Acquy nước GS 95D31R-E',200)
+-- insert into VATTU values (6,N'Acquy khô GS 12V-60AH',200)
+-- insert into VATTU values (6,N'Acquy Rocket GS 12V-200AH',200)
 
-insert into VATTU values (7,N'Hyundai Santafe',200)
-insert into VATTU values (7,N'Kia Morning',200)
-insert into VATTU values (7,N'Mica KMCXD',200)
+-- insert into VATTU values (7,N'Hyundai Santafe',200)
+-- insert into VATTU values (7,N'Kia Morning',200)
+-- insert into VATTU values (7,N'Mica KMCXD',200)
 
-insert into VATTU values (8,N'Daewoo Lacetti',200)
-insert into VATTU values (8,N'',200)
-insert into VATTU values (8,N'Daewoo Lacetti',200)
-insert into VATTU values (8,N'Daewoo Lacetti',200)
-insert into VATTU values (8,N'Toyota Vios',200)
-insert into VATTU values (8,N'Kia Morning P961840-47',200)
+-- insert into VATTU values (8,N'Daewoo Lacetti',200)
+-- insert into VATTU values (8,N'',200)
+-- insert into VATTU values (8,N'Daewoo Lacetti',200)
+-- insert into VATTU values (8,N'Daewoo Lacetti',200)
+-- insert into VATTU values (8,N'Toyota Vios',200)
+-- insert into VATTU values (8,N'Kia Morning P961840-47',200)
 
-insert into VATTU values(9,N'Lót sàn 4D PU',200)
-insert into VATTU values(9,N'Lót sàn 4D PU All new',200)
-insert into VATTU values(9,N'Lót sàn 5D kẽ ngang',200)
+-- insert into VATTU values(9,N'Lót sàn 4D PU',200)
+-- insert into VATTU values(9,N'Lót sàn 4D PU All new',200)
+-- insert into VATTU values(9,N'Lót sàn 5D kẽ ngang',200)
 
-insert into VATTU values(10,N'Đèn pha trái C180k WDB203',200)
-insert into VATTU values(10,N'Đèn pha cos Mercedes C200',200)
-insert into VATTU values(10,N'Đèn pha bixenon E240',200)
-insert into VATTU values(10,N'Đèn pha DS2 Bentley',200)
-insert into VATTU values(10,N'Đèn pha Audi TT Coupe',200)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- insert into VATTU values(10,N'Đèn pha trái C180k WDB203',200)
+-- insert into VATTU values(10,N'Đèn pha cos Mercedes C200',200)
+-- insert into VATTU values(10,N'Đèn pha bixenon E240',200)
+-- insert into VATTU values(10,N'Đèn pha DS2 Bentley',200)
+-- insert into VATTU values(10,N'Đèn pha Audi TT Coupe',200)

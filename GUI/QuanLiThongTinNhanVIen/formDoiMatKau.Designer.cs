@@ -75,7 +75,7 @@
             this.txbTaiKhoan.Name = "txbTaiKhoan";
             this.txbTaiKhoan.ReadOnly = true;
             this.txbTaiKhoan.Size = new System.Drawing.Size(234, 26);
-            this.txbTaiKhoan.TabIndex = 3;
+            this.txbTaiKhoan.TabIndex = 0;
             this.txbTaiKhoan.TextChanged += new System.EventHandler(this.txbTaiKhoan_TextChanged);
             // 
             // txbMatKhauCu
@@ -83,7 +83,7 @@
             this.txbMatKhauCu.Location = new System.Drawing.Point(206, 179);
             this.txbMatKhauCu.Name = "txbMatKhauCu";
             this.txbMatKhauCu.Size = new System.Drawing.Size(234, 26);
-            this.txbMatKhauCu.TabIndex = 4;
+            this.txbMatKhauCu.TabIndex = 1;
             this.txbMatKhauCu.UseSystemPasswordChar = true;
             // 
             // txbMatKhauMoi
@@ -91,7 +91,7 @@
             this.txbMatKhauMoi.Location = new System.Drawing.Point(206, 227);
             this.txbMatKhauMoi.Name = "txbMatKhauMoi";
             this.txbMatKhauMoi.Size = new System.Drawing.Size(234, 26);
-            this.txbMatKhauMoi.TabIndex = 5;
+            this.txbMatKhauMoi.TabIndex = 2;
             this.txbMatKhauMoi.UseSystemPasswordChar = true;
             // 
             // BtnDoiMatKhau
@@ -101,7 +101,7 @@
             this.BtnDoiMatKhau.Name = "BtnDoiMatKhau";
             this.BtnDoiMatKhau.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.BtnDoiMatKhau.Size = new System.Drawing.Size(137, 33);
-            this.BtnDoiMatKhau.TabIndex = 6;
+            this.BtnDoiMatKhau.TabIndex = 4;
             this.BtnDoiMatKhau.Text = "Đổi mật khẩu";
             this.BtnDoiMatKhau.UseVisualStyleBackColor = true;
             this.BtnDoiMatKhau.Click += new System.EventHandler(this.BtnDoiMatKhau_Click);
@@ -124,7 +124,7 @@
             this.txbMKXacNhan.Location = new System.Drawing.Point(206, 277);
             this.txbMKXacNhan.Name = "txbMKXacNhan";
             this.txbMKXacNhan.Size = new System.Drawing.Size(234, 26);
-            this.txbMKXacNhan.TabIndex = 11;
+            this.txbMKXacNhan.TabIndex = 3;
             this.txbMKXacNhan.UseSystemPasswordChar = true;
             // 
             // label5
