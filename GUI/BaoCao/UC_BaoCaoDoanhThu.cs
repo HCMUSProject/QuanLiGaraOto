@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using DTO;
 using BUS;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace GUI.BaoCao
 {
@@ -118,6 +119,97 @@ namespace GUI.BaoCao
             {
                 MessageBox.Show("Ngày bắt đầu và ngày kết thúc phải khác nhau!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BtnXuatExcel_Click(object sender, EventArgs e)
+        {
+            //export2Excel(dtgvTonKho, @"D:\", "xuatfileTonKho");
+            //Tạo đối tượng lưu tệp tin
+            SaveFileDialog fsave = new SaveFileDialog();
+            //chỉ ra đuôi
+            fsave.Filter = "(Tất cả các tệp) | *.*|(Các tệp excel)|*.xlsx";
+            fsave.ShowDialog();
+            //xử lý
+            if (fsave.FileName != "")
+            {
+                //tạo excel app
+                Excel.Application app = new Excel.Application();
+                //tạo 1 workbook
+                Excel.Workbook wb = app.Workbooks.Add(Type.Missing);
+
+                //tạo sheet
+                Excel._Worksheet sheet = null;
+
+                try
+                {
+                    //đọc dữ liệu từ Listview export ra file Excel có đinh dạng
+                    sheet = wb.ActiveSheet;
+                    sheet.Name = "Báo cáo doanh thu";
+                    sheet.Columns.ColumnWidth = 25;
+                    sheet.Range[sheet.Cells[1, 1], sheet.Cells[1, dtgvTienNhapVatTu.Columns.Count]].Merge();
+                    sheet.Cells[1, 1].value = "DOANH THU TIỀN VẬT TƯ";
+                    sheet.Cells[1, 1].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                    //sinh tiêu đề vật tư
+                    for (int i = 1; i <= dtgvTienNhapVatTu.Columns.Count; i++)
+                    {
+                        sheet.Cells[2, i] = dtgvTienNhapVatTu.Columns[i - 1].HeaderText;
+                    }
+                    //sinh du lieu vat tu
+                    for (int i = 0; i < dtgvTienNhapVatTu.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dtgvTienNhapVatTu.Columns.Count; j++)
+                        {
+                            if (dtgvTienNhapVatTu.Rows[i].Cells[j].Value != null)
+                            {
+                                sheet.Cells[i + 3, j + 1] = dtgvTienNhapVatTu.Rows[i].Cells[j].Value.ToString();
+                            }
+                        }
+                    }
+                    int bang2 = dtgvTienNhapVatTu.Rows.Count+4;
+                    sheet.Range[sheet.Cells[bang2, 1], sheet.Cells[bang2, dtgvTienPhiSuaChua.Columns.Count]].Merge();
+                    sheet.Cells[bang2, 1].value = "DOANH THU PHÍ SỬA CHỮA";
+                    sheet.Cells[bang2, 1].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                    //sinh tiêu đề sua chua
+                    for (int i = 1; i <= dtgvTienPhiSuaChua.Columns.Count; i++)
+                    {
+                        sheet.Cells[1+bang2, i] = dtgvTienPhiSuaChua.Columns[i - 1].HeaderText;
+                    }
+                    //sinh du lieu sua chua
+                    for (int i = 0; i < dtgvTienPhiSuaChua.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dtgvTienPhiSuaChua.Columns.Count; j++)
+                        {
+                            if (dtgvTienPhiSuaChua.Rows[i].Cells[j].Value != null)
+                            {
+                                sheet.Cells[i + 2+ bang2, j + 1] = dtgvTienPhiSuaChua.Rows[i].Cells[j].Value.ToString();
+                            }
+                        }
+                    }
+
+                    //sinh du lieu tong
+                    int bang3 = bang2+ dtgvTienPhiSuaChua.Rows.Count +4;
+                    sheet.Cells[bang3, 1].value = "Tổng tiền nhập vật vư";
+                    sheet.Cells[bang3+1, 1].value = "Doanh Thu";
+                    sheet.Cells[bang3, 2].value = lbTongTienNhapVatTu.Text;
+                    sheet.Cells[bang3+1, 2].value = lbDoanhThu.Text;
+                    //ghi lại
+                    wb.SaveAs(fsave.FileName);
+                    MessageBox.Show("Xuất thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                finally
+                {
+                    app.Quit();
+                    wb = null;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn không chọn tệp tin nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
