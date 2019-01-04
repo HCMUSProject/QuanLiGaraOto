@@ -16,6 +16,7 @@ namespace GUI
     {
         BUS_Nhanvien nv = new BUS_Nhanvien();
         formDangNhap dangnhap = new formDangNhap();
+        
         private int m_nLoaiNhanVien = 1;
         private string m_strUsername;
         private int m_MaNhanVien = 1;
@@ -440,6 +441,8 @@ namespace GUI
                     QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance.Dock = DockStyle.Fill;
                     QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance.BringToFront();
                     QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance.GetUsername(m_strUsername);
+                    QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance.GetMaNhanVien(m_MaNhanVien);
+                    QuanLiThongTinNhanVIen.UC_XemThongTinNhanVien.Instance.UC_XemThongTinNhanVien_Load();
                 }
                 else
                 {
@@ -448,7 +451,7 @@ namespace GUI
                 }
             }
 
-            if (BtnClicked.Name== "BtnQuanLiNhanVien")
+            if (BtnClicked.Name== "BtnQuanLiNhanVien" && m_nLoaiNhanVien == 0)//nếu là admin
             {
                 if (!PanelContent.Controls.Contains(QuanLiThongTinNhanVIen.UC_QuanLiThongTinNV.Instance))
                 {
@@ -461,6 +464,14 @@ namespace GUI
                 {
                     QuanLiThongTinNhanVIen.UC_QuanLiThongTinNV.Instance.XoaDuLieu();
                     QuanLiThongTinNhanVIen.UC_QuanLiThongTinNV.Instance.BringToFront();
+                }
+            }
+            else
+            {
+                if(BtnClicked.Name == "BtnQuanLiNhanVien" && m_nLoaiNhanVien == 1)//nhân viên
+                {
+                    MessageBox.Show("Bạn phải truy cập dưới quyền admin mới dùng được chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
             }
         }
@@ -481,6 +492,21 @@ namespace GUI
                 QuanLiKhachHang.UC_QuanLiKhachHang.Instance.XoaDuLieu();
                 QuanLiKhachHang.UC_QuanLiKhachHang.Instance.BringToFront();
             }
+        }
+
+        private void lbTenNhanVien_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("kkkk "+m_MaNhanVien.ToString());           
+        }
+
+        private void PanelContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PanelSubButtons_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

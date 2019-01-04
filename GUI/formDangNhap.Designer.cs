@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cTxbUserName = new ChreneLib.Controls.TextBoxes.CTextBox();
+            this.ctxbPassword = new ChreneLib.Controls.TextBoxes.CTextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnExits = new System.Windows.Forms.Button();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.ctxbPassword = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.cTxbUserName = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,6 +56,54 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 177);
             this.panel1.TabIndex = 6;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // cTxbUserName
+            // 
+            this.cTxbUserName.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cTxbUserName.Location = new System.Drawing.Point(126, 20);
+            this.cTxbUserName.Name = "cTxbUserName";
+            this.cTxbUserName.Size = new System.Drawing.Size(214, 31);
+            this.cTxbUserName.TabIndex = 8;
+            this.cTxbUserName.WaterMark = "Nhập tên đăng nhập";
+            this.cTxbUserName.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
+            this.cTxbUserName.WaterMarkFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cTxbUserName.WaterMarkForeColor = System.Drawing.Color.LightGray;
+            this.cTxbUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cTxbUserName_KeyDown);
+            this.cTxbUserName.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cTxbUserName_PreviewKeyDown);
+            // 
+            // ctxbPassword
+            // 
+            this.ctxbPassword.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctxbPassword.Location = new System.Drawing.Point(126, 85);
+            this.ctxbPassword.Name = "ctxbPassword";
+            this.ctxbPassword.Size = new System.Drawing.Size(214, 31);
+            this.ctxbPassword.TabIndex = 7;
+            this.ctxbPassword.WaterMark = "Nhập mật khẩu";
+            this.ctxbPassword.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
+            this.ctxbPassword.WaterMarkFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctxbPassword.WaterMarkForeColor = System.Drawing.Color.LightGray;
+            this.ctxbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ctxbPassword_KeyDown);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::GUI.Properties.Resources.icon_username;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(53, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 32);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.icon_password;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(53, 85);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -114,33 +162,6 @@
             this.lblLogin.TabIndex = 5;
             this.lblLogin.Text = "Đăng nhập";
             // 
-            // ctxbPassword
-            // 
-            this.ctxbPassword.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctxbPassword.Location = new System.Drawing.Point(126, 85);
-            this.ctxbPassword.Name = "ctxbPassword";
-            this.ctxbPassword.Size = new System.Drawing.Size(214, 31);
-            this.ctxbPassword.TabIndex = 7;
-            this.ctxbPassword.WaterMark = "Nhập mật khẩu";
-            this.ctxbPassword.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
-            this.ctxbPassword.WaterMarkFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctxbPassword.WaterMarkForeColor = System.Drawing.Color.LightGray;
-            this.ctxbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ctxbPassword_KeyDown);
-            // 
-            // cTxbUserName
-            // 
-            this.cTxbUserName.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cTxbUserName.Location = new System.Drawing.Point(126, 20);
-            this.cTxbUserName.Name = "cTxbUserName";
-            this.cTxbUserName.Size = new System.Drawing.Size(214, 31);
-            this.cTxbUserName.TabIndex = 8;
-            this.cTxbUserName.WaterMark = "Nhập tên đăng nhập";
-            this.cTxbUserName.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
-            this.cTxbUserName.WaterMarkFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cTxbUserName.WaterMarkForeColor = System.Drawing.Color.LightGray;
-            this.cTxbUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cTxbUserName_KeyDown);
-            this.cTxbUserName.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cTxbUserName_PreviewKeyDown);
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
@@ -152,26 +173,6 @@
             this.pictureBox3.TabIndex = 9;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::GUI.Properties.Resources.icon_username;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(53, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 32);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.icon_password;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(53, 85);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 31);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // formDangNhap
             // 
@@ -194,9 +195,9 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.formDangNhap_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

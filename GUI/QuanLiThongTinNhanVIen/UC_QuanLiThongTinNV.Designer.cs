@@ -182,7 +182,6 @@
             // 
             this.txbTaiKhoan.Location = new System.Drawing.Point(118, 41);
             this.txbTaiKhoan.Name = "txbTaiKhoan";
-            this.txbTaiKhoan.ReadOnly = true;
             this.txbTaiKhoan.Size = new System.Drawing.Size(168, 26);
             this.txbTaiKhoan.TabIndex = 0;
             // 
@@ -277,6 +276,7 @@
             // 
             this.BtnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnXoa.AutoSize = true;
+            this.BtnXoa.Enabled = false;
             this.BtnXoa.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnXoa.Location = new System.Drawing.Point(200, 402);
             this.BtnXoa.Name = "BtnXoa";

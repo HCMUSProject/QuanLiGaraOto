@@ -110,6 +110,7 @@
             this.label4.Size = new System.Drawing.Size(336, 56);
             this.label4.TabIndex = 10;
             this.label4.Text = "Đổi Mật Khẩu";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // formDoiMatKau
             // 

@@ -86,6 +86,7 @@
             resources.ApplyResources(this.lbTenNhanVien, "lbTenNhanVien");
             this.lbTenNhanVien.ForeColor = System.Drawing.Color.White;
             this.lbTenNhanVien.Name = "lbTenNhanVien";
+            this.lbTenNhanVien.Click += new System.EventHandler(this.lbTenNhanVien_Click);
             // 
             // lbChucVu
             // 
@@ -152,12 +153,14 @@
             this.PanelContent.BackColor = System.Drawing.SystemColors.ControlLightLight;
             resources.ApplyResources(this.PanelContent, "PanelContent");
             this.PanelContent.Name = "PanelContent";
+            this.PanelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContent_Paint);
             // 
             // PanelSubButtons
             // 
             this.PanelSubButtons.BackColor = System.Drawing.SystemColors.MenuBar;
             resources.ApplyResources(this.PanelSubButtons, "PanelSubButtons");
             this.PanelSubButtons.Name = "PanelSubButtons";
+            this.PanelSubButtons.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelSubButtons_Paint);
             // 
             // PanelDecoration
             // 

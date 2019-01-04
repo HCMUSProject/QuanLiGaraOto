@@ -25,6 +25,23 @@ namespace DAL
         }
 
         /// <summary>
+        /// Get nhân viên theo mã nhân viên
+        /// </summary>
+        /// <returns></returns>
+        public DataTable getNhanVien(DTO_NhanVien NV)
+        {
+            // Query string 
+            string SQL = string.Format("SELECT USERNAME,Ten,Ngaysinh,Gioitinh,CMND,Sodienthoai,Diachi,Ngayvaolam,AC.Manhanvien " +
+                "FROM ACCOUNT AC, NHANVIEN NV WHERE AC.Manhanvien = NV.Manhanvien and AC.Manhanvien = N'{0}'", NV.MANHANVIEN);
+            /*SqlDataAdapter da = new SqlDataAdapter("SELECT USERNAME,Ten,Ngaysinh,Gioitinh,CMND,Sodienthoai,Diachi,Ngayvaolam,AC.Manhanvien " +
+                "FROM ACCOUNT AC, NHANVIEN NV WHERE AC.Manhanvien = NV.Manhanvien", _conn);*/
+            SqlDataAdapter da = new SqlDataAdapter(SQL, _conn);
+            DataTable dtNhanVien = new DataTable();
+            da.Fill(dtNhanVien);
+            return dtNhanVien;
+        }
+
+        /// <summary>
         /// get toàn bộ nhân viên theo CMND hoặc username
         /// </summary>
         /// <param name="NV"></param>

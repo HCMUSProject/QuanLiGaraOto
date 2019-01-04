@@ -17,7 +17,7 @@ namespace GUI.QuanLiThongTinNhanVIen
     {
         BUS_Nhanvien BUS_NV = new BUS_Nhanvien();     
         string CMND;//kiểm tra Có đang sửa CMND hay không
-
+        string TaiKhoan;//kiểm tra có sửa tài khoản hay không
         private static UC_QuanLiThongTinNV _instance;
         public static UC_QuanLiThongTinNV Instance
         {
@@ -65,8 +65,7 @@ namespace GUI.QuanLiThongTinNhanVIen
             dtgvNhanVien.Columns["Ten"].FillWeight = 150;
             dtgvNhanVien.Columns["Ngaysinh"].FillWeight = 80;
             dtgvNhanVien.Columns["Gioitinh"].FillWeight = 40;
-
-            dtgvNhanVien.ClearSelection();
+            
         }
         public void XoaDuLieu()
         {
@@ -102,7 +101,7 @@ namespace GUI.QuanLiThongTinNhanVIen
                 txbHoTen.Text = row.Cells[1].Value.ToString();
                 txbCMND.Text = row.Cells[4].Value.ToString().Trim();
                 txbSDT.Text = row.Cells[5].Value.ToString().Trim();
-
+                TaiKhoan = txbTaiKhoan.Text;
                 //kiểm tra trong chức năng sửa có sửa CMND hay không
                 CMND = txbCMND.Text;
 
@@ -212,31 +211,40 @@ namespace GUI.QuanLiThongTinNhanVIen
             {
                 if (txbHoTen.Text != "" && txbCMND.Text != "" && txbSDT.Text != "" && txbDiaChi.Text != "" && (rbNam.Checked == true || rbNu.Checked == true))
                 {
-                    //kiểm tra các trường dữ liệu đầu vào
-                    if (txbCMND.Text.All(char.IsDigit) == false || (txbCMND.Text.Length != 9 && txbCMND.Text.Length != 12))
+                    if (TaiKhoan != txbTaiKhoan.Text)
                     {
-                        MessageBox.Show("CMND không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txbCMND.Text = "";
+                        MessageBox.Show("Không thể sửa tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txbTaiKhoan.Text = TaiKhoan;
                         return;
                     }
                     else
                     {
-                        // Tạo DTo
-                        DTO_Account AC = new DTO_Account();
-                        DTO_NhanVien NV1 = new DTO_NhanVien(0, "", txbCMND.Text, 0, "", "", "", dtpkNgayLam.Value.Date, dtpkNgaySinh.Value.Date);
-                        //DTO_Khachhangsuachua khCMND = new DTO_Khachhangsuachua(0, txbCMND.Text, "", "", "", "", dtpkNgaySinh.Value.Date);
-                        // Tìm kiếm
-                        DataTable dttb = null;
-                        dttb = BUS_NV.getNhanVien(NV1,AC);
-                       // MessageBox.Show("sau" + CMND + "txb" + txbCMND.Text);
-                        if (dttb.Rows.Count >= 1 && CMND != txbCMND.Text)
+                        //kiểm tra các trường dữ liệu đầu vào
+                        if (txbCMND.Text.All(char.IsDigit) == false || (txbCMND.Text.Length != 9 && txbCMND.Text.Length != 12))
                         {
-                            MessageBox.Show("Nhân viên này đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            capNhatdtgvNhanVien(dtgvXemNhanVIen, this);                            
+                            MessageBox.Show("CMND không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txbCMND.Text = "";
                             return;
                         }
+                        else
+                        {
+                            // Tạo DTo
+                            DTO_Account AC = new DTO_Account();
+                            DTO_NhanVien NV1 = new DTO_NhanVien(0, "", txbCMND.Text, 0, "", "", "", dtpkNgayLam.Value.Date, dtpkNgaySinh.Value.Date);
+                            //DTO_Khachhangsuachua khCMND = new DTO_Khachhangsuachua(0, txbCMND.Text, "", "", "", "", dtpkNgaySinh.Value.Date);
+                            // Tìm kiếm
+                            DataTable dttb = null;
+                            dttb = BUS_NV.getNhanVien(NV1, AC);
+                            // MessageBox.Show("sau" + CMND + "txb" + txbCMND.Text);
+                            if (dttb.Rows.Count >= 1 && CMND != txbCMND.Text)
+                            {
+                                MessageBox.Show("Nhân viên này đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                capNhatdtgvNhanVien(dtgvXemNhanVIen, this);
+                                return;
+                            }
 
 
+                        }
                     }
 
                     // Lấy row hiện tại
