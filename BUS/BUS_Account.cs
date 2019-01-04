@@ -18,6 +18,11 @@ namespace BUS
             return acc.getThongTinAccountNhanVien(AC);
         }
 
+        public DataTable getThongTinUsernamePass(DTO_Account AC)
+        {
+            return acc.getThongTinUsernamePass(AC);
+        }
+
         public bool CheckAccount(string username,string password)
         {
             return acc.CheckAccount(username, password);
@@ -33,6 +38,11 @@ namespace BUS
         public string getLoainhanvien(string username,string password)
         {
             return acc.getLoainhanvien(username, password);
+        }
+
+        public bool suaAccount(DTO_Account AC)
+        {
+            return acc.suaAccount(AC);
         }
     }
 }

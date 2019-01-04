@@ -56,5 +56,45 @@ namespace DAL
             da.Fill(dtThongTinAccountNhanVien);
             return dtThongTinAccountNhanVien;
         }
+
+        public DataTable getThongTinUsernamePass(DTO_Account AC)
+        {
+            string SQL = string.Format("SELECT USERNAME,pass " +
+                " FROM ACCOUNT AC WHERE  AC.Manhanvien like N'{0}'", AC.MANHANVIEN);
+            SqlDataAdapter da = new SqlDataAdapter(SQL, _conn);
+            DataTable dtThongTinAccountNhanVien = new DataTable();
+            da.Fill(dtThongTinAccountNhanVien);
+            return dtThongTinAccountNhanVien;
+        }
+        //thay đổi mật khẩu
+        public bool suaAccount(DTO_Account AC)
+        {
+            try
+            {
+                //Ket noi
+                _conn.Open();
+
+                //Query string
+                string SQL = string.Format("UPDATE ACCOUNT SET" +
+                    " pass = '{0}'  where Manhanvien={1}",AC.PASSWORD,AC.MANHANVIEN);
+
+                SqlCommand cmd = new SqlCommand(SQL, _conn);
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return false;
+        }
     }
 }

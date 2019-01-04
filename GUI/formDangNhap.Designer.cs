@@ -79,6 +79,7 @@
             this.ctxbPassword.Name = "ctxbPassword";
             this.ctxbPassword.Size = new System.Drawing.Size(214, 31);
             this.ctxbPassword.TabIndex = 7;
+            this.ctxbPassword.UseSystemPasswordChar = true;
             this.ctxbPassword.WaterMark = "Nhập mật khẩu";
             this.ctxbPassword.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
             this.ctxbPassword.WaterMarkFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
